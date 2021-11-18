@@ -16,36 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `truck`
+-- Table structure for table `trip`
 --
 
-DROP TABLE IF EXISTS `truck`;
+DROP TABLE IF EXISTS `trip`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `truck` (
-  `TruckID` int NOT NULL,
-  `TruckType` varchar(45) DEFAULT NULL,
-  `ReeferStatus` tinyint(1) DEFAULT NULL,
-  `DrivenHours` int DEFAULT NULL,
-  `OperationalHours` int DEFAULT NULL,
-  `OriginCity` varchar(45) DEFAULT NULL,
-  `DestCity` varchar(45) DEFAULT NULL,
-  `LoadTime` int DEFAULT NULL,
-  `UnloadTime` int DEFAULT NULL,
-  `CarrierID` int DEFAULT NULL,
-  PRIMARY KEY (`TruckID`),
-  KEY `CarrierID_idx` (`CarrierID`),
-  CONSTRAINT `CarrierID` FOREIGN KEY (`CarrierID`) REFERENCES `carrier` (`CarrierID`)
+CREATE TABLE `trip` (
+  `TripID` int NOT NULL,
+  `OrderID` int DEFAULT NULL,
+  `TruckID` int DEFAULT NULL,
+  `RouteID` int DEFAULT NULL,
+  `TripCost` varchar(45) DEFAULT NULL,
+  `GrossCost` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`TripID`),
+  KEY `OrderID_idx` (`OrderID`),
+  KEY `TruckID_idx` (`TruckID`),
+  KEY `RouteID_idx` (`RouteID`),
+  CONSTRAINT `RouteID` FOREIGN KEY (`RouteID`) REFERENCES `route` (`RouteID`),
+  CONSTRAINT `TripOrderID` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`),
+  CONSTRAINT `TruckID` FOREIGN KEY (`TruckID`) REFERENCES `truck` (`TruckID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `truck`
+-- Dumping data for table `trip`
 --
 
-LOCK TABLES `truck` WRITE;
-/*!40000 ALTER TABLE `truck` DISABLE KEYS */;
-/*!40000 ALTER TABLE `truck` ENABLE KEYS */;
+LOCK TABLES `trip` WRITE;
+/*!40000 ALTER TABLE `trip` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18 17:10:01
+-- Dump completed on 2021-11-18 17:12:03

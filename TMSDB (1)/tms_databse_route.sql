@@ -16,36 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `trip`
+-- Table structure for table `route`
 --
 
-DROP TABLE IF EXISTS `trip`;
+DROP TABLE IF EXISTS `route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `trip` (
-  `TripID` int NOT NULL,
-  `OrderID` int DEFAULT NULL,
-  `TruckID` int DEFAULT NULL,
-  `RouteID` int DEFAULT NULL,
-  `TripCost` varchar(45) DEFAULT NULL,
-  `GrossCost` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`TripID`),
-  KEY `OrderID_idx` (`OrderID`),
-  KEY `TruckID_idx` (`TruckID`),
-  KEY `RouteID_idx` (`RouteID`),
-  CONSTRAINT `RouteID` FOREIGN KEY (`RouteID`) REFERENCES `route` (`RouteID`),
-  CONSTRAINT `TripOrderID` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`),
-  CONSTRAINT `TruckID` FOREIGN KEY (`TruckID`) REFERENCES `truck` (`TruckID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `route` (
+  `RouteID` int NOT NULL AUTO_INCREMENT,
+  `DepartLocation` varchar(45) DEFAULT NULL,
+  `DestinationLocation` varchar(45) DEFAULT NULL,
+  `Hours` float DEFAULT NULL,
+  `KMs` float DEFAULT NULL,
+  `Direction` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`RouteID`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `trip`
+-- Dumping data for table `route`
 --
 
-LOCK TABLES `trip` WRITE;
-/*!40000 ALTER TABLE `trip` DISABLE KEYS */;
-/*!40000 ALTER TABLE `trip` ENABLE KEYS */;
+LOCK TABLES `route` WRITE;
+/*!40000 ALTER TABLE `route` DISABLE KEYS */;
+INSERT INTO `route` VALUES (1,'Windsor','London',2.5,191,'East'),(2,'London','Hamilton',1.75,127,'East'),(3,'Hamilton','Toronto',1.25,68,'East'),(4,'Toronto','Oshawa',1.3,60,'East'),(5,'Oshawa','Belleville',1.65,134,'East'),(6,'Belleville','Kingston',1.2,82,'East'),(7,'Kingston','Ottawa',2.5,196,'East'),(8,'Ottawa','Kingston',2.5,196,'West'),(9,'Kingston','Belleville',1.2,82,'West'),(10,'Belleville','Oshawa',1.65,134,'West'),(11,'Oshawa','Toronto',1.3,60,'West'),(12,'Toronto','Hamilton',1.25,68,'West'),(13,'Hamilton','London',1.75,127,'West'),(14,'London','Windsor',2.5,191,'West');
+/*!40000 ALTER TABLE `route` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18 17:10:01
+-- Dump completed on 2021-11-18 17:12:03

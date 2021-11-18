@@ -16,39 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `order`
+-- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `order` (
-  `OrderID` int NOT NULL,
-  `CustomerID` int DEFAULT NULL,
-  `UserID` int DEFAULT NULL,
-  `OrderType` varchar(45) DEFAULT NULL,
-  `TotalCost` float DEFAULT NULL,
-  `DepartCity` varchar(45) DEFAULT NULL,
-  `DestCity` varchar(45) DEFAULT NULL,
-  `TotalHours` int DEFAULT NULL,
-  `Surcharge` float DEFAULT NULL,
-  `Markup` float DEFAULT NULL,
-  `OrderConfirmed` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`OrderID`),
-  KEY `CustomerID_idx` (`CustomerID`),
-  KEY `UserID_idx` (`UserID`),
-  CONSTRAINT `CustomerID` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`),
-  CONSTRAINT `UserID` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`)
+CREATE TABLE `customer` (
+  `CustomerID` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`CustomerID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `customer`
 --
 
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -60,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18 17:10:01
+-- Dump completed on 2021-11-18 17:12:02
