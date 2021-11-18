@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SQ_Main_Window
+namespace TMSMainWindow
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
