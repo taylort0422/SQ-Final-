@@ -16,29 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `invoice`
+-- Table structure for table `ltltruck`
 --
 
-DROP TABLE IF EXISTS `invoice`;
+DROP TABLE IF EXISTS `ltltruck`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `invoice` (
-  `InvoiceID` int NOT NULL,
-  `OrderID` int DEFAULT NULL,
-  `Amount` float DEFAULT NULL,
-  PRIMARY KEY (`InvoiceID`),
-  KEY `OrderID_idx` (`OrderID`),
-  CONSTRAINT `OrderID` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`)
+CREATE TABLE `ltltruck` (
+  `LTLTruckID` int NOT NULL,
+  `LTLID` varchar(45) DEFAULT NULL,
+  `MaxLoad` varchar(45) DEFAULT NULL,
+  `CurrentLoad` varchar(45) DEFAULT NULL,
+  KEY `LTLTruckID_idx` (`LTLTruckID`),
+  CONSTRAINT `LTLTruckID` FOREIGN KEY (`LTLTruckID`) REFERENCES `truck` (`TruckID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `invoice`
+-- Dumping data for table `ltltruck`
 --
 
-LOCK TABLES `invoice` WRITE;
-/*!40000 ALTER TABLE `invoice` DISABLE KEYS */;
-/*!40000 ALTER TABLE `invoice` ENABLE KEYS */;
+LOCK TABLES `ltltruck` WRITE;
+/*!40000 ALTER TABLE `ltltruck` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ltltruck` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18 15:56:57
+-- Dump completed on 2021-11-18 17:10:00

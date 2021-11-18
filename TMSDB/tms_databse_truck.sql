@@ -16,27 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ftltruck`
+-- Table structure for table `truck`
 --
 
-DROP TABLE IF EXISTS `ftltruck`;
+DROP TABLE IF EXISTS `truck`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ftltruck` (
-  `FTLTruckID` int NOT NULL,
-  `FTLID` varchar(45) DEFAULT NULL,
-  KEY `FTLTruckID_idx` (`FTLTruckID`),
-  CONSTRAINT `FTLTruckID` FOREIGN KEY (`FTLTruckID`) REFERENCES `truck` (`TruckID`)
+CREATE TABLE `truck` (
+  `TruckID` int NOT NULL,
+  `TruckType` varchar(45) DEFAULT NULL,
+  `ReeferStatus` tinyint(1) DEFAULT NULL,
+  `DrivenHours` int DEFAULT NULL,
+  `OperationalHours` int DEFAULT NULL,
+  `OriginCity` varchar(45) DEFAULT NULL,
+  `DestCity` varchar(45) DEFAULT NULL,
+  `LoadTime` int DEFAULT NULL,
+  `UnloadTime` int DEFAULT NULL,
+  `CarrierID` int DEFAULT NULL,
+  PRIMARY KEY (`TruckID`),
+  KEY `CarrierID_idx` (`CarrierID`),
+  CONSTRAINT `CarrierID` FOREIGN KEY (`CarrierID`) REFERENCES `carrier` (`CarrierID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ftltruck`
+-- Dumping data for table `truck`
 --
 
-LOCK TABLES `ftltruck` WRITE;
-/*!40000 ALTER TABLE `ftltruck` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ftltruck` ENABLE KEYS */;
+LOCK TABLES `truck` WRITE;
+/*!40000 ALTER TABLE `truck` DISABLE KEYS */;
+/*!40000 ALTER TABLE `truck` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18 17:02:30
+-- Dump completed on 2021-11-18 17:10:01
