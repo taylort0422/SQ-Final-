@@ -23,16 +23,17 @@ DROP TABLE IF EXISTS `order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order` (
-  `OrderID` int NOT NULL,
+  `OrderID` int NOT NULL auto_increment,
   `CustomerID` int DEFAULT NULL,
   `UserID` int DEFAULT NULL,
-  `OrderType` varchar(45) DEFAULT NULL,
+  `OrderType` int DEFAULT NULL,
   `TotalCost` float DEFAULT NULL,
   `DepartCity` varchar(45) DEFAULT NULL,
   `DestCity` varchar(45) DEFAULT NULL,
   `TotalHours` int DEFAULT NULL,
   `Surcharge` float DEFAULT NULL,
   `Markup` float DEFAULT NULL,
+  `VanType` float DEFAULT NULL,
   `OrderConfirmed` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`OrderID`),
   KEY `CustomerID_idx` (`CustomerID`),
