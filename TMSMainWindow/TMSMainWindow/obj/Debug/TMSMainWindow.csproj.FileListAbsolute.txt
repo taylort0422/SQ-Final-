@@ -1,0 +1,16 @@
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\TMSMainWindow.exe.config
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\TMSMainWindow.exe
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\TMSMainWindow.pdb
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csprojAssemblyReference.cache
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\AdminMainWindow.g.cs
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\BuyerMainWindow.g.cs
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\App.g.cs
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow_MarkupCompile.cache
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow_MarkupCompile.lref
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\AdminMainWindow.baml
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\BuyerMainWindow.baml
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.g.resources
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.Properties.Resources.resources
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.GenerateResource.cache
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.exe
+C:\Users\thatd\source\repos\SQLab2\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.pdb
