@@ -1,0 +1,36 @@
+﻿<Window x:Class="TMSMainWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TMSMainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="420">
+
+            <ListBox Name="NewCustomerListBox" HorizontalAlignment="Left" Height="259" Margin="10,68,0,0" VerticalAlignment="Top" Width="400"/>
+            <ListBox Name="AcceptedCustomerListBox" HorizontalAlignment="Left" Height="231" Margin="10,448,0,0" VerticalAlignment="Top" Width="400"/>
+            <Button Name="AcceptSelectedCustomerButton" FontSize="18" Content="Accept selected customer" HorizontalAlignment="Left" Margin="86,350,0,0" VerticalAlignment="Top" Width="248" Height="40" Click="AcceptSelectedCustomerButton_Click"/>
+            <Label Content="New Customers" FontSize="30" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+            <Label Content="Accepted Customers" FontSize="30" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top"/>
+            <Label Content="Marketplace Orders" FontSize="30" HorizontalAlignment="Left" Margin="432,13,-293,0" VerticalAlignment="Top" Width="281"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="420" Margin="420,0,0,0">
+            <ListBox HorizontalAlignment="Left" Height="450" Margin="10,68,0,0" VerticalAlignment="Top" Width="400">
+
+            </ListBox>
+            <Button Name="CreateNewOrderButton" FontSize="18" Content="Create new order from selected" HorizontalAlignment="Left" Margin="74,631,0,0" VerticalAlignment="Top" Width="266" Height="40" Click="AcceptSelectedCustomerButton_Click"/>
+            <ComboBox Name="SelectCityToAddDropdown" HorizontalAlignment="Left" Margin="10,574,0,0" VerticalAlignment="Top" Width="266" Height="32"/>
+            <Button Name="AddCityToOrderButton" FontSize="18" Content="Add" HorizontalAlignment="Left" Margin="310,574,0,0" VerticalAlignment="Top" Width="100" Height="32" Click="Button_Click"/>
+            <Label FontSize="18" Content="Select addtional stops..." HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="432" Margin="840,0,0,0">
+            <Button x:Name="GenerateInvoiceButton" FontSize="18" Content="Generate invoice for selected order" HorizontalAlignment="Left" Margin="66,625,0,0" VerticalAlignment="Top" Width="304" Height="40" Click="AcceptSelectedCustomerButton_Click"/>
+            <ListBox HorizontalAlignment="Left" Height="534" Margin="10,68,0,0" VerticalAlignment="Top" Width="412"/>
+            <Label Content="Completed Orders" FontSize="30" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="281"/>
+        </Grid>
+    </Grid>
+</Window>
