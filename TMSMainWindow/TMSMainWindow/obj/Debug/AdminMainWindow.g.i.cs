@@ -121,6 +121,9 @@ namespace TMSMainWindow
         internal System.Windows.Controls.DataGrid RateFeeDataGrid;
         internal System.Windows.Controls.DataGrid CarrierDataGrid;
         internal System.Windows.Controls.DataGrid RouteDataGrid;
+        internal System.Windows.Controls.Button SaveRateFeeTableChangesButton;
+        internal System.Windows.Controls.Button SaveCarrierDataChangesButton;
+        internal System.Windows.Controls.Button SaveRouteTableChangesButton;
     }
 }
 
