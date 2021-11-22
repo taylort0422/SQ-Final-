@@ -1,0 +1,49 @@
+﻿<Window x:Class="TMSMainWindow.PlannerMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:local="clr-namespace:TMSMainWindow"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        
+        mc:Ignorable="d"
+        Title="PlannerMainWindow" Height="720" Width="1280">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="722">
+            <Label FontSize="30" Content="Active Orders" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <DataGrid Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702"/>
+            <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250"/>
+            <Label FontSize="30" Content="Modify Selected Order" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="16" Content="Carriers" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="16" Content="Trips currently attached to Order" HorizontalAlignment="Left" Margin="462,386,0,0" VerticalAlignment="Top"/>
+            <Button Name="AddTripToOrderButton" HorizontalAlignment="Left" Margin="265,453,0,0" VerticalAlignment="Top" Width="192" Height="56">
+                <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Add Trip to Order"/><LineBreak/><Run Text="🡆"/></TextBlock>
+            </Button>
+            <ListBox Name="TripsAttachedToOrderListBox" HorizontalAlignment="Left" Height="259" Margin="462,417,0,0" VerticalAlignment="Top" Width="250"/>
+            <Button Name="RemoveTripFromOrderButton" HorizontalAlignment="Left" Margin="265,523,0,0" VerticalAlignment="Top" Width="192" Height="57">
+                <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Text="Remove Trip from Order"/>
+            </Button>
+            <Button Name="MarkOrderAsCompleteButton" HorizontalAlignment="Left" Margin="265,596,0,0" VerticalAlignment="Top" Width="192" Height="56">
+                <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Mark Order as Complete"/></TextBlock>
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="689" Margin="727,0,0,0" VerticalAlignment="Top" Width="545">
+            <m:Map Name="Map" CredentialsProvider="AmC2NIVH6Hki-5mUPviE1KwWHwr5-iWsm1R4j2zxo18OPRQg7iks3P1G14SB7TxH" Center="43.130038, -80.691651" ZoomLevel="7" Mode="Road" Margin="10,60,10,84">
+                <m:Pushpin Location="43.257986, -79.876444" Name="Hamilton" MouseDoubleClick="Hamilton_DoubleClick"/>
+                <m:Pushpin Location="42.986900, -81.246220" Name="London"/>
+                <m:Pushpin Location="42.316581, -83.031123" Name="Windsor"/>
+                <m:Pushpin Location="43.894904, -78.863242" Name="Oshawa"/>
+                <m:Pushpin Location="43.650687, -79.384410" Name="Toronto"/>
+                <m:Pushpin Location="45.421780, -75.691190" Name="Ottawa"/>
+            </m:Map>
+            <Label FontSize="30" Content="Map" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="18"  Content="Pass           days" HorizontalAlignment="Left" Margin="59,610,0,0" VerticalAlignment="Top"/>
+            <Label FontSize="18"  Content="Generate invoice for..." HorizontalAlignment="Left" Margin="323,610,0,0" VerticalAlignment="Top"/>
+            <Button FontSize="16" Name="GenerateInvoiceAllTimeButton" Content="All time" HorizontalAlignment="Left" Margin="297,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
+            <Button FontSize="16" Name="GenerateInvoicePast2WeeksButton" Content="Past 2 weeks" HorizontalAlignment="Left" Margin="421,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
+            <Button FontSize="16" Name="PassTimeButton" Content="Go!" HorizontalAlignment="Left" Margin="69,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
+            <xctk:IntegerUpDown Text="2" FontSize="16" Name="NumberOfDaysToPassIntegerUpDown" Margin="103,615,398,50" />
+        </Grid>
+    </Grid>
+</Window>
