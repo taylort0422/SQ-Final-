@@ -12,7 +12,7 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="722">
             <Label FontSize="30" Content="Active Orders" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <DataGrid Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702"/>
+            <ListBox Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702"/>
             <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250"/>
             <Label FontSize="30" Content="Modify Selected Order" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top"/>
             <Label FontSize="16" Content="Carriers" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top"/>

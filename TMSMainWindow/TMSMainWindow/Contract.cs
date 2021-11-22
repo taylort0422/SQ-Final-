@@ -8,6 +8,7 @@ namespace TMSMainWindow
 {
     public class Contract
     {
+        public int ContractID { get; set; }
         public string Name { get; set; }
         public int JobType { get; set; }
         public int Quantity { get; set; }
@@ -15,8 +16,9 @@ namespace TMSMainWindow
         public string Destination { get; set; }
         public int VanType { get; set; }
 
-        public Contract(string name, int jobType, int quantity, string origin, string destination, int vanType)
+        public Contract(int ContractID,  string name, int jobType, int quantity, string origin, string destination, int vanType)
         {
+            this.ContractID = ContractID;
             this.Name = name;
             this.JobType = jobType;
             this.Quantity = quantity;
@@ -31,7 +33,7 @@ namespace TMSMainWindow
 
         public override string ToString()
         {
-            return String.Format(Name + " " + JobType + " " + Quantity + " " + Origin + " " + Destination + " " + VanType);
+            return String.Format(ContractID + " " + Name + " " + JobType + " " + Quantity + " " + Origin + " " + Destination + " " + VanType);
         }
     }
 }

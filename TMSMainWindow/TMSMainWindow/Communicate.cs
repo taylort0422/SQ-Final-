@@ -38,10 +38,11 @@ namespace TMSMainWindow
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-
+                int i = 0;
                 while (rdr.Read())
                 {
                     Contract newContract = new Contract();
+                    newContract.ContractID = i;
                     newContract.Name = rdr[0].ToString();
                     newContract.JobType = Int32.Parse(rdr[1].ToString());
                     newContract.Quantity = Int32.Parse(rdr[2].ToString());
@@ -49,6 +50,7 @@ namespace TMSMainWindow
                     newContract.Destination = rdr[4].ToString();
                     newContract.VanType = rdr.GetInt32(5);
                     ConList.Add(newContract);
+                    i++;
                 }
                 rdr.Close();
             }
@@ -56,8 +58,6 @@ namespace TMSMainWindow
             {
                 Console.WriteLine(e.ToString());
             }
-
-            Console.ReadKey();
             conn.Close();
             return ConList;
         }

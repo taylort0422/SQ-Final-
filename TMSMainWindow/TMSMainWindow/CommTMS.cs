@@ -195,7 +195,6 @@ namespace TMSMainWindow
             MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-
                 firstRouteID = rdr.GetInt32(0);
             }
             conn.Close();
@@ -335,6 +334,77 @@ namespace TMSMainWindow
             conn.Close();
 
             return tripList;
+        }
+
+        public List<string> CitiesBetween(string depart, string destination, string direction)
+        {
+            int firstRouteID=0;
+            int lastRouteID=0;
+            //string direction = null;
+            //Need to determine direction
+            //if (firstRouteID < 8) direction = "East";
+           // else direction = "West";
+
+
+            conn.Open();
+            string sql = "SELECT routeID FROM route WHERE DepartLocation = \"" + depart + "\" AND Direction = \"" + direction + "\"";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                firstRouteID = rdr.GetInt32(0);
+            }
+            conn.Close();
+
+         
+
+            conn.Open();
+            sql = "SELECT routeID FROM route WHERE DestinationLocation = \"" + destination + "\" AND Direction = \"" + direction + "\"";
+            cmd = new MySqlCommand(sql, conn);
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+
+                lastRouteID = rdr.GetInt32(0);
+            }
+            conn.Close();
+
+
+
+
+            List<string> cities = new List<string>();
+            for (int i = firstRouteID; i <= lastRouteID; i++)
+            {
+                conn.Open();
+                sql = "SELECT DepartLocation FROM route WHERE RouteID = " + i;
+
+                cmd = new MySqlCommand(sql, conn);
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    cities.Add(rdr.GetString(0));
+                }
+                conn.Close();
+            }
+            return cities;
+        }
+
+        public List<string> DisplayCustomers()
+        {
+
+            List<string> customers = new List<string>();
+            conn.Open();
+            string sql = "SELECT Name FROM customer";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                string retString = rdr.GetString(0);
+                customers.Add(retString);
+            }
+            conn.Close();
+            return customers;
         }
     }
 }
