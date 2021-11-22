@@ -18,21 +18,11 @@ namespace TMSMainWindow
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BuyerMainWindow : Window
     {
-        public MainWindow()
+        public BuyerMainWindow()
         {
             InitializeComponent();
-        }
-
-        private void AcceptSelectedCustomerButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

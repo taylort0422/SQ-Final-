@@ -30,7 +30,7 @@
         </Grid>
         <Grid HorizontalAlignment="Left" Height="689" Margin="727,0,0,0" VerticalAlignment="Top" Width="545">
             <m:Map Name="Map" CredentialsProvider="AmC2NIVH6Hki-5mUPviE1KwWHwr5-iWsm1R4j2zxo18OPRQg7iks3P1G14SB7TxH" Center="43.130038, -80.691651" ZoomLevel="7" Mode="Road" Margin="10,60,10,84">
-                <m:Pushpin Location="43.257986, -79.876444" Name="Hamilton" MouseDoubleClick="Hamilton_DoubleClick"/>
+                <m:Pushpin Location="43.257986, -79.876444" Name="Hamilton"/>
                 <m:Pushpin Location="42.986900, -81.246220" Name="London"/>
                 <m:Pushpin Location="42.316581, -83.031123" Name="Windsor"/>
                 <m:Pushpin Location="43.894904, -78.863242" Name="Oshawa"/>
