@@ -166,13 +166,15 @@ namespace TMSMainWindow
 
             List<string> cities = new List<string>();
             conn.Open();
-            string sql = "SELECT DepotID, Carrier FROM citylist WHERE WhichOrder = " + orderID;
+            string sql = "SELECT DepotID, Carrier, carrier.DepotCity " 
+                        + "FROM citylist "
+                        + "INNER JOIN carrier ON citylist.DepotID = carrier.CarrierID WHERE WhichOrder = " + orderID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             while (rdr.Read())
             {
-                string retString = rdr.GetString(0) + " : " + rdr.GetString(1);
+                string retString = rdr.GetString(0) + " : " + rdr.GetString(1) + " : " + rdr.GetString(2);
                 cities.Add(retString);
             }
             conn.Close();
@@ -236,7 +238,7 @@ namespace TMSMainWindow
         public void PlanTrip(string[] trip, int orderNum)
         {
 
-            foreach (string t in trip) //more than 1 trip in this order
+            foreach (string t in trip) 
             {
                 float hours = 0;
                 float kms = 0;
@@ -246,7 +248,7 @@ namespace TMSMainWindow
                 string DepLocation = GetCityFromCarrier(Int32.Parse(trip1[0]));
                 string DestLocation = GetCityFromCarrier(Int32.Parse(trip1[1]));
 
-
+                // should be checked against greater than 8
                 if (Int32.Parse(trip1[0]) < Int32.Parse(trip1[1]))
                 {
                     //Heading east
@@ -297,8 +299,6 @@ namespace TMSMainWindow
         public int InsertTrip(Trip newTrip)
         {
             int lastID = 0;
-
-
 
             conn.Open();
             string sql = "INSERT INTO `trip` (OrderID, OriginCity, DestinationCity, Kilometers, Hours) VALUES(" + newTrip.OrderId + ",\"" + newTrip.OriginCity + "\",\"" + newTrip.DestinationCity + "\"," + newTrip.Kilometers + "," + newTrip.Hours + "); SELECT LAST_INSERT_ID();";
@@ -386,6 +386,7 @@ namespace TMSMainWindow
                 }
                 conn.Close();
             }
+            cities.Add(destination);
             return cities;
         }
 

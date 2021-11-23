@@ -78,21 +78,19 @@ namespace TMSMainWindow
             else
             {
                 //populate cities to add
-                foreach(string city in nTMS.CitiesBetween(newOrder.OriginCity, newOrder.DestinationCity, "East"))
+                
+                foreach (string city in nTMS.CitiesBetween(newOrder.OriginCity, newOrder.DestinationCity, "East"))
                 {
                     SelectCityToAddDropdown.Items.Add(city);
                 }
                 
             }
-    
 
         }
 
         private void NewCustomerListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            AcceptSelectedCustomerButton.IsEnabled = true;
-            
-            
+            AcceptSelectedCustomerButton.IsEnabled = true;            
         }
 
         private void AcceptSelectedCustomerButton_Click(object sender, RoutedEventArgs e)
@@ -107,12 +105,15 @@ namespace TMSMainWindow
 
         private void CreateNewOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            nTMS.InsertOrder(newOrder);
+            newOrder.Id = nTMS.InsertOrder(newOrder);
+            nTMS.AvailableCarriers(sCities, newOrder.Id);
+            
         }
 
         private void AddCityToOrderButton_Click(object sender, RoutedEventArgs e)
         {
             sCities += SelectCityToAddDropdown.SelectedValue.ToString() + ",";
+            CreateNewOrderButton.IsEnabled = true;
         }
     }
 }

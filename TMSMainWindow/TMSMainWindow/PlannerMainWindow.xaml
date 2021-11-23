@@ -12,12 +12,12 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="722">
             <Label FontSize="30" Content="Active Orders" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <ListBox Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702"/>
+            <ListBox Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702" SelectionChanged="ActiveOrdersDataGrid_SelectionChanged"/>
             <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250"/>
             <Label FontSize="30" Content="Modify Selected Order" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top"/>
             <Label FontSize="16" Content="Carriers" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top"/>
             <Label FontSize="16" Content="Trips currently attached to Order" HorizontalAlignment="Left" Margin="462,386,0,0" VerticalAlignment="Top"/>
-            <Button Name="AddTripToOrderButton" HorizontalAlignment="Left" Margin="265,453,0,0" VerticalAlignment="Top" Width="192" Height="56">
+            <Button Name="AddTripToOrderButton" HorizontalAlignment="Left" Margin="265,453,0,0" VerticalAlignment="Top" Width="192" Height="56" Click="AddTripToOrderButton_Click">
                 <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Add Trip to Order"/><LineBreak/><Run Text="🡆"/></TextBlock>
             </Button>
             <ListBox Name="TripsAttachedToOrderListBox" HorizontalAlignment="Left" Height="259" Margin="462,417,0,0" VerticalAlignment="Top" Width="250"/>

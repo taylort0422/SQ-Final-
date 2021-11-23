@@ -31,20 +31,46 @@ namespace TMSMainWindow
                                     ConfigurationManager.AppSettings.Get("marketplaceIP"),
                                     Int32.Parse(ConfigurationManager.AppSettings.Get("marketplacePort")),
                                     ConfigurationManager.AppSettings.Get("marketplaceDb"));
+        Trip trip = new Trip();
+        List<Order> openOrders = new List<Order>();
+        
         public PlannerMainWindow()
         {
             InitializeComponent();
-            foreach (Order orders in nTMS.ListOpenOrders())
+            openOrders = nTMS.ListOpenOrders();
+            foreach (Order orders in openOrders)
             {
                 ActiveOrdersDataGrid.Items.Add(orders);
                 //Console.WriteLine(orders.ToString());
 
             }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ActiveOrdersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CarrierListBox.Items.Clear();
+            List<string> carriers = nTMS.DisplayCarriers(Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]));
+
+            for (int i = 0; i < carriers.Count; i++)
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Content = carriers[i].Split(':')[1] + "-" + carriers[i].Split(':')[2];
+                checkBox.Name = "Carrier_"+ carriers[i].Split(':')[0].Trim();
+
+                CarrierListBox.Items.Add(checkBox);
+            }
+        }
+
+        private void AddTripToOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            int firstID = CarrierListBox.SelectedItems.Count;
+            //nTMS.PlanTrip()
         }
     }
 }
