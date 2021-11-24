@@ -9,21 +9,21 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="420">
 
-            <ListBox Name="NewCustomerListBox" HorizontalAlignment="Left" Height="259" Margin="10,68,0,0" VerticalAlignment="Top" Width="400"/>
+            <ListBox Name="NewCustomerListBox" HorizontalAlignment="Left" Height="259" Margin="10,68,0,0" VerticalAlignment="Top" Width="400" SelectionChanged="NewCustomerListBox_SelectionChanged"/>
             <ListBox Name="AcceptedCustomerListBox" HorizontalAlignment="Left" Height="231" Margin="10,448,0,0" VerticalAlignment="Top" Width="400"/>
-            <Button Name="AcceptSelectedCustomerButton" FontSize="18" Content="Accept selected customer" HorizontalAlignment="Left" Margin="86,350,0,0" VerticalAlignment="Top" Width="248" Height="40"/>
+            <Button Name="AcceptSelectedCustomerButton" FontSize="18" Content="Accept selected customer" HorizontalAlignment="Left" Margin="86,350,0,0" VerticalAlignment="Top" Width="248" Height="40" Click="AcceptSelectedCustomerButton_Click"/>
             <Label Content="New Customers" FontSize="30" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
             <Label Content="Accepted Customers" FontSize="30" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top"/>
             <Label Content="Marketplace Orders" FontSize="30" HorizontalAlignment="Left" Margin="432,13,-293,0" VerticalAlignment="Top" Width="281"/>
         </Grid>
 
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="420" Margin="420,0,0,0">
-            <ListBox Name="MarketplaceOrdersListBox" HorizontalAlignment="Left" Height="450" Margin="10,68,0,0" VerticalAlignment="Top" Width="400">
+            <ListBox Name="MarketplaceOrdersListBox" HorizontalAlignment="Left" Height="450" Margin="10,68,0,0" VerticalAlignment="Top" Width="400" SelectionChanged="MarketplaceOrdersListBox_SelectionChanged">
 
             </ListBox>
-            <Button Name="CreateNewOrderButton" FontSize="18" Content="Create new order from selected" HorizontalAlignment="Left" Margin="74,631,0,0" VerticalAlignment="Top" Width="266" Height="40"/>
+            <Button Name="CreateNewOrderButton" IsEnabled="False" FontSize="18" Content="Create new order from selected" HorizontalAlignment="Left" Margin="74,631,0,0" VerticalAlignment="Top" Width="266" Height="40" Click="CreateNewOrderButton_Click"/>
             <ComboBox Name="SelectCityToAddDropdown" HorizontalAlignment="Left" Margin="10,574,0,0" VerticalAlignment="Top" Width="266" Height="32"/>
-            <Button Name="AddCityToOrderButton" FontSize="18" Content="Add" HorizontalAlignment="Left" Margin="310,574,0,0" VerticalAlignment="Top" Width="100" Height="32"/>
+            <Button Name="AddCityToOrderButton" FontSize="18" Content="Add" HorizontalAlignment="Left" Margin="310,574,0,0" VerticalAlignment="Top" Width="100" Height="32" Click="AddCityToOrderButton_Click"/>
             <Label FontSize="18" Content="Select addtional stops..." HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top"/>
         </Grid>
 

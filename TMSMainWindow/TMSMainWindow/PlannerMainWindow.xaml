@@ -12,30 +12,34 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="722">
             <Label FontSize="30" Content="Active Orders" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <DataGrid Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702"/>
-            <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250"/>
+            <ListBox Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702" SelectionChanged="ActiveOrdersDataGrid_SelectionChanged"/>
+            <StackPanel x:Name="CarrierStack">
+                <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250"/>
+            </StackPanel>
             <Label FontSize="30" Content="Modify Selected Order" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top"/>
             <Label FontSize="16" Content="Carriers" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top"/>
             <Label FontSize="16" Content="Trips currently attached to Order" HorizontalAlignment="Left" Margin="462,386,0,0" VerticalAlignment="Top"/>
-            <Button Name="AddTripToOrderButton" HorizontalAlignment="Left" Margin="265,453,0,0" VerticalAlignment="Top" Width="192" Height="56">
+            <Button Name="AddTripToOrderButton" HorizontalAlignment="Left" Margin="265,453,0,0" VerticalAlignment="Top" Width="192" Height="56" Click="AddTripToOrderButton_Click">
                 <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Add Trip to Order"/><LineBreak/><Run Text="🡆"/></TextBlock>
             </Button>
             <ListBox Name="TripsAttachedToOrderListBox" HorizontalAlignment="Left" Height="259" Margin="462,417,0,0" VerticalAlignment="Top" Width="250"/>
             <Button Name="RemoveTripFromOrderButton" HorizontalAlignment="Left" Margin="265,523,0,0" VerticalAlignment="Top" Width="192" Height="57">
                 <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Text="Remove Trip from Order"/>
             </Button>
-            <Button Name="MarkOrderAsCompleteButton" HorizontalAlignment="Left" Margin="265,596,0,0" VerticalAlignment="Top" Width="192" Height="56">
+            <Button Name="MarkOrderAsCompleteButton" HorizontalAlignment="Left" Margin="265,596,0,0" VerticalAlignment="Top" Width="192" Height="56" Click="MarkOrderAsCompleteButton_Click">
                 <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Mark Order as Complete"/></TextBlock>
             </Button>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="689" Margin="727,0,0,0" VerticalAlignment="Top" Width="545">
-            <m:Map Name="Map" CredentialsProvider="AmC2NIVH6Hki-5mUPviE1KwWHwr5-iWsm1R4j2zxo18OPRQg7iks3P1G14SB7TxH" Center="43.130038, -80.691651" ZoomLevel="7" Mode="Road" Margin="10,60,10,84">
-                <m:Pushpin Location="43.257986, -79.876444" Name="Hamilton"/>
-                <m:Pushpin Location="42.986900, -81.246220" Name="London"/>
-                <m:Pushpin Location="42.316581, -83.031123" Name="Windsor"/>
-                <m:Pushpin Location="43.894904, -78.863242" Name="Oshawa"/>
-                <m:Pushpin Location="43.650687, -79.384410" Name="Toronto"/>
-                <m:Pushpin Location="45.421780, -75.691190" Name="Ottawa"/>
+            <m:Map Name="Map" CredentialsProvider="AmC2NIVH6Hki-5mUPviE1KwWHwr5-iWsm1R4j2zxo18OPRQg7iks3P1G14SB7TxH" Center="43.430038, -79.691651" ZoomLevel="6" Mode="Road" Margin="10,60,10,84">
+                <m:Pushpin Location="43.257986, -79.876444" Name="Hamilton" Content="Hamilton"/>
+                <m:Pushpin Location="42.986900, -81.246220" Name="London" Content="London"/>
+                <m:Pushpin Location="42.316581, -83.031123" Name="Windsor" Content="Windsor"/>
+                <m:Pushpin Location="43.894904, -78.863242" Name="Oshawa" Content="Oshawa"/>
+                <m:Pushpin Location="43.650687, -79.384410" Name="Toronto" Content="Toronto"/>
+                <m:Pushpin Location="44.2405145,-77.5012222" Name="Belleville" Content="Belleville"/>
+                <m:Pushpin Location="44.3397743,-76.6132777" Name="Kingston" Content="Kingston"/>
+                <m:Pushpin Location="45.421780, -75.691190" Name="Ottawa" Content="Ottawa"/>
             </m:Map>
             <Label FontSize="30" Content="Map" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <Label FontSize="18"  Content="Pass           days" HorizontalAlignment="Left" Margin="59,610,0,0" VerticalAlignment="Top"/>
