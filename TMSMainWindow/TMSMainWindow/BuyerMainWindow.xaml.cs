@@ -17,24 +17,49 @@ using System.Configuration;
 namespace TMSMainWindow
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BuyerMainWindow.xaml
     /// </summary>
     public partial class BuyerMainWindow : Window
     {
+        //! A private variable.
+        /*!
+          This variable stores the communication information for the local database.
+        */
         private CommTMS nTMS = new CommTMS(ConfigurationManager.AppSettings.Get("localUser"),
                                 ConfigurationManager.AppSettings.Get("localPass"),
                                 ConfigurationManager.AppSettings.Get("localIP"),
                                 Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                                 ConfigurationManager.AppSettings.Get("localDb"));
-
+        //! A private variable.
+        /*!
+          This variable stores the communication information for the external marketplace database.
+        */
         private Communicate nc = new Communicate(ConfigurationManager.AppSettings.Get("marketplaceUser"),
                                     ConfigurationManager.AppSettings.Get("marketplacePass"),
                                     ConfigurationManager.AppSettings.Get("marketplaceIP"),
                                     Int32.Parse(ConfigurationManager.AppSettings.Get("marketplacePort")),
                                     ConfigurationManager.AppSettings.Get("marketplaceDb"));
+        //! A private variable.
+        /*!
+          This variable stores the information for the Order currently being created.
+        */
         private Order newOrder;
+        //! A function variable.
+        /*!
+          This string is a list of cities that the Order will stop at.
+          \sa newOrder
+        */
         string sCities = "";
+        //! A function variable.
+        /*!
+          This is a list that will be filled with contracts from the Contract database.
+        */
         List<Contract> contracts = new List<Contract>();
+
+        //! This is the function for the Buyer window. It fills the relevant WPF controls with data from the external and internal databases.
+        /*!
+          
+        */
         public BuyerMainWindow()
         {
             InitializeComponent();
@@ -55,6 +80,13 @@ namespace TMSMainWindow
             }
         }
 
+        //! This is the function that is triggered when an item is selected from the Marketplace Orders menu.
+        /*!
+          \param sender the wpf object that called the function.
+          \param e the arguments of the event that was triggered.
+          \return void
+          \sa 
+        */
         private void MarketplaceOrdersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int selectedContract;
@@ -93,11 +125,13 @@ namespace TMSMainWindow
 
         }
 
-        private void NewCustomerListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            AcceptSelectedCustomerButton.IsEnabled = true;            
-        }
-
+        //! This is the function that is triggered when the "accept customer" button is clicked.
+        /*!
+          \param sender the wpf object that called the function.
+          \param e the arguments of the event that was triggered.
+          \return void
+          \sa 
+        */
         private void AcceptSelectedCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             newOrder.CustomerID = nTMS.AddCustomer(newOrder.CustomerName);
@@ -108,6 +142,13 @@ namespace TMSMainWindow
             }
         }
 
+        //! This is the function that is triggered when the "create new order" button is clicked. It stores the order in the TMS database.
+        /*!
+          \param sender the wpf object that called the function.
+          \param e the arguments of the event that was triggered.
+          \return void
+          \sa 
+        */
         private void CreateNewOrderButton_Click(object sender, RoutedEventArgs e)
         {
             if(newOrder.JobType != 1)
@@ -119,6 +160,13 @@ namespace TMSMainWindow
             
         }
 
+        //! This is the function that is triggered when the "add city to order" button is clicked.  
+        /*!
+          \param sender the wpf object that called the function.
+          \param e the arguments of the event that was triggered.
+          \return void
+          \sa 
+        */
         private void AddCityToOrderButton_Click(object sender, RoutedEventArgs e)
         {
             sCities += SelectCityToAddDropdown.SelectedValue.ToString() + ",";
