@@ -17,20 +17,23 @@ using System.Configuration;
 namespace TMSMainWindow
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BuyerMainWindow.xaml
     /// </summary>
     public partial class BuyerMainWindow : Window
     {
         //! A private variable.
         /*!
-          Details.
+          This variable stores the communication information for the local database.
         */
         private CommTMS nTMS = new CommTMS(ConfigurationManager.AppSettings.Get("localUser"),
                                 ConfigurationManager.AppSettings.Get("localPass"),
                                 ConfigurationManager.AppSettings.Get("localIP"),
                                 Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                                 ConfigurationManager.AppSettings.Get("localDb"));
-
+        //! A private variable.
+        /*!
+          This variable stores the communication information for the external marketplace database.
+        */
         private Communicate nc = new Communicate(ConfigurationManager.AppSettings.Get("marketplaceUser"),
                                     ConfigurationManager.AppSettings.Get("marketplacePass"),
                                     ConfigurationManager.AppSettings.Get("marketplaceIP"),
