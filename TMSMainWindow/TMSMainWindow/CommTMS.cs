@@ -177,23 +177,6 @@ namespace TMSMainWindow
             return retString;
         }
 
-        //// This returns an orderID based on 
-        //public int GetOrderID(string Name)
-        //{
-        //    int retString = 0;
-        //    conn.Open();
-        //    string sql = "SELECT OrderID FROM customer WHERE name = " + Name.Trim();
-        //    MySqlCommand cmd = new MySqlCommand(sql, conn);
-        //    MySqlDataReader rdr = cmd.ExecuteReader();
-
-        //    while (rdr.Read())
-        //    {
-        //        retString = rdr.GetInt32(0);
-        //    }
-        //    conn.Close();
-        //    return retString;
-        //}
-
         // This generates a list of carriers and their cities based on an OrderID
         public List<string> DisplayCarriers(int orderID)
         {
@@ -284,7 +267,8 @@ namespace TMSMainWindow
             string DestLocation = GetCityFromCarrier(Int32.Parse(trip1[1]));
 
             // should be checked against greater than 8
-            if (Int32.Parse(trip1[0]) < Int32.Parse(trip1[1]))
+            //if (Int32.Parse(trip1[0]) < Int32.Parse(trip1[1]))
+            if (Int32.Parse(trip1[0]) < 8)
             {
                 //Heading east
                 kmhrs = GetRouteKMSHRS(DepLocation, DestLocation, "east").Split('|');
@@ -292,7 +276,8 @@ namespace TMSMainWindow
                 hours = float.Parse(kmhrs[1]);
 
             }
-            else if (Int32.Parse(trip1[0]) > Int32.Parse(trip1[1]))
+            //else if (Int32.Parse(trip1[0]) > Int32.Parse(trip1[1]))
+            else if (Int32.Parse(trip1[0]) >= 8)
             {
                 //Heading west
                 kmhrs = GetRouteKMSHRS(DepLocation, DestLocation, "west").Split('|');

@@ -14,7 +14,7 @@
             <Label FontSize="30" Content="Active Orders" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <ListBox Name="ActiveOrdersDataGrid" HorizontalAlignment="Left" Height="274" Margin="10,60,0,0" VerticalAlignment="Top" Width="702" SelectionChanged="ActiveOrdersDataGrid_SelectionChanged"/>
             <StackPanel x:Name="CarrierStack">
-                <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250"/>
+                <ListBox Name="CarrierListBox" HorizontalAlignment="Left" Height="259" Margin="10,420,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="CarrierListBox_SelectionChanged"/>
             </StackPanel>
             <Label FontSize="30" Content="Modify Selected Order" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top"/>
             <Label FontSize="16" Content="Carriers" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top"/>

@@ -61,7 +61,6 @@ C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWin
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.AssemblyReference.cache
-C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.SuggestedBindingRedirects.cache
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\AdminMainWindow.g.cs
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\BuyerMainWindow.g.cs
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\PlannerMainWindow.g.cs
@@ -77,7 +76,6 @@ C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWin
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.Properties.Resources.resources
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.GenerateResource.cache
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.CoreCompileInputs.cache
-C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.CopyComplete
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.exe
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.pdb
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\BouncyCastle.Crypto.dll
