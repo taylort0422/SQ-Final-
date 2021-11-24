@@ -48,6 +48,11 @@ namespace TMSMainWindow
             {
                 AcceptedCustomerListBox.Items.Add(customer);
             }
+
+            foreach(Order o in nTMS.ListCompletedOrders())
+            {
+                CompletedOrdersListBox.Items.Add(o);
+            }
         }
 
         private void MarketplaceOrdersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -105,6 +110,10 @@ namespace TMSMainWindow
 
         private void CreateNewOrderButton_Click(object sender, RoutedEventArgs e)
         {
+            if(newOrder.JobType != 1)
+            {
+                sCities = newOrder.OriginCity + "," + newOrder.DestinationCity;
+            }
             newOrder.Id = nTMS.InsertOrder(newOrder);
             nTMS.AvailableCarriers(sCities, newOrder.Id);
             

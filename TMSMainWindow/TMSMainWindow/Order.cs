@@ -22,6 +22,7 @@ namespace TMSMainWindow
         public float Surcharge { get; set; }
         public float Markup { get; set; }
         public int Confirmed { get; set; }
+        public DateTime date { get; set; }
 
         public List<Trip> tripList = new List<Trip>();
 

@@ -15,7 +15,9 @@ namespace TMSMainWindow
         public float GrossCost { get; set; }
         public float Kilometers { get; set; }
         public float Hours { get; set; }
+        public int OriginDepotID { get; set; }
         public string OriginCity { get; set; }
+        public int DestinationDepotID { get; set; }    
         public string DestinationCity { get; set; }
     }
 }

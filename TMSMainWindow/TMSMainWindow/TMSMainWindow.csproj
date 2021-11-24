@@ -116,6 +116,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Carrier.cs" />
     <Compile Include="CommTMS.cs" />
     <Compile Include="Communicate.cs" />
     <Compile Include="Contract.cs" />
