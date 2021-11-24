@@ -709,5 +709,56 @@ namespace TMSMainWindow
             // Return the list of all carriers
             return carriers;
         }
+
+
+        /// \brief Called to generate an invoice
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database by orderID, geenrates an invoice based off of
+        /// order information and costs
+        /// 
+        /// \param (int) orderID
+        /// 
+        /// \return invoice
+
+
+        ///RemoveTrip(int TripID)
+        /// \brief Called to delete a trip
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database based on tripID, and removes that trip from the database
+        /// 
+        /// \param (int) tripID
+        /// 
+        /// \return N/A
+
+        /// \brief Called to insert an invoice on to an order
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database based on OrderID, and inserts the associated invoice
+        /// 
+        /// \param (int) orderID, (int) invoiceID
+        /// 
+        /// \return N/A
+
+        /// \brief Called to back up a database
+        /// \details <b>Details</b>
+        /// 
+        /// Method backs up a database to a specified file path
+        /// 
+        /// \param (string)filePath
+        /// 
+        /// \return N/A
+
+        ///UpdateCarrier(int CarrierID)
+        /// \brief Called to update a carrier's information
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for a carrier based on their ID, and gives
+        /// user ability to update any of the carrier's attributes
+        /// 
+        /// \param (int)carrierID
+        /// 
+        /// \return N/A
     }
 }

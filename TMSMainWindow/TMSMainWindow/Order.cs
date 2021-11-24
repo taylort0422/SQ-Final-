@@ -7,25 +7,37 @@ using System.Configuration;
 
 namespace TMSMainWindow
 {
+    /// 
+    /// \class Order
+    ///
+    /// \brief The purpose of this class is to keep all the parts of an order together
+    /// 
+    /// \author <i>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</i>
+    ///
     public class Order
     {
-        public int Id { get; set; }
-        public int CustomerID { get; set; }
-        public string CustomerName { get; set; }
-        public int JobType { get; set; }
-        public int vanType { get; set; }
-        public float TotalCost { get; set; }
-        public string OriginCity { get; set; }
-        public string DestinationCity { get; set; }
-        public float TotalHours { get; set; }
-        public float TotalKms { get; set; }
-        public float Surcharge { get; set; }
-        public float Markup { get; set; }
-        public int Confirmed { get; set; }
-        public DateTime date { get; set; }
+        public int Id { get; set; } ///</The order ID
+        public int CustomerID { get; set; } ///</The customer associated with the order
+        public string CustomerName { get; set; } ///</The name of the customer
+        public int JobType { get; set; } ///</Type of job
+        public int vanType { get; set; } ///</LTL or FTL
+        public float TotalCost { get; set; } ///</The cost of this order
+        public string OriginCity { get; set; } ///</Originating city
+        public string DestinationCity { get; set; } ///</Final city
+        public float TotalHours { get; set; } ///</The hours driven for the order
+        public float TotalKms { get; set; } ///</The kms driven for the order
+        public float Surcharge { get; set; } ///</Our markup on this order
+        public float Markup { get; set; } ///</Markup % for this order
+        public int Confirmed { get; set; } ///</Boolean indicating whether the order is confirmed
+        public DateTime date { get; set; } ///<Date/time of the order
 
-        public List<Trip> tripList = new List<Trip>();
+        public List<Trip> tripList = new List<Trip>(); ///<The name of the database 
 
+        /*
+* \brief To instantiate a new Order object 
+*
+* \return As this is a <i>constructor< / i> for the Communicate class, nothing is returned
+*/
         public Order(string customerName, string originCity, string destinationCity, int jobType, int vanType)
         {
             this.CustomerName = customerName;
@@ -36,11 +48,27 @@ namespace TMSMainWindow
             this.Confirmed = 0;
         }
 
+        ///
+        /// \brief Changes an order's elements to a legible string
+        /// \details <b>Details</b>
+        /// 
+        /// \param N/A
+        /// 
+        /// \return the elements of the order as a string
         public override string ToString()
         {
             return String.Format(Id + " " + CustomerName + " " + OriginCity + " " + DestinationCity + " " + JobType);
         }
 
+        ///
+        /// \brief Calculates the hours of an order
+        /// \details <b>Details</b>
+        /// Connects to a database, and finds a given order using an orderID. 
+        /// The total hours of driving are calculated from all the trips within the order
+        /// 
+        /// \param (int) orderID
+        /// 
+        /// \return N/A
         public void CalcTotalHours(int orderID)
         {
 
