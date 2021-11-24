@@ -8,14 +8,33 @@ using MySql.Data.MySqlClient;
 
 namespace TMSMainWindow
 {
+    /// 
+    /// \class Communicate
+    ///
+    /// \brief The purpose of this class is to allow communications between
+    /// our program and a database
+    /// 
+    /// \details <b>Details< / b>
+    /// The Communicate has several parameters; (string) DbUserName to access the database,
+    /// (string) DbPassword to also access a database, a (string) DbIP to conncet
+    /// to the database IP, an (int) DbPort to also connect to the database IP, and
+    /// a (string) DbName as a database's name.
+    /// 
+    /// \author <i>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</i>
+    ///
     public class Communicate
     {
-        public string DbIP { get; set; }
-        public int DbPort { get; set; }
-        public string DbUser { get; set; }
-        public string DbPassword { get; set; }
-        public string DbName { get; set; }
+        public string DbIP { get; set; }  ///<The IP of the database 
+        public int DbPort { get; set; } ///<The Port of the database 
+        public string DbUser { get; set; }  ///<The username for the database 
+        public string DbPassword { get; set; }  ///<The password of the database 
+        public string DbName { get; set; }  ///<The name of the database 
 
+/*
+* \brief To instantiate a new Communicate object 
+*
+* \return As this is a <i>constructor< / i> for the Communicate class, nothing is returned
+*/
         public Communicate(string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)
         {
             this.DbIP = DbIP;
@@ -25,6 +44,16 @@ namespace TMSMainWindow
             this.DbName = DbName;
         }
 
+        ///
+        /// \brief Called to retreive a list of contracts from the database
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and goes through all available contracts. 
+        /// Each contracted will be added to a list, which will be returned by th emethod
+        /// 
+        /// \param N/A
+        /// 
+        /// \return the list of contracts
         public List<Contract> RetrieveContracts()
         {
             string connStr = "server=" + DbIP + ";user=" + DbUser + ";database=" + DbName + ";port=" + DbPort + ";password=" + DbPassword;

@@ -8,19 +8,47 @@ using MySql.Data.MySqlClient;
 
 namespace TMSMainWindow
 {
+    /// 
+    /// \class Comm TMS
+    ///
+    /// \brief This class is a child of the Communicate class, and has more specialized methods
+    /// 
+    /// \details <b>Details< / b>
+    /// The Communicate has the same parameters as it's parent class. This class is far more involved with  
+    /// databases however, and can see, retreive, insert, and update all sorts of fields within our TMS database. 
+    /// 
+    /// \author <i>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</i>
+    /// 
+    /// \see Communicate.cs
+    ///
 
     public class CommTMS : Communicate
     {
-        public string connStr { get; set; }
+        public string connStr { get; set; } ///<SQL command to connect to databse
         public MySqlConnection conn = null;
 
+/*
+* \brief To instantiate a new CommTMS object 
+*
+* \return As this is a <i>constructor< / i> for the CommTMS class, nothing is returned
+*/
         public CommTMS(string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName) : base(DbUserName, DbPassword, DbIP, DbPort, DbName)
         {
             connStr = "server=" + DbIP + ";user=" + DbUser + ";database=" + DbName + ";port=" + DbPort + ";password=" + DbPassword;
             conn = new MySqlConnection(connStr);
         }
 
-        // This inserts an order into the DB
+        ///
+        /// \brief Called to insert a new order into the database
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and inserts a newly created order into    
+        /// an SQL database
+        /// 
+        /// \param Order object 
+        /// \see Order.cs
+        /// 
+        /// \return an int indicating success
         public int InsertOrder(Order newOrder)
         {
             int retInt = 0;
@@ -49,7 +77,16 @@ namespace TMSMainWindow
             return retInt;
         }
 
-        // This checks if a customer exists, returns 0 if not, or customer ID if they do
+        ///
+        /// \brief Called to see if a customer exists
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and searches for a specific customer
+        /// 
+        /// \param (string) customer name
+        /// 
+        /// \return an int of a customer's ID if method is successful
+        /// 
         public int CheckCustomer(string name)
         {
             conn.Open();
@@ -65,7 +102,16 @@ namespace TMSMainWindow
             return retInt;
         }
 
-        // This adds a customer to the database
+        ///
+        /// \brief Called to add a customer to the database
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and inserts a customer
+        /// 
+        /// \param (string) customer name
+        /// 
+        /// \return an int of a customer's ID if method is successful
+        /// 
         public int AddCustomer(string name)
         {
             conn.Open();
@@ -77,7 +123,19 @@ namespace TMSMainWindow
             return CheckCustomer(name);
         }
 
-        // This generates a list of carriers in cities that pertain to a specific order ID
+     
+        ///
+        /// \brief view carriers in a city
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, checks cities against an orderID. The method will see which
+        /// cities are within a specific order. The method then connects to a different database table, and updates it with
+        /// the cities within a specific order
+        /// 
+        /// \param (string) cityL, (int) orderID
+        /// 
+        /// \return N/A
+        /// 
         public void AvailableCarriers(string cityL, int orderID)
         {
             List<string[]> cityList = new List<string[]>();
@@ -108,7 +166,18 @@ namespace TMSMainWindow
                 conn.Close();
             }
         }
-        // This generates a list of open orders
+
+        ///
+        /// \brief Called to generate a list of open orders
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, goes through the 'orders' table. All of the orders with a 0 status for 'confirmed' 
+        /// (so not confirmed) will be pulled from the database. Every order which has not yet been confirmed will 
+        /// be added to a list.
+        /// 
+        /// \param N/A
+        /// 
+        /// \return list of open orders
         public List<Order> ListOpenOrders()
         {
             List<Order> oList = new List<Order>();
@@ -132,7 +201,17 @@ namespace TMSMainWindow
             return oList;
         }
 
-        // This generates a list of completed orders
+        ///
+        /// \brief Called to generate a list of confirmed orders
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, goes through the 'orders' table. All of the orders with a 1 status for 'confirmed' 
+        /// (so  confirmed) will be pulled from the database. Every order which has  been confirmed will 
+        /// be added to a list.
+        /// 
+        /// \param N/A
+        /// 
+        /// \return list of completed orders
         public List<Order> ListCompletedOrders()
         {
             List<Order> oList = new List<Order>();
@@ -159,7 +238,16 @@ namespace TMSMainWindow
             return oList;
         }
 
-        // This gets the customer Name based on their ID
+        ///
+        /// \brief Called to retreive a customer name from their custID
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and finds a specific customer ID. The name associated
+        /// with that ID is retreived.
+        /// 
+        /// \param (int) custID
+        /// 
+        /// \return (string) customer's name
         public string GetCustomerName(int custID)
         {
             string retString = null;
@@ -177,7 +265,16 @@ namespace TMSMainWindow
             return retString;
         }
 
-        // This generates a list of carriers and their cities based on an OrderID
+        ///
+        /// \brief Called to retreive a list of carriers and their cities based on an OrderID
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and finds a specific order ID from a cityList table. 
+        /// all associated cities from that orderID are returned. 
+        /// 
+        /// \param (int) orderID
+        /// 
+        /// \return (san array of (string) showing the cities within that order 
         public List<string> DisplayCarriers(int orderID)
         {
 
@@ -199,6 +296,20 @@ namespace TMSMainWindow
         }
 
         // This calculates the KMs and Hrs a route takes
+
+        ///
+        /// \brief Calculates the KM's and hours a route takes
+        /// \details <b>Details</b>
+        /// 
+        /// Method connects to a server, and finds a specific route ID from the routes table. For 
+        /// each city the KM's and hours will be taken out of that route. These values will be added together to determine 
+        /// the length of the trip. 
+        /// 
+        /// \param (string) depart location, (string) destination location, (string) direction
+        /// 
+        /// \return a string indicating the KM's and horus of a route
+
+
         public string GetRouteKMSHRS(string depart, string destination, string direction)
         {
             int firstRouteID = 0;
@@ -254,6 +365,17 @@ namespace TMSMainWindow
         }
 
         // Plan trip builds a trip to later be inserted 
+
+        ///
+        /// \brief Called to insert a planned trip into the database
+        /// \details <b>Details</b>
+        /// 
+        /// Method gets destionation and departure cities from another fucntion. 
+        /// After the cities and direction are determined, the trip is inserted into a database.
+        /// 
+        /// \param (string) trip, (int) order number
+        /// 
+        /// \return N/A
         public void PlanTrip(string trip, int orderNum)
         {
 
@@ -298,7 +420,17 @@ namespace TMSMainWindow
             InsertTrip(newTrip);
         }
 
-        // This updates the order to completed
+        
+
+        ///
+        /// \brief Called to updates the order to completed
+        /// \details <b>Details</b>
+        /// 
+        /// Method chamnges an OrderConfirmed value to '1'
+        /// 
+        /// \param (int) orderID
+        /// 
+        /// \return N/A
         public void MarkOrderComplete(int orderID)
         {
             conn.Open();
@@ -308,7 +440,17 @@ namespace TMSMainWindow
 
         }
 
-        // This finds a carrier with a specific name in a specific city
+
+        ///
+        /// \brief Called to find a carrier with a specific name in a specific city
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for a carrier name and a city. The carrierID value
+        /// will be retreived from that entry in the database where the name and city match those of the database
+        /// 
+        /// \param (string) name, (string) city
+        /// 
+        /// \return (int) carrierID
         public int GetCarrierID(string name, string city)
         {
             int cityID = 0;
@@ -326,7 +468,17 @@ namespace TMSMainWindow
             return cityID;
         }
 
-        // This gets the Depot city of a carrier based on it's ID
+
+        ///
+        /// \brief Called to get the Depot city of a carrier based on it's ID
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for a carrierID. The depot city of the 
+        /// associated carrierID will be returned
+        /// 
+        /// \param (int) carrierID
+        /// 
+        /// \return (string) city
         public string GetCityFromCarrier(int CarrierID)
         {
             string city = "";
@@ -345,7 +497,16 @@ namespace TMSMainWindow
 
         }
 
-        // This inserts a trip into the database
+        ///
+        /// \brief Called to insert a trip into the database
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for a carrierID. The depot city of the 
+        /// associated carrierID will be returned
+        /// 
+        /// \param (int) carrierID
+        /// 
+        /// \return (string) city
         public int InsertTrip(Trip newTrip)
         {
             int lastID = 0;
@@ -362,7 +523,16 @@ namespace TMSMainWindow
             return lastID;
         }
 
-        // This creates a list of trips from a specific order
+        /// \brief Called to create a list of trips from a specific order
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for an orderID. According to that orderID,
+        /// the database is searched for all trips associated wit that order. 
+        /// Those trips are added to a list, and returned.
+        /// 
+        /// \param (int) orderID
+        /// 
+        /// \return List of trips
         public List<Trip> ListOfTrips(int orderId)
         {
             List<Trip> tripList = new List<Trip>();
@@ -391,7 +561,15 @@ namespace TMSMainWindow
             return tripList;
         }
 
-        // This Gets carrier name and depot city from the carrier id
+        /// \brief Called to find a specific carrier from their ID
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for a carrierID. According to that ID,
+        /// the database is searched for the associated carrrier. 
+        /// 
+        /// \param (int) carrierID
+        /// 
+        /// \return (string) name of carrier
         public string GetCarrierFromID(int carrierID)
         {
             string retString = "";
@@ -407,7 +585,15 @@ namespace TMSMainWindow
             return retString;
         }
 
-        // This finds all cities between an origin and a destination
+
+        /// \brief Called to find all cities between an origin and a destination
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches between a departure and destination city, and find each city between them
+        /// 
+        /// \param (string) depart, (string) destination, (string) direction
+        /// 
+        /// \return List of strings of cities between the depart and destination
         public List<string> CitiesBetween(string depart, string destination, string direction)
         {
             int firstRouteID=0;
@@ -460,7 +646,14 @@ namespace TMSMainWindow
             return cities;
         }
 
-        // Displays customers
+        /// \brief Displays customers
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches the contract database and finds all active customers
+        /// 
+        /// \param N/A
+        /// 
+        /// \return List of strings of customers
         public List<string> DisplayCustomers()
         {
 
@@ -479,7 +672,16 @@ namespace TMSMainWindow
             return customers;
         }
 
-        // This gets a list of carriers from the database and their data
+
+        /// \brief Called to get a list of carriers from the database and their data
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database, extracts all carrier information, and returns it in a list 
+        /// of objects
+        /// 
+        /// \param N/A
+        /// 
+        /// \return List of Carrier objects
         public List<Carrier> CarrierList()
         {
             List<Carrier> carriers = new List<Carrier>();
