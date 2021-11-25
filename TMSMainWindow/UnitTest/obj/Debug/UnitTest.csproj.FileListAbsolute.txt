@@ -1,0 +1,2 @@
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\UnitTest\obj\Debug\UnitTest.csproj.AssemblyReference.cache
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
