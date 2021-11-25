@@ -35,7 +35,7 @@
             <Label FontSize="22" Content="Carrier" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top"/>
             <TextBox Name="ContractIPAddressTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="10,367,0,0" TextWrapping="Wrap" Text="255.255.255.255" VerticalAlignment="Top" Width="203"/>
             <Button Name="ChangeContractConnectionInfoButton" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="300,367,0,0" VerticalAlignment="Top" Width="90" Height="29"/>
-            <TextBox Name="ContractPortNumberTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="218,367,0,0" TextWrapping="Wrap" Text="65535" VerticalAlignment="Top" Width="77" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.407,0.471"/>
+            <TextBox Name="ContractPortNumberTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="218,367,0,0" TextWrapping="Wrap" Text="65535" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.407,0.471"/>
             <Label FontSize="18" Content="IP Address" HorizontalAlignment="Left" Margin="10,333,0,0" VerticalAlignment="Top"/>
             <Label FontSize="18" Content="Port" HorizontalAlignment="Left" Margin="218,333,0,0" VerticalAlignment="Top"/>
             <Label FontSize="22" Content="Contract" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top"/>

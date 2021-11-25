@@ -20,11 +20,20 @@ namespace TMSMainWindow
     /// </summary>
     public partial class AdminMainWindow : Window
     {
+        //! A private variable.
+        /*!
+          This variable stores the communication information for the local database.
+        */
         private CommTMS nTMS = new CommTMS(ConfigurationManager.AppSettings.Get("localUser"),
                         ConfigurationManager.AppSettings.Get("localPass"),
                         ConfigurationManager.AppSettings.Get("localIP"),
                         Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                         ConfigurationManager.AppSettings.Get("localDb"));
+
+        //! This is the function for the Admin window. It fills the relevant WPF controls with data from the external and internal databases.
+        /*!
+          
+        */
         public AdminMainWindow()
         {
             InitializeComponent();
@@ -39,10 +48,17 @@ namespace TMSMainWindow
             LocalDatabasePortNumberTextBox.Text = ConfigurationManager.AppSettings.Get("localPort");
             ContractIPAddressTextBox.Text = ConfigurationManager.AppSettings.Get("marketplaceIP");
             ContractPortNumberTextBox.Text = ConfigurationManager.AppSettings.Get("marketplacePort");
-
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //! This is the function that is used to change the currently displayed logfile.
+        /*!
+          It gets the new logfile location from the UI, then updates the UI to show the contents of the new logfile.
+            note: this function has not been implemented yet and is subject to change
+          \param sender the wpf object that called the function.
+          \param e the arguments of the event that was triggered.
+          \return void
+        */
+        private void ChangeLogFile(object sender, SelectionChangedEventArgs e)
         {
 
         }

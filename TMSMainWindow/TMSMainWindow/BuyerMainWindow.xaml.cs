@@ -82,10 +82,10 @@ namespace TMSMainWindow
 
         //! This is the function that is triggered when an item is selected from the Marketplace Orders menu.
         /*!
+          It gets the selected order from the Marketplace Orders list and starts creating a new order.
           \param sender the wpf object that called the function.
           \param e the arguments of the event that was triggered.
           \return void
-          \sa 
         */
         private void MarketplaceOrdersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -127,10 +127,10 @@ namespace TMSMainWindow
 
         //! This is the function that is triggered when the "accept customer" button is clicked.
         /*!
+          It adds the customer selected in the new customer list to the TMS database as an accepted customer.
           \param sender the wpf object that called the function.
           \param e the arguments of the event that was triggered.
           \return void
-          \sa 
         */
         private void AcceptSelectedCustomerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -142,12 +142,12 @@ namespace TMSMainWindow
             }
         }
 
-        //! This is the function that is triggered when the "create new order" button is clicked. It stores the order in the TMS database.
+        //! This is the function that is triggered when the "create new order" button is clicked. 
         /*!
+          It stores the order in the TMS database.
           \param sender the wpf object that called the function.
           \param e the arguments of the event that was triggered.
           \return void
-          \sa 
         */
         private void CreateNewOrderButton_Click(object sender, RoutedEventArgs e)
         {
@@ -162,10 +162,10 @@ namespace TMSMainWindow
 
         //! This is the function that is triggered when the "add city to order" button is clicked.  
         /*!
+          It adds the selected city to the list of cities attached to the current order.
           \param sender the wpf object that called the function.
           \param e the arguments of the event that was triggered.
           \return void
-          \sa 
         */
         private void AddCityToOrderButton_Click(object sender, RoutedEventArgs e)
         {
