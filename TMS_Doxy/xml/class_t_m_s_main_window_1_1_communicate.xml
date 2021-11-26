@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_communicate" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::Communicate</compoundname>
+    <derivedcompoundref refid="class_t_m_s_main_window_1_1_comm_t_m_s" prot="public" virt="non-virtual">TMSMainWindow.CommTMS</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_communicate_1aba5a2f550e3b505dc550b242e6a67627" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Communicate.DbIP</definition>
+        <argsstring></argsstring>
+        <name>DbIP</name>
+        <briefdescription>
+<para>The IP of the database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="27" column="23" bodyfile="Communicate.cs" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_communicate_1a3a101124c5070f67bdcc148f3a3093b5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Communicate.DbPort</definition>
+        <argsstring></argsstring>
+        <name>DbPort</name>
+        <briefdescription>
+<para>The Port of the database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="28" column="20" bodyfile="Communicate.cs" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_communicate_1abc7531dabe10ed197f4c6e5c3112f46f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Communicate.DbUser</definition>
+        <argsstring></argsstring>
+        <name>DbUser</name>
+        <briefdescription>
+<para>The username for the database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="29" column="23" bodyfile="Communicate.cs" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_communicate_1acdc8fe131e431e5315b448b23b22e29d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Communicate.DbPassword</definition>
+        <argsstring></argsstring>
+        <name>DbPassword</name>
+        <briefdescription>
+<para>The password of the database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="30" column="23" bodyfile="Communicate.cs" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_communicate_1a8f4b006365927d49dbd226bc29b9cfc1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Communicate.DbName</definition>
+        <argsstring></argsstring>
+        <name>DbName</name>
+        <briefdescription>
+<para>The name of the database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="31" column="23" bodyfile="Communicate.cs" bodystart="31" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_communicate_1abe43ad9b47229f8bcb7777e361e881cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.Communicate.Communicate</definition>
+        <argsstring>(string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)</argsstring>
+        <name>Communicate</name>
+        <param>
+          <type>string</type>
+          <declname>DbUserName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>DbPassword</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>DbIP</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>DbPort</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>DbName</declname>
+        </param>
+        <briefdescription>
+<para>To instantiate a new <ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>As this is a <emphasis>constructor&lt; / i&gt; for the <ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref> class, nothing is returned </emphasis></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="37" column="16" bodyfile="Communicate.cs" bodystart="37" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_communicate_1a19eb594004b930935448078d2890a461" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="class_t_m_s_main_window_1_1_contract" kindref="compound">Contract</ref> &gt;</type>
+        <definition>List&lt; Contract &gt; TMSMainWindow.Communicate.RetrieveContracts</definition>
+        <argsstring>()</argsstring>
+        <name>RetrieveContracts</name>
+        <briefdescription>
+<para>Called to retreive a list of contracts from the database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><bold>Details</bold></para>
+<para>Method connects to a server, and goes through all available contracts. Each contracted will be added to a list, which will be returned by th emethod</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the list of contracts </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Communicate.cs" line="56" column="21" bodyfile="Communicate.cs" bodystart="56" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The purpose of this class is to allow communications between our program and a database. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><bold>Details&lt; / b&gt; The <ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref> has several parameters; (string) DbUserName to access the database, (string) DbPassword to also access a database, a (string) DbIP to conncet to the database IP, an (int) DbPort to also connect to the database IP, and a (string) DbName as a database&apos;s name.</bold></para>
+<para><bold><simplesect kind="author"><para><emphasis>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</emphasis> </para>
+</simplesect>
+</bold></para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TMSMainWindow.Communicate</label>
+        <link refid="class_t_m_s_main_window_1_1_communicate"/>
+      </node>
+      <node id="2">
+        <label>TMSMainWindow.CommTMS</label>
+        <link refid="class_t_m_s_main_window_1_1_comm_t_m_s"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Communicate.cs" line="25" column="11" bodyfile="Communicate.cs" bodystart="26" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1abe43ad9b47229f8bcb7777e361e881cf" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>Communicate</name></member>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1aba5a2f550e3b505dc550b242e6a67627" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>DbIP</name></member>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1a8f4b006365927d49dbd226bc29b9cfc1" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>DbName</name></member>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1acdc8fe131e431e5315b448b23b22e29d" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>DbPassword</name></member>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1a3a101124c5070f67bdcc148f3a3093b5" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>DbPort</name></member>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1abc7531dabe10ed197f4c6e5c3112f46f" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>DbUser</name></member>
+      <member refid="class_t_m_s_main_window_1_1_communicate_1a19eb594004b930935448078d2890a461" prot="public" virt="non-virtual"><scope>TMSMainWindow::Communicate</scope><name>RetrieveContracts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

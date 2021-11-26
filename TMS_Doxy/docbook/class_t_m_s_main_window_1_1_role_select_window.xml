@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_role_select_window" xml:lang="en-US">
+<title>TMSMainWindow.RoleSelectWindow Class Reference</title>
+<indexterm><primary>TMSMainWindow.RoleSelectWindow</primary></indexterm>
+<para>
+
+<para>Interaction logic for RoleSelectWindow.xaml </para>
+ 
+</para>
+<para>Inheritance diagram for TMSMainWindow.RoleSelectWindow:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_t_m_s_main_window_1_1_role_select_window.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_role_select_window_1a9349087eaaa610b45ee21575cbf505b0">RoleSelectWindow</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Interaction logic for RoleSelectWindow.xaml </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_role_select_window_1a9349087eaaa610b45ee21575cbf505b0"/><section>
+    <title>RoleSelectWindow()</title>
+<indexterm><primary>RoleSelectWindow</primary><secondary>TMSMainWindow.RoleSelectWindow</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.RoleSelectWindow</primary><secondary>RoleSelectWindow</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.RoleSelectWindow.RoleSelectWindow ( )</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="_mainwindow_8xaml_8cs">mainwindow.xaml.cs</link></section>
+</section>

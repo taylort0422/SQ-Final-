@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_contract" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::Contract</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1ab206d6090be27567862832c59ed261ae" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Contract.ContractID</definition>
+        <argsstring></argsstring>
+        <name>ContractID</name>
+        <briefdescription>
+<para>/The contract ID </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="18" column="20" bodyfile="Contract.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1a3fbc3166d4f1a1e99efc3f4068afe967" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Contract.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>/The customer name </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="19" column="23" bodyfile="Contract.cs" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1a47c06fbf639da7ae54367d23239c12d9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Contract.JobType</definition>
+        <argsstring></argsstring>
+        <name>JobType</name>
+        <briefdescription>
+<para>/The type of job </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="20" column="20" bodyfile="Contract.cs" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1a5078d194297643b1ecf86d20d2e5c1a7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Contract.Quantity</definition>
+        <argsstring></argsstring>
+        <name>Quantity</name>
+        <briefdescription>
+<para>/Amount of boxes on the order </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="21" column="20" bodyfile="Contract.cs" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1a04e3405f5a7964dcaa4da821d6d27631" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Contract.Origin</definition>
+        <argsstring></argsstring>
+        <name>Origin</name>
+        <briefdescription>
+<para>/Origin city </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="22" column="23" bodyfile="Contract.cs" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1a8b820da859b813758ad956795f875dc7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Contract.Destination</definition>
+        <argsstring></argsstring>
+        <name>Destination</name>
+        <briefdescription>
+<para>/The final city </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="23" column="23" bodyfile="Contract.cs" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_contract_1acb6cf164681cfcd7d5dd6937f1ddccb8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Contract.VanType</definition>
+        <argsstring></argsstring>
+        <name>VanType</name>
+        <briefdescription>
+<para>/LTL or FTL </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="24" column="20" bodyfile="Contract.cs" bodystart="24" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_contract_1ae6fd9572e8236aaeb9e31fd1856060ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.Contract.Contract</definition>
+        <argsstring>(int ContractID, string name, int jobType, int quantity, string origin, string destination, int vanType)</argsstring>
+        <name>Contract</name>
+        <param>
+          <type>int</type>
+          <declname>ContractID</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>jobType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quantity</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vanType</declname>
+        </param>
+        <briefdescription>
+<para>To instantiate a new <ref refid="class_t_m_s_main_window_1_1_contract" kindref="compound">Contract</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>As this is a <emphasis>constructor&lt; / i&gt; for the <ref refid="class_t_m_s_main_window_1_1_contract" kindref="compound">Contract</ref> class, nothing is returned </emphasis></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="31" column="16" bodyfile="Contract.cs" bodystart="31" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_contract_1af6ec4a8d5f349decc7cfba961eefdcc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.Contract.Contract</definition>
+        <argsstring>()</argsstring>
+        <name>Contract</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="41" column="16" bodyfile="Contract.cs" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_contract_1ae8dcb8d63c29fb8e3ade124d7237d2a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string TMSMainWindow.Contract.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+<para>Changes an contract&apos;s elements to a legible string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the elements of the contract as a string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Contract.cs" line="52" column="32" bodyfile="Contract.cs" bodystart="52" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The purpose of this class is to keep all the parts of a contract together. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para><emphasis>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</emphasis> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="Contract.cs" line="16" column="11" bodyfile="Contract.cs" bodystart="17" bodyend="56"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_contract_1ae6fd9572e8236aaeb9e31fd1856060ab" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>Contract</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1af6ec4a8d5f349decc7cfba961eefdcc4" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>Contract</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1ab206d6090be27567862832c59ed261ae" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>ContractID</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1a8b820da859b813758ad956795f875dc7" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>Destination</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1a47c06fbf639da7ae54367d23239c12d9" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>JobType</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1a3fbc3166d4f1a1e99efc3f4068afe967" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>Name</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1a04e3405f5a7964dcaa4da821d6d27631" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>Origin</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1a5078d194297643b1ecf86d20d2e5c1a7" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>Quantity</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1ae8dcb8d63c29fb8e3ade124d7237d2a1" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>ToString</name></member>
+      <member refid="class_t_m_s_main_window_1_1_contract_1acb6cf164681cfcd7d5dd6937f1ddccb8" prot="public" virt="non-virtual"><scope>TMSMainWindow::Contract</scope><name>VanType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

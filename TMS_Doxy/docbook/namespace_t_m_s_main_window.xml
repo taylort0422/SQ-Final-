@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_t_m_s_main_window" xml:lang="en-US">
+<title>TMSMainWindow Namespace Reference</title>
+<indexterm><primary>TMSMainWindow</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_admin_main_window">AdminMainWindow</link></para>
+
+<para>Interaction logic for AdminMainWindow.xaml </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_app">App</link></para>
+
+<para>Interaction logic for App.xaml </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_buyer_main_window">BuyerMainWindow</link></para>
+
+<para>Interaction logic for BuyerMainWindow.xaml </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_carrier">Carrier</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s">CommTMS</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_communicate">Communicate</link></para>
+
+<para>The purpose of this class is to allow communications between our program and a database. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_contract">Contract</link></para>
+
+<para>The purpose of this class is to keep all the parts of a contract together. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_order">Order</link></para>
+
+<para>The purpose of this class is to keep all the parts of an order together. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_planner_main_window">PlannerMainWindow</link></para>
+
+<para>Interaction logic for PlannerMainWindow.xaml </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_role_select_window">RoleSelectWindow</link></para>
+
+<para>Interaction logic for RoleSelectWindow.xaml </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

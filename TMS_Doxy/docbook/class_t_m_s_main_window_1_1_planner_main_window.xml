@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_planner_main_window" xml:lang="en-US">
+<title>TMSMainWindow.PlannerMainWindow Class Reference</title>
+<indexterm><primary>TMSMainWindow.PlannerMainWindow</primary></indexterm>
+<para>
+
+<para>Interaction logic for PlannerMainWindow.xaml </para>
+ 
+</para>
+<para>Inheritance diagram for TMSMainWindow.PlannerMainWindow:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_t_m_s_main_window_1_1_planner_main_window.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_planner_main_window_1abe8434f9e322e1cd321e28cfc2aa3cc6">PlannerMainWindow</link> ()</para>
+
+<para>This is the function for the Planner window. It fills the active orders data grid with information from the TMS database. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Interaction logic for PlannerMainWindow.xaml </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_planner_main_window_1abe8434f9e322e1cd321e28cfc2aa3cc6"/><section>
+    <title>PlannerMainWindow()</title>
+<indexterm><primary>PlannerMainWindow</primary><secondary>TMSMainWindow.PlannerMainWindow</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.PlannerMainWindow</primary><secondary>PlannerMainWindow</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.PlannerMainWindow.PlannerMainWindow ( )</computeroutput></para><para>
+
+<para>This is the function for the Planner window. It fills the active orders data grid with information from the TMS database. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__planner_main_window_8xaml_8cs">PlannerMainWindow.xaml.cs</link></section>
+</section>

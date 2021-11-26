@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_order" xml:lang="en-US">
+<title>TMSMainWindow.Order Class Reference</title>
+<indexterm><primary>TMSMainWindow.Order</primary></indexterm>
+<para>
+
+<para>The purpose of this class is to keep all the parts of an order together. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_order_1a5d2feca871caca7faf8737f317dcbc19">Order</link> (string customerName, string originCity, string destinationCity, int jobType, int <link linkend="_class_t_m_s_main_window_1_1_order_1a4e752af83a43a722d46c2ea223f6438c">vanType</link>)</para>
+
+<para>To instantiate a new <link linkend="_class_t_m_s_main_window_1_1_order">Order</link> object. </para>
+</listitem>
+            <listitem><para>override string <link linkend="_class_t_m_s_main_window_1_1_order_1a8b9252bb8bb00ce34f444503a6847a8d">ToString</link> ()</para>
+
+<para>Changes an order&apos;s elements to a legible string. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_t_m_s_main_window_1_1_order_1a24ffee555987b9f69ce3c20ffa13cfa5">CalcTotalHours</link> (int orderID)</para>
+
+<para>Calculates the hours of an order. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>List&lt; <link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link> &gt; <link linkend="_class_t_m_s_main_window_1_1_order_1a68f74b62f895ba35619c11bb6dbe869d">tripList</link> = new List&lt;<link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link>&gt;()</para>
+
+<para>The name of the database. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_order_1a3c92f14fcbafdc0ac910c3ea5514524b">Id</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/The order ID </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_order_1a26ad20ae4b80bc549fcfa2b4f80ae254">CustomerID</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/The customer associated with the order </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_order_1ac5f9c2c262b60d61dde833c668649b36">CustomerName</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/The name of the customer </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_order_1aaa4642f331622e6690ab78a04b6dfd8e">JobType</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/Type of job </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_order_1a4e752af83a43a722d46c2ea223f6438c">vanType</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/LTL or FTL </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_order_1ac6c64dc070ffbfc406fd614d19f17343">TotalCost</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/The cost of this order </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_order_1a814cfd21e69f588c282d00e5238c6851">OriginCity</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/Originating city </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_order_1aa69bedf62cb93d4e3004ac599369e049">DestinationCity</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/Final city </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_order_1a37ee77db72ca99e7b2a3bb0e56064251">TotalHours</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/The hours driven for the order </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_order_1a24e55d20d69c3877e576cee680bcb6f0">TotalKms</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/The kms driven for the order </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_order_1a153a6b7e574090419e677630bc44d862">Surcharge</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/Our markup on this order </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_order_1acd02a464d61ddec615dd67992aa64025">Markup</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/Markup % for this order </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_order_1a5f68c1ce23d6de9227324af123bebd9d">Confirmed</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>/Boolean indicating whether the order is confirmed </para>
+</listitem>
+            <listitem><para>DateTime <link linkend="_class_t_m_s_main_window_1_1_order_1a774480dd6d2b84f80f7c18537260ad75">date</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>Date/time of the order. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The purpose of this class is to keep all the parts of an order together. </para>
+
+
+
+<para><formalpara><title>Author</title>
+
+<para><emphasis>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</emphasis> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a5d2feca871caca7faf8737f317dcbc19"/><section>
+    <title>Order()</title>
+<indexterm><primary>Order</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>Order</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.Order.Order (string customerName, string originCity, string destinationCity, int jobType, int vanType)</computeroutput></para><para>
+
+<para>To instantiate a new <link linkend="_class_t_m_s_main_window_1_1_order">Order</link> object. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>As this is a <emphasis>constructor&lt; / i&gt; for the <link linkend="_class_t_m_s_main_window_1_1_communicate">Communicate</link> class, nothing is returned </emphasis></para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a24ffee555987b9f69ce3c20ffa13cfa5"/><section>
+    <title>CalcTotalHours()</title>
+<indexterm><primary>CalcTotalHours</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>CalcTotalHours</secondary></indexterm>
+<para><computeroutput>void TMSMainWindow.Order.CalcTotalHours (int orderID)</computeroutput></para><para>
+
+<para>Calculates the hours of an order. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis> Connects to a database, and finds a given order using an orderID. The total hours of driving are calculated from all the trips within the order</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>orderID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>N/A </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a8b9252bb8bb00ce34f444503a6847a8d"/><section>
+    <title>ToString()</title>
+<indexterm><primary>ToString</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>ToString</secondary></indexterm>
+<para><computeroutput>override string TMSMainWindow.Order.ToString ( )</computeroutput></para><para>
+
+<para>Changes an order&apos;s elements to a legible string. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the elements of the order as a string </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a68f74b62f895ba35619c11bb6dbe869d"/><section>
+    <title>tripList</title>
+<indexterm><primary>tripList</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>tripList</secondary></indexterm>
+<para><computeroutput>List&lt;<link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link>&gt; TMSMainWindow.Order.tripList = new List&lt;<link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link>&gt;()</computeroutput></para><para>
+
+<para>The name of the database. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a5f68c1ce23d6de9227324af123bebd9d"/><section>
+    <title>Confirmed</title>
+<indexterm><primary>Confirmed</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>Confirmed</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Order.Confirmed<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/Boolean indicating whether the order is confirmed </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a26ad20ae4b80bc549fcfa2b4f80ae254"/><section>
+    <title>CustomerID</title>
+<indexterm><primary>CustomerID</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>CustomerID</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Order.CustomerID<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/The customer associated with the order </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1ac5f9c2c262b60d61dde833c668649b36"/><section>
+    <title>CustomerName</title>
+<indexterm><primary>CustomerName</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>CustomerName</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Order.CustomerName<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/The name of the customer </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a774480dd6d2b84f80f7c18537260ad75"/><section>
+    <title>date</title>
+<indexterm><primary>date</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>date</secondary></indexterm>
+<para><computeroutput>DateTime TMSMainWindow.Order.date<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>Date/time of the order. </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1aa69bedf62cb93d4e3004ac599369e049"/><section>
+    <title>DestinationCity</title>
+<indexterm><primary>DestinationCity</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>DestinationCity</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Order.DestinationCity<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/Final city </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a3c92f14fcbafdc0ac910c3ea5514524b"/><section>
+    <title>Id</title>
+<indexterm><primary>Id</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>Id</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Order.Id<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/The order ID </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1aaa4642f331622e6690ab78a04b6dfd8e"/><section>
+    <title>JobType</title>
+<indexterm><primary>JobType</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>JobType</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Order.JobType<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/Type of job </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1acd02a464d61ddec615dd67992aa64025"/><section>
+    <title>Markup</title>
+<indexterm><primary>Markup</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>Markup</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Order.Markup<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/Markup % for this order </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a814cfd21e69f588c282d00e5238c6851"/><section>
+    <title>OriginCity</title>
+<indexterm><primary>OriginCity</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>OriginCity</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Order.OriginCity<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/Originating city </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a153a6b7e574090419e677630bc44d862"/><section>
+    <title>Surcharge</title>
+<indexterm><primary>Surcharge</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>Surcharge</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Order.Surcharge<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/Our markup on this order </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1ac6c64dc070ffbfc406fd614d19f17343"/><section>
+    <title>TotalCost</title>
+<indexterm><primary>TotalCost</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>TotalCost</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Order.TotalCost<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/The cost of this order </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a37ee77db72ca99e7b2a3bb0e56064251"/><section>
+    <title>TotalHours</title>
+<indexterm><primary>TotalHours</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>TotalHours</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Order.TotalHours<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/The hours driven for the order </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a24e55d20d69c3877e576cee680bcb6f0"/><section>
+    <title>TotalKms</title>
+<indexterm><primary>TotalKms</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>TotalKms</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Order.TotalKms<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/The kms driven for the order </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_order_1a4e752af83a43a722d46c2ea223f6438c"/><section>
+    <title>vanType</title>
+<indexterm><primary>vanType</primary><secondary>TMSMainWindow.Order</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Order</primary><secondary>vanType</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Order.vanType<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>/LTL or FTL </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__order_8cs">Order.cs</link></section>
+</section>

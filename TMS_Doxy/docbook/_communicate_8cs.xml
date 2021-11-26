@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__communicate_8cs" xml:lang="en-US">
+<title>Communicate.cs File Reference</title>
+<indexterm><primary>Communicate.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_t_m_s_main_window_1_1_communicate">TMSMainWindow.Communicate</link></para>
+
+<para>The purpose of this class is to allow communications between our program and a database. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_t_m_s_main_window">TMSMainWindow</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

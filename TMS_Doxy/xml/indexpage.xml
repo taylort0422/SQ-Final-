@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Plakata TMS Project   &lt;br&gt;</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1intro">
+<title>Program Introduction</title>
+<para>The <bold>TMS</bold> project is meant to revolutionize the shippign and logistics industry. Our project allows for the purchasing, scheduling, monitoring and billing of organizations who want to have cargo shipped via truck or train. Though this work is currently in a prototype stage, it is meant to model the effectiveness of using a TMS solution as opposed to more traditional shipping providers.</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="index_1notes">
+<title>Special Release Notes</title>
+<para><bold>Version 0.0.1</bold> Features: Added GUI functionality Added SQL backend Added doxygen wiki to project</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="index_1version">
+<title>Current version of the Shapes Project : 0.0.1</title>
+<para><itemizedlist>
+<listitem>
+<para><simplesect kind="authors"><para><bold><emphasis>Andrew Tudor, Ashley Ingle, Taylor Trainor, Will Schwetz</emphasis></bold> </para>
+</simplesect>
+</para>
+</listitem>
+<listitem>
+<para><simplesect kind="version"><para>0.0.1 </para>
+</simplesect>
+</para>
+</listitem>
+<listitem>
+<para><simplesect kind="date"><para>11-2021 </para>
+</simplesect>
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="TMSMainPage.h"/>
+  </compounddef>
+</doxygen>

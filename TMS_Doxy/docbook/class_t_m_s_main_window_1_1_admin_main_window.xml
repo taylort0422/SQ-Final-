@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_admin_main_window" xml:lang="en-US">
+<title>TMSMainWindow.AdminMainWindow Class Reference</title>
+<indexterm><primary>TMSMainWindow.AdminMainWindow</primary></indexterm>
+<para>
+
+<para>Interaction logic for AdminMainWindow.xaml </para>
+ 
+</para>
+<para>Inheritance diagram for TMSMainWindow.AdminMainWindow:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_t_m_s_main_window_1_1_admin_main_window.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_admin_main_window_1ad9773b55fb89e2488fcecf9d6a9b65aa">AdminMainWindow</link> ()</para>
+
+<para>This is the function for the Admin window. It fills the relevant WPF controls with data from the external and internal databases. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Interaction logic for AdminMainWindow.xaml </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_admin_main_window_1ad9773b55fb89e2488fcecf9d6a9b65aa"/><section>
+    <title>AdminMainWindow()</title>
+<indexterm><primary>AdminMainWindow</primary><secondary>TMSMainWindow.AdminMainWindow</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.AdminMainWindow</primary><secondary>AdminMainWindow</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.AdminMainWindow.AdminMainWindow ( )</computeroutput></para><para>
+
+<para>This is the function for the Admin window. It fills the relevant WPF controls with data from the external and internal databases. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__admin_main_window_8xaml_8cs">AdminMainWindow.xaml.cs</link></section>
+</section>

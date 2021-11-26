@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_trip" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::Trip</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1ab3ed3723d49bf74e82b46bee78041024" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Trip.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="11" column="20" bodyfile="Trip.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a2da1c2e5bf6e4eaa07e6b53414949fbf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Trip.OrderId</definition>
+        <argsstring></argsstring>
+        <name>OrderId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="12" column="20" bodyfile="Trip.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1adf292412d39f9b54f5ac278b05570c70" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Trip.TruckId</definition>
+        <argsstring></argsstring>
+        <name>TruckId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="13" column="20" bodyfile="Trip.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a251615d9c5b93d75dd9dcea732d1c989" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Trip.TripCost</definition>
+        <argsstring></argsstring>
+        <name>TripCost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="14" column="22" bodyfile="Trip.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a419602e661a5c35040e53bc06b991186" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Trip.GrossCost</definition>
+        <argsstring></argsstring>
+        <name>GrossCost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="15" column="22" bodyfile="Trip.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a22bd16abf0d799a578a0d8a064723984" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Trip.Kilometers</definition>
+        <argsstring></argsstring>
+        <name>Kilometers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="16" column="22" bodyfile="Trip.cs" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a27b7a209549170cbe69ebc101d180b11" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Trip.Hours</definition>
+        <argsstring></argsstring>
+        <name>Hours</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="17" column="22" bodyfile="Trip.cs" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a9474111c3a49ac2bb0a5b519373270a6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Trip.OriginDepotID</definition>
+        <argsstring></argsstring>
+        <name>OriginDepotID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="18" column="20" bodyfile="Trip.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a2a8799fbb2820ad28e9ae6e22c442464" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Trip.OriginCity</definition>
+        <argsstring></argsstring>
+        <name>OriginCity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="19" column="23" bodyfile="Trip.cs" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a9b8f0dfd3806ab59fd881c66892ca86a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Trip.DestinationDepotID</definition>
+        <argsstring></argsstring>
+        <name>DestinationDepotID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="20" column="20" bodyfile="Trip.cs" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_trip_1a74b3bea311c1b0f4ef1947456cb3da34" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Trip.DestinationCity</definition>
+        <argsstring></argsstring>
+        <name>DestinationCity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Trip.cs" line="21" column="23" bodyfile="Trip.cs" bodystart="21" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Trip.cs" line="9" column="11" bodyfile="Trip.cs" bodystart="10" bodyend="22"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a74b3bea311c1b0f4ef1947456cb3da34" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>DestinationCity</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a9b8f0dfd3806ab59fd881c66892ca86a" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>DestinationDepotID</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a419602e661a5c35040e53bc06b991186" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>GrossCost</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a27b7a209549170cbe69ebc101d180b11" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>Hours</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1ab3ed3723d49bf74e82b46bee78041024" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>ID</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a22bd16abf0d799a578a0d8a064723984" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>Kilometers</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a2da1c2e5bf6e4eaa07e6b53414949fbf" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>OrderId</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a2a8799fbb2820ad28e9ae6e22c442464" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>OriginCity</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a9474111c3a49ac2bb0a5b519373270a6" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>OriginDepotID</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1a251615d9c5b93d75dd9dcea732d1c989" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>TripCost</name></member>
+      <member refid="class_t_m_s_main_window_1_1_trip_1adf292412d39f9b54f5ac278b05570c70" prot="public" virt="non-virtual"><scope>TMSMainWindow::Trip</scope><name>TruckId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

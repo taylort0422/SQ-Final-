@@ -23,11 +23,11 @@ namespace TMSMainWindow
         public string Destination { get; set; } ///</The final city
         public int VanType { get; set; } ///</LTL or FTL
 
-    /*
-    * \brief To instantiate a new Contract object 
-    *
-    * \return As this is a <i>constructor< / i> for the Contract class, nothing is returned
-    */
+///
+/// \brief To instantiate a new Contract object 
+///
+/// \return As this is a <i>constructor< / i> for the Contract class, nothing is returned
+    ///
         public Contract(int ContractID,  string name, int jobType, int quantity, string origin, string destination, int vanType)
         {
             this.ContractID = ContractID;

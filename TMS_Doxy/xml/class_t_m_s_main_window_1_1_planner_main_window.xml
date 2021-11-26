@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_planner_main_window" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::PlannerMainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_planner_main_window_1a142db66e951b797eaa91e20dfe500acc" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_comm_t_m_s" kindref="compound">CommTMS</ref></type>
+        <definition>CommTMS TMSMainWindow.PlannerMainWindow.nTMS</definition>
+        <argsstring></argsstring>
+        <name>nTMS</name>
+        <initializer>= new <ref refid="class_t_m_s_main_window_1_1_comm_t_m_s" kindref="compound">CommTMS</ref>(ConfigurationManager.AppSettings.Get(&quot;localUser&quot;),
+                        ConfigurationManager.AppSettings.Get(&quot;localPass&quot;),
+                        ConfigurationManager.AppSettings.Get(&quot;localIP&quot;),
+                        Int32.Parse(ConfigurationManager.AppSettings.Get(&quot;localPort&quot;)),
+                        ConfigurationManager.AppSettings.Get(&quot;localDb&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A private variable.</para>
+<para>This variable stores the communication information for the local database. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="27" column="25" bodyfile="PlannerMainWindow.xaml.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_planner_main_window_1ae69f71b3574e8cca22cc2636e20d4507" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref></type>
+        <definition>Communicate TMSMainWindow.PlannerMainWindow.nc</definition>
+        <argsstring></argsstring>
+        <name>nc</name>
+        <initializer>= new <ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref>(ConfigurationManager.AppSettings.Get(&quot;marketplaceUser&quot;),
+                                    ConfigurationManager.AppSettings.Get(&quot;marketplacePass&quot;),
+                                    ConfigurationManager.AppSettings.Get(&quot;marketplaceIP&quot;),
+                                    Int32.Parse(ConfigurationManager.AppSettings.Get(&quot;marketplacePort&quot;)),
+                                    ConfigurationManager.AppSettings.Get(&quot;marketplaceDb&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A private variable.</para>
+<para>This variable stores the communication information for the external marketplace database. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="37" column="29" bodyfile="PlannerMainWindow.xaml.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_planner_main_window_1a191e861958809636b8b438e356188eb0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_trip" kindref="compound">Trip</ref></type>
+        <definition>Trip TMSMainWindow.PlannerMainWindow.trip</definition>
+        <argsstring></argsstring>
+        <name>trip</name>
+        <initializer>= new <ref refid="class_t_m_s_main_window_1_1_trip" kindref="compound">Trip</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A function variable.</para>
+<para>This variable stores a trip. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="46" column="14" bodyfile="PlannerMainWindow.xaml.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_planner_main_window_1a99a7be4548d6209dbf480d095bba818a" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_t_m_s_main_window_1_1_order" kindref="compound">Order</ref> &gt;</type>
+        <definition>List&lt;Order&gt; TMSMainWindow.PlannerMainWindow.openOrders</definition>
+        <argsstring></argsstring>
+        <name>openOrders</name>
+        <initializer>= new List&lt;<ref refid="class_t_m_s_main_window_1_1_order" kindref="compound">Order</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A function variable.</para>
+<para>This is a list that will be filled with currently open orders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="52" column="14" bodyfile="PlannerMainWindow.xaml.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_planner_main_window_1abe8434f9e322e1cd321e28cfc2aa3cc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.PlannerMainWindow.PlannerMainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>PlannerMainWindow</name>
+        <briefdescription>
+<para>This is the function for the Planner window. It fills the active orders data grid with information from the TMS database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="56" column="16" bodyfile="PlannerMainWindow.xaml.cs" bodystart="56" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_planner_main_window_1ace42f0bd3aeec3d5a479dc24b9fd660b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.PlannerMainWindow.ActiveOrdersDataGrid_SelectionChanged</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>ActiveOrdersDataGrid_SelectionChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the function that is triggered when an active order is selected from the active orders data grid.</para>
+<para>It updates the relevant WPF controls with information about the selected order. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="76" column="22" bodyfile="PlannerMainWindow.xaml.cs" bodystart="76" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_planner_main_window_1a84225eecfa96811816bf6416e72e17b3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.PlannerMainWindow.AddTripToOrderButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>AddTripToOrderButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the function that is triggered when the &quot;add trip to order&quot; button is clicked.</para>
+<para>It adds the selected trip to the current <ref refid="class_t_m_s_main_window_1_1_order" kindref="compound">Order</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="117" column="22" bodyfile="PlannerMainWindow.xaml.cs" bodystart="117" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_planner_main_window_1a55e8382cd4df72cc73be938d7241ce71" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.PlannerMainWindow.MarkOrderAsCompleteButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>MarkOrderAsCompleteButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the function that is triggered when the &quot;mark order as complete&quot; button is clicked.</para>
+<para>It marks the order as complete, clears the relevant wpf controls, and updates the list of active orders. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="207" column="22" bodyfile="PlannerMainWindow.xaml.cs" bodystart="207" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_planner_main_window_1a38cb728402471930a26f5f167f908a1e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.PlannerMainWindow.CarrierListBox_SelectionChanged</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>CarrierListBox_SelectionChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the function that is triggered when an item is selected in the <ref refid="class_t_m_s_main_window_1_1_carrier" kindref="compound">Carrier</ref> list box.</para>
+<para>It enables the &quot;add trip to order&quot; button. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="229" column="22" bodyfile="PlannerMainWindow.xaml.cs" bodystart="229" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_planner_main_window_1ab6f8927e18283819789642a9480e4cfb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.PlannerMainWindow.ForwardTime</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>ForwardTime</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the function that is triggered when an item is selected in the <ref refid="class_t_m_s_main_window_1_1_carrier" kindref="compound">Carrier</ref> list box.</para>
+<para>It enables the &quot;add trip to order&quot; button. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void This is the function that is used to pass time when the planner selects the &quot;pass time&quot; option.</para>
+</simplesect>
+It gets the number of days to pass from the UI, then simulates that much time passing. note: this function has not been implemented yet and is subject to change <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="PlannerMainWindow.xaml.cs" line="250" column="22" bodyfile="PlannerMainWindow.xaml.cs" bodystart="250" bodyend="253"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for PlannerMainWindow.xaml </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TMSMainWindow.PlannerMainWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_planner_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>TMSMainWindow.PlannerMainWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_planner_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </collaborationgraph>
+    <location file="PlannerMainWindow.xaml.cs" line="21" column="19" bodyfile="PlannerMainWindow.xaml.cs" bodystart="22" bodyend="254"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1ace42f0bd3aeec3d5a479dc24b9fd660b" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>ActiveOrdersDataGrid_SelectionChanged</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1a84225eecfa96811816bf6416e72e17b3" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>AddTripToOrderButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1a38cb728402471930a26f5f167f908a1e" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>CarrierListBox_SelectionChanged</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1ab6f8927e18283819789642a9480e4cfb" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>ForwardTime</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1a55e8382cd4df72cc73be938d7241ce71" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>MarkOrderAsCompleteButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1ae69f71b3574e8cca22cc2636e20d4507" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>nc</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1a142db66e951b797eaa91e20dfe500acc" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>nTMS</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1a99a7be4548d6209dbf480d095bba818a" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>openOrders</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1abe8434f9e322e1cd321e28cfc2aa3cc6" prot="public" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>PlannerMainWindow</name></member>
+      <member refid="class_t_m_s_main_window_1_1_planner_main_window_1a191e861958809636b8b438e356188eb0" prot="private" virt="non-virtual"><scope>TMSMainWindow::PlannerMainWindow</scope><name>trip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

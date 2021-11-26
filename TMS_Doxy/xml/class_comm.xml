@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_comm" kind="class" language="C#" prot="public">
+    <compoundname>Comm</compoundname>
+    <briefdescription>
+<para>This class is a child of the Communicate class, and has more specialized methods. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><bold>Details&lt; / b&gt; The Communicate has the same parameters as it&apos;s parent class. This class is far more involved with <linebreak/>
+ databases however, and can see, retreive, insert, and update all sorts of fields within our TMS database.</bold></para>
+<para><bold><simplesect kind="author"><para><emphasis>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</emphasis></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_communicate_8cs" kindref="compound">Communicate.cs</ref> </para>
+</simplesect>
+</bold></para>
+    </detaileddescription>
+    <location file="CommTMS.cs" line="12" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

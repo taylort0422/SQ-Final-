@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_communicate" xml:lang="en-US">
+<title>TMSMainWindow.Communicate Class Reference</title>
+<indexterm><primary>TMSMainWindow.Communicate</primary></indexterm>
+<para>
+
+<para>The purpose of this class is to allow communications between our program and a database. </para>
+ 
+</para>
+<para>Inheritance diagram for TMSMainWindow.Communicate:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_t_m_s_main_window_1_1_communicate.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_communicate_1abe43ad9b47229f8bcb7777e361e881cf">Communicate</link> (string DbUserName, string <link linkend="_class_t_m_s_main_window_1_1_communicate_1acdc8fe131e431e5315b448b23b22e29d">DbPassword</link>, string <link linkend="_class_t_m_s_main_window_1_1_communicate_1aba5a2f550e3b505dc550b242e6a67627">DbIP</link>, int <link linkend="_class_t_m_s_main_window_1_1_communicate_1a3a101124c5070f67bdcc148f3a3093b5">DbPort</link>, string <link linkend="_class_t_m_s_main_window_1_1_communicate_1a8f4b006365927d49dbd226bc29b9cfc1">DbName</link>)</para>
+
+<para>To instantiate a new <link linkend="_class_t_m_s_main_window_1_1_communicate">Communicate</link>. </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_t_m_s_main_window_1_1_contract">Contract</link> &gt; <link linkend="_class_t_m_s_main_window_1_1_communicate_1a19eb594004b930935448078d2890a461">RetrieveContracts</link> ()</para>
+
+<para>Called to retreive a list of contracts from the database. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_communicate_1aba5a2f550e3b505dc550b242e6a67627">DbIP</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>The IP of the database. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_communicate_1a3a101124c5070f67bdcc148f3a3093b5">DbPort</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>The Port of the database. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_communicate_1abc7531dabe10ed197f4c6e5c3112f46f">DbUser</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>The username for the database. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_communicate_1acdc8fe131e431e5315b448b23b22e29d">DbPassword</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>The password of the database. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_communicate_1a8f4b006365927d49dbd226bc29b9cfc1">DbName</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>The name of the database. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The purpose of this class is to allow communications between our program and a database. </para>
+
+
+
+<para><emphasis role="bold">Details&lt; / b&gt; The <link linkend="_class_t_m_s_main_window_1_1_communicate">Communicate</link> has several parameters; (string) DbUserName to access the database, (string) DbPassword to also access a database, a (string) DbIP to conncet to the database IP, an (int) DbPort to also connect to the database IP, and a (string) DbName as a database&apos;s name.</emphasis></para>
+
+<para><emphasis role="bold"><formalpara><title>Author</title>
+
+<para><emphasis>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</emphasis> </para>
+</formalpara>
+</emphasis></para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1abe43ad9b47229f8bcb7777e361e881cf"/><section>
+    <title>Communicate()</title>
+<indexterm><primary>Communicate</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>Communicate</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.Communicate.Communicate (string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)</computeroutput></para><para>
+
+<para>To instantiate a new <link linkend="_class_t_m_s_main_window_1_1_communicate">Communicate</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>As this is a <emphasis>constructor&lt; / i&gt; for the <link linkend="_class_t_m_s_main_window_1_1_communicate">Communicate</link> class, nothing is returned </emphasis></para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1a19eb594004b930935448078d2890a461"/><section>
+    <title>RetrieveContracts()</title>
+<indexterm><primary>RetrieveContracts</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>RetrieveContracts</secondary></indexterm>
+<para><computeroutput>List&lt; <link linkend="_class_t_m_s_main_window_1_1_contract">Contract</link> &gt; TMSMainWindow.Communicate.RetrieveContracts ( )</computeroutput></para><para>
+
+<para>Called to retreive a list of contracts from the database. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and goes through all available contracts. Each contracted will be added to a list, which will be returned by th emethod</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the list of contracts </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1aba5a2f550e3b505dc550b242e6a67627"/><section>
+    <title>DbIP</title>
+<indexterm><primary>DbIP</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>DbIP</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Communicate.DbIP<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>The IP of the database. </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1a8f4b006365927d49dbd226bc29b9cfc1"/><section>
+    <title>DbName</title>
+<indexterm><primary>DbName</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>DbName</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Communicate.DbName<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>The name of the database. </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1acdc8fe131e431e5315b448b23b22e29d"/><section>
+    <title>DbPassword</title>
+<indexterm><primary>DbPassword</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>DbPassword</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Communicate.DbPassword<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>The password of the database. </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1a3a101124c5070f67bdcc148f3a3093b5"/><section>
+    <title>DbPort</title>
+<indexterm><primary>DbPort</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>DbPort</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Communicate.DbPort<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>The Port of the database. </para>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_communicate_1abc7531dabe10ed197f4c6e5c3112f46f"/><section>
+    <title>DbUser</title>
+<indexterm><primary>DbUser</primary><secondary>TMSMainWindow.Communicate</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Communicate</primary><secondary>DbUser</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Communicate.DbUser<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>The username for the database. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__communicate_8cs">Communicate.cs</link></section>
+</section>

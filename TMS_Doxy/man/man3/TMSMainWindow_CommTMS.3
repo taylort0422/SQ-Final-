@@ -1,0 +1,479 @@
+.TH "TMSMainWindow.CommTMS" 3 "Fri Nov 26 2021" "Version 0.0.1" "Plakata TMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TMSMainWindow.CommTMS
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBTMSMainWindow\&.Communicate\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommTMS\fP (string DbUserName, string \fBDbPassword\fP, string \fBDbIP\fP, int \fBDbPort\fP, string \fBDbName\fP)"
+.br
+.ti -1c
+.RI "int \fBInsertOrder\fP (\fBOrder\fP newOrder)"
+.br
+.RI "Called to insert a new order into the database\&. "
+.ti -1c
+.RI "int \fBCheckCustomer\fP (string name)"
+.br
+.RI "Called to see if a customer exists\&. "
+.ti -1c
+.RI "int \fBAddCustomer\fP (string name)"
+.br
+.RI "Called to add a customer to the database\&. "
+.ti -1c
+.RI "void \fBAvailableCarriers\fP (string cityL, int orderID)"
+.br
+.RI "view carriers in a city "
+.ti -1c
+.RI "List< \fBOrder\fP > \fBListOpenOrders\fP ()"
+.br
+.RI "Called to generate a list of open orders\&. "
+.ti -1c
+.RI "List< \fBOrder\fP > \fBListCompletedOrders\fP ()"
+.br
+.RI "Called to generate a list of confirmed orders\&. "
+.ti -1c
+.RI "string \fBGetCustomerName\fP (int custID)"
+.br
+.RI "Called to retreive a customer name from their custID\&. "
+.ti -1c
+.RI "List< string > \fBDisplayCarriers\fP (int orderID)"
+.br
+.RI "Called to retreive a list of carriers and their cities based on an OrderID\&. "
+.ti -1c
+.RI "string \fBGetRouteKMSHRS\fP (string depart, string destination, string direction)"
+.br
+.RI "Calculates the KM's and hours a route takes\&. "
+.ti -1c
+.RI "void \fBPlanTrip\fP (string trip, int orderNum)"
+.br
+.RI "Called to insert a planned trip into the database\&. "
+.ti -1c
+.RI "void \fBMarkOrderComplete\fP (int orderID)"
+.br
+.RI "Called to updates the order to completed\&. "
+.ti -1c
+.RI "int \fBGetCarrierID\fP (string name, string city)"
+.br
+.RI "Called to find a carrier with a specific name in a specific city\&. "
+.ti -1c
+.RI "string \fBGetCityFromCarrier\fP (int CarrierID)"
+.br
+.RI "Called to get the Depot city of a carrier based on it's ID\&. "
+.ti -1c
+.RI "int \fBInsertTrip\fP (\fBTrip\fP newTrip)"
+.br
+.RI "Called to insert a trip into the database\&. "
+.ti -1c
+.RI "List< \fBTrip\fP > \fBListOfTrips\fP (int orderId)"
+.br
+.RI "Called to create a list of trips from a specific order\&. "
+.ti -1c
+.RI "string \fBGetCarrierFromID\fP (int carrierID)"
+.br
+.RI "Called to find a specific carrier from their ID\&. "
+.ti -1c
+.RI "List< string > \fBCitiesBetween\fP (string depart, string destination, string direction)"
+.br
+.RI "Called to find all cities between an origin and a destination\&. "
+.ti -1c
+.RI "List< string > \fBDisplayCustomers\fP ()"
+.br
+.RI "Displays customers\&. "
+.ti -1c
+.RI "List< \fBCarrier\fP > \fBCarrierList\fP ()"
+.br
+.RI "Called to get a list of carriers from the database and their data\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "MySqlConnection \fBconn\fP = null"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBconnStr\fP\fC [getset]\fP"
+.br
+.RI "SQL command to connect to databse\&. "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TMSMainWindow\&.CommTMS\&.CommTMS (string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int TMSMainWindow\&.CommTMS\&.AddCustomer (string name)"
+
+.PP
+Called to add a customer to the database\&. \fBDetails\fP
+.PP
+Method connects to a server, and inserts a customer
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP customer name
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an int of a customer's ID if method is successful 
+.RE
+.PP
+
+.SS "void TMSMainWindow\&.CommTMS\&.AvailableCarriers (string cityL, int orderID)"
+
+.PP
+view carriers in a city \fBDetails\fP
+.PP
+Method connects to a server, checks cities against an orderID\&. The method will see which cities are within a specific order\&. The method then connects to a different database table, and updates it with the cities within a specific order
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP cityL, (int) orderID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+N/A 
+.RE
+.PP
+
+.SS "List< \fBCarrier\fP > TMSMainWindow\&.CommTMS\&.CarrierList ()"
+
+.PP
+Called to get a list of carriers from the database and their data\&. \fBDetails\fP
+.PP
+Method searches a database, extracts all carrier information, and returns it in a list of objects
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List of \fBCarrier\fP objects 
+.RE
+.PP
+
+.SS "int TMSMainWindow\&.CommTMS\&.CheckCustomer (string name)"
+
+.PP
+Called to see if a customer exists\&. \fBDetails\fP
+.PP
+Method connects to a server, and searches for a specific customer
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP customer name
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an int of a customer's ID if method is successful 
+.RE
+.PP
+
+.SS "List< string > TMSMainWindow\&.CommTMS\&.CitiesBetween (string depart, string destination, string direction)"
+
+.PP
+Called to find all cities between an origin and a destination\&. \fBDetails\fP
+.PP
+Method searches between a departure and destination city, and find each city between them
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP depart, (string) destination, (string) direction
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List of strings of cities between the depart and destination 
+.RE
+.PP
+
+.SS "List< string > TMSMainWindow\&.CommTMS\&.DisplayCarriers (int orderID)"
+
+.PP
+Called to retreive a list of carriers and their cities based on an OrderID\&. \fBDetails\fP
+.PP
+Method connects to a server, and finds a specific order ID from a cityList table\&. all associated cities from that orderID are returned\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP orderID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(san array of (string) showing the cities within that order 
+.br
+ 
+.RE
+.PP
+
+.SS "List< string > TMSMainWindow\&.CommTMS\&.DisplayCustomers ()"
+
+.PP
+Displays customers\&. \fBDetails\fP
+.PP
+Method searches the contract database and finds all active customers
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List of strings of customers 
+.RE
+.PP
+
+.SS "string TMSMainWindow\&.CommTMS\&.GetCarrierFromID (int carrierID)"
+
+.PP
+Called to find a specific carrier from their ID\&. \fBDetails\fP
+.PP
+Method searches a database for a carrierID\&. According to that ID, the database is searched for the associated carrrier\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP carrierID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(string) name of carrier 
+.RE
+.PP
+
+.SS "int TMSMainWindow\&.CommTMS\&.GetCarrierID (string name, string city)"
+
+.PP
+Called to find a carrier with a specific name in a specific city\&. \fBDetails\fP
+.PP
+Method searches a database for a carrier name and a city\&. The carrierID value will be retreived from that entry in the database where the name and city match those of the database
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP name, (string) city
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(int) carrierID 
+.RE
+.PP
+
+.SS "string TMSMainWindow\&.CommTMS\&.GetCityFromCarrier (int CarrierID)"
+
+.PP
+Called to get the Depot city of a carrier based on it's ID\&. \fBDetails\fP
+.PP
+Method searches a database for a carrierID\&. The depot city of the associated carrierID will be returned
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP carrierID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(string) city 
+.RE
+.PP
+
+.SS "string TMSMainWindow\&.CommTMS\&.GetCustomerName (int custID)"
+
+.PP
+Called to retreive a customer name from their custID\&. \fBDetails\fP
+.PP
+Method connects to a server, and finds a specific customer ID\&. The name associated with that ID is retreived\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP custID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(string) customer's name 
+.RE
+.PP
+
+.SS "string TMSMainWindow\&.CommTMS\&.GetRouteKMSHRS (string depart, string destination, string direction)"
+
+.PP
+Calculates the KM's and hours a route takes\&. \fBDetails\fP
+.PP
+Method connects to a server, and finds a specific route ID from the routes table\&. For each city the KM's and hours will be taken out of that route\&. These values will be added together to determine the length of the trip\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP depart location, (string) destination location, (string) direction
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a string indicating the KM's and horus of a route 
+.RE
+.PP
+
+.SS "int TMSMainWindow\&.CommTMS\&.InsertOrder (\fBOrder\fP newOrder)"
+
+.PP
+Called to insert a new order into the database\&. \fBDetails\fP
+.PP
+Method connects to a server, and inserts a newly created order into 
+.br
+ an SQL database
+.PP
+\fBParameters\fP
+.RS 4
+\fI\fBOrder\fP\fP object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBOrder\&.cs\fP
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an int indicating success 
+.RE
+.PP
+
+.SS "int TMSMainWindow\&.CommTMS\&.InsertTrip (\fBTrip\fP newTrip)"
+
+.PP
+Called to insert a trip into the database\&. \fBDetails\fP
+.PP
+Method searches a database for a carrierID\&. The depot city of the associated carrierID will be returned
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP carrierID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(string) city 
+.RE
+.PP
+
+.SS "List< \fBOrder\fP > TMSMainWindow\&.CommTMS\&.ListCompletedOrders ()"
+
+.PP
+Called to generate a list of confirmed orders\&. \fBDetails\fP
+.PP
+Method connects to a server, goes through the 'orders' table\&. All of the orders with a 1 status for 'confirmed' (so confirmed) will be pulled from the database\&. Every order which has been confirmed will be added to a list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+list of completed orders 
+.RE
+.PP
+
+.SS "List< \fBTrip\fP > TMSMainWindow\&.CommTMS\&.ListOfTrips (int orderId)"
+
+.PP
+Called to create a list of trips from a specific order\&. \fBDetails\fP
+.PP
+Method searches a database for an orderID\&. According to that orderID, the database is searched for all trips associated wit that order\&. Those trips are added to a list, and returned\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP orderID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+List of trips 
+.RE
+.PP
+
+.SS "List< \fBOrder\fP > TMSMainWindow\&.CommTMS\&.ListOpenOrders ()"
+
+.PP
+Called to generate a list of open orders\&. \fBDetails\fP
+.PP
+Method connects to a server, goes through the 'orders' table\&. All of the orders with a 0 status for 'confirmed' (so not confirmed) will be pulled from the database\&. Every order which has not yet been confirmed will be added to a list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+list of open orders 
+.RE
+.PP
+
+.SS "void TMSMainWindow\&.CommTMS\&.MarkOrderComplete (int orderID)"
+
+.PP
+Called to updates the order to completed\&. \fBDetails\fP
+.PP
+Method chamnges an OrderConfirmed value to '1'
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP orderID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+N/A 
+.RE
+.PP
+
+.SS "void TMSMainWindow\&.CommTMS\&.PlanTrip (string trip, int orderNum)"
+
+.PP
+Called to insert a planned trip into the database\&. \fBDetails\fP
+.PP
+Method gets destionation and departure cities from another fucntion\&. After the cities and direction are determined, the trip is inserted into a database\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fI(string)\fP trip, (int) order number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+N/A 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "MySqlConnection TMSMainWindow\&.CommTMS\&.conn = null"
+
+.SH "Property Documentation"
+.PP 
+.SS "string TMSMainWindow\&.CommTMS\&.connStr\fC [get]\fP, \fC [set]\fP"
+
+.PP
+SQL command to connect to databse\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Plakata TMS from the source code\&.

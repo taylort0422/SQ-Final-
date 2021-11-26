@@ -30,11 +30,10 @@ namespace TMSMainWindow
         public string DbPassword { get; set; }  ///<The password of the database 
         public string DbName { get; set; }  ///<The name of the database 
 
-/*
-* \brief To instantiate a new Communicate object 
-*
-* \return As this is a <i>constructor< / i> for the Communicate class, nothing is returned
-*/
+ ///
+ /// \brief To instantiate a new Communicate 
+ /// \return As this is a <i>constructor< / i> for the Communicate class, nothing is returned
+ ///
         public Communicate(string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)
         {
             this.DbIP = DbIP;

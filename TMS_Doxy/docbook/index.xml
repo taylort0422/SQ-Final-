@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>Plakata TMS</title>
+    </info>
+<chapter>
+    <title>Plakata TMS Project &lt;br&gt;</title>
+    <xi:include href="mainpage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespace_t_m_s_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="class_t_m_s_main_window_1_1_admin_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_app.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_buyer_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_carrier.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_comm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_comm_t_m_s.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_communicate.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_contract.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_order.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_planner_main_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_role_select_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_m_s_main_window_1_1_trip.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_admin_main_window_8xaml_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_app_8xaml_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_buyer_main_window_8xaml_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_carrier_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_comm_t_m_s_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_communicate_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_contract_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="mainwindow_8xaml_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_order_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_planner_main_window_8xaml_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_t_m_s_main_page_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_t_m_s_main_page_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_trip_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

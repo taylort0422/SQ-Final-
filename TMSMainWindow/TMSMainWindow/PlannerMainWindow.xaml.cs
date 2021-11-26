@@ -20,41 +20,39 @@ namespace TMSMainWindow
     /// </summary>
     public partial class PlannerMainWindow : Window
     {
-        //! A private variable.
-        /*!
-          This variable stores the communication information for the local database.
-        */
+        /// A private variable.
+        ///
+        /// This variable stores the communication information for the local database.
+        ///
         private CommTMS nTMS = new CommTMS(ConfigurationManager.AppSettings.Get("localUser"),
                         ConfigurationManager.AppSettings.Get("localPass"),
                         ConfigurationManager.AppSettings.Get("localIP"),
                         Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                         ConfigurationManager.AppSettings.Get("localDb"));
 
-        //! A private variable.
-        /*!
-          This variable stores the communication information for the external marketplace database.
-        */
+        /// A private variable.
+        ///
+        /// This variable stores the communication information for the external marketplace database.
+        ///
         private Communicate nc = new Communicate(ConfigurationManager.AppSettings.Get("marketplaceUser"),
                                     ConfigurationManager.AppSettings.Get("marketplacePass"),
                                     ConfigurationManager.AppSettings.Get("marketplaceIP"),
                                     Int32.Parse(ConfigurationManager.AppSettings.Get("marketplacePort")),
                                     ConfigurationManager.AppSettings.Get("marketplaceDb"));
-        //! A function variable.
-        /*!
-          This variable stores a trip.
-        */
+        /// A function variable.
+        ///
+        /// This variable stores a trip.
+        ///
         Trip trip = new Trip();
 
-        //! A function variable.
-        /*!
-          This is a list that will be filled with currently open orders.
-        */
+        /// A function variable.
+        ///
+        /// This is a list that will be filled with currently open orders.
+        ///
         List<Order> openOrders = new List<Order>();
 
-        //! This is the function for the Planner window. It fills the active orders data grid with information from the TMS database.
-        /*!
-          
-        */
+        /// This is the function for the Planner window. It fills the active orders data grid with information from the TMS database.
+        
         public PlannerMainWindow()
         {
             InitializeComponent();
@@ -68,13 +66,13 @@ namespace TMSMainWindow
 
         }
 
-        //! This is the function that is triggered when an active order is selected from the active orders data grid.
-        /*!
-          It updates the relevant WPF controls with information about the selected order.
-          \param sender the wpf object that called the function.
-          \param e the arguments of the event that was triggered.
-          \return void
-        */
+        /// This is the function that is triggered when an active order is selected from the active orders data grid.
+        ///
+        /// It updates the relevant WPF controls with information about the selected order.
+        ///  \param sender the wpf object that called the function.
+        ///  \param e the arguments of the event that was triggered.
+        ///  \return void
+        
         private void ActiveOrdersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CarrierListBox.Items.Clear();
@@ -105,17 +103,17 @@ namespace TMSMainWindow
                     }
                 }
             }
-            
-            
+
+
         }
 
-        //! This is the function that is triggered when the "add trip to order" button is clicked.
-        /*!
-          It adds the selected trip to the current Order.
-          \param sender the wpf object that called the function.
-          \param e the arguments of the event that was triggered.
-          \return void
-        */
+        /// This is the function that is triggered when the "add trip to order" button is clicked.
+        ///
+        /// It adds the selected trip to the current Order.
+        ///  \param sender the wpf object that called the function.
+        ///  \param e the arguments of the event that was triggered.
+        ///  \return void
+        
         private void AddTripToOrderButton_Click(object sender, RoutedEventArgs e)
         {
             var checkBoxes = CarrierListBox.Items.OfType<CheckBox>();
@@ -199,13 +197,13 @@ namespace TMSMainWindow
 
         }
 
-        //! This is the function that is triggered when the "mark order as complete" button is clicked.
-        /*!
-          It marks the order as complete, clears the relevant wpf controls, and updates the list of active orders.
-          \param sender the wpf object that called the function.
-          \param e the arguments of the event that was triggered.
-          \return void
-        */
+        /// This is the function that is triggered when the "mark order as complete" button is clicked.
+        ///
+        /// It marks the order as complete, clears the relevant wpf controls, and updates the list of active orders.
+        ///  \param sender the wpf object that called the function.
+        ///  \param e the arguments of the event that was triggered.
+        ///  \return void
+        
         private void MarkOrderAsCompleteButton_Click(object sender, RoutedEventArgs e)
         {
             nTMS.MarkOrderComplete(Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]));
@@ -221,34 +219,34 @@ namespace TMSMainWindow
 
         }
 
-        //! This is the function that is triggered when an item is selected in the Carrier list box.
-        /*!
-          It enables the "add trip to order" button.
-          \param sender the wpf object that called the function.
-          \param e the arguments of the event that was triggered.
-          \return void
-        */
+        /// This is the function that is triggered when an item is selected in the Carrier list box.
+        ///
+        /// It enables the "add trip to order" button.
+        ///  \param sender the wpf object that called the function.
+        ///  \param e the arguments of the event that was triggered.
+        ///  \return void
+        
         private void CarrierListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AddTripToOrderButton.IsEnabled = true;
         }
 
-        //! This is the function that is triggered when an item is selected in the Carrier list box.
-        /*!
-          It enables the "add trip to order" button.
-          \param sender the wpf object that called the function.
-          \param e the arguments of the event that was triggered.
-          \return void
-        */
+        /// This is the function that is triggered when an item is selected in the Carrier list box.
+        ///
+        /// It enables the "add trip to order" button.
+        /// \param sender the wpf object that called the function.
+        ///  \param e the arguments of the event that was triggered.
+        ///  \return void
 
-        //! This is the function that is used to pass time when the planner selects the "pass time" option.
-        /*!
-          It gets the number of days to pass from the UI, then simulates that much time passing.
-            note: this function has not been implemented yet and is subject to change
-          \param sender the wpf object that called the function.
-          \param e the arguments of the event that was triggered.
-          \return void
-        */
+
+        /// This is the function that is used to pass time when the planner selects the "pass time" option.
+        ///
+        /// It gets the number of days to pass from the UI, then simulates that much time passing.
+        /// note: this function has not been implemented yet and is subject to change
+        ///  \param sender the wpf object that called the function.
+        ///  \param e the arguments of the event that was triggered.
+        ///  \return void
+        
         private void ForwardTime(object sender, SelectionChangedEventArgs e)
         {
 

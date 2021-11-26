@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_comm" xml:lang="en-US">
+<title>Comm Class Reference</title>
+<indexterm><primary>Comm</primary></indexterm>
+<para>
+
+<para>This class is a child of the Communicate class, and has more specialized methods. </para>
+ 
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>This class is a child of the Communicate class, and has more specialized methods. </para>
+
+
+
+<para><emphasis role="bold">Details&lt; / b&gt; The Communicate has the same parameters as it&apos;s parent class. This class is far more involved with 
+<literallayout>&#160;&#xa;</literallayout>
+ databases however, and can see, retreive, insert, and update all sorts of fields within our TMS database.</emphasis></para>
+
+<para><emphasis role="bold"><formalpara><title>Author</title>
+
+<para><emphasis>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</emphasis></para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__communicate_8cs">Communicate.cs</link> </para>
+</formalpara>
+</emphasis></para>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__comm_t_m_s_8cs">CommTMS.cs</link></section>
+</section>

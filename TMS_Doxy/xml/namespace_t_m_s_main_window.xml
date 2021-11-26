@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="namespace_t_m_s_main_window" kind="namespace" language="C#">
+    <compoundname>TMSMainWindow</compoundname>
+    <innerclass refid="class_t_m_s_main_window_1_1_admin_main_window" prot="public">TMSMainWindow::AdminMainWindow</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_app" prot="public">TMSMainWindow::App</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_buyer_main_window" prot="public">TMSMainWindow::BuyerMainWindow</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_carrier" prot="public">TMSMainWindow::Carrier</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_comm_t_m_s" prot="public">TMSMainWindow::CommTMS</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_communicate" prot="public">TMSMainWindow::Communicate</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_contract" prot="public">TMSMainWindow::Contract</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_order" prot="public">TMSMainWindow::Order</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_planner_main_window" prot="public">TMSMainWindow::PlannerMainWindow</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_role_select_window" prot="public">TMSMainWindow::RoleSelectWindow</innerclass>
+    <innerclass refid="class_t_m_s_main_window_1_1_trip" prot="public">TMSMainWindow::Trip</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="AdminMainWindow.xaml.cs" line="16" column="1"/>
+  </compounddef>
+</doxygen>

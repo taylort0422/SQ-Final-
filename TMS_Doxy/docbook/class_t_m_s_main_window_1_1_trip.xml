@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_trip" xml:lang="en-US">
+<title>TMSMainWindow.Trip Class Reference</title>
+<indexterm><primary>TMSMainWindow.Trip</primary></indexterm>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_trip_1ab3ed3723d49bf74e82b46bee78041024">ID</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_trip_1a2da1c2e5bf6e4eaa07e6b53414949fbf">OrderId</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_trip_1adf292412d39f9b54f5ac278b05570c70">TruckId</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_trip_1a251615d9c5b93d75dd9dcea732d1c989">TripCost</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_trip_1a419602e661a5c35040e53bc06b991186">GrossCost</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_trip_1a22bd16abf0d799a578a0d8a064723984">Kilometers</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_trip_1a27b7a209549170cbe69ebc101d180b11">Hours</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_trip_1a9474111c3a49ac2bb0a5b519373270a6">OriginDepotID</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_trip_1a2a8799fbb2820ad28e9ae6e22c442464">OriginCity</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_trip_1a9b8f0dfd3806ab59fd881c66892ca86a">DestinationDepotID</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_trip_1a74b3bea311c1b0f4ef1947456cb3da34">DestinationCity</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a74b3bea311c1b0f4ef1947456cb3da34"/><section>
+    <title>DestinationCity</title>
+<indexterm><primary>DestinationCity</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>DestinationCity</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Trip.DestinationCity<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a9b8f0dfd3806ab59fd881c66892ca86a"/><section>
+    <title>DestinationDepotID</title>
+<indexterm><primary>DestinationDepotID</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>DestinationDepotID</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Trip.DestinationDepotID<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a419602e661a5c35040e53bc06b991186"/><section>
+    <title>GrossCost</title>
+<indexterm><primary>GrossCost</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>GrossCost</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Trip.GrossCost<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a27b7a209549170cbe69ebc101d180b11"/><section>
+    <title>Hours</title>
+<indexterm><primary>Hours</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>Hours</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Trip.Hours<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1ab3ed3723d49bf74e82b46bee78041024"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Trip.ID<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a22bd16abf0d799a578a0d8a064723984"/><section>
+    <title>Kilometers</title>
+<indexterm><primary>Kilometers</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>Kilometers</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Trip.Kilometers<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a2da1c2e5bf6e4eaa07e6b53414949fbf"/><section>
+    <title>OrderId</title>
+<indexterm><primary>OrderId</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>OrderId</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Trip.OrderId<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a2a8799fbb2820ad28e9ae6e22c442464"/><section>
+    <title>OriginCity</title>
+<indexterm><primary>OriginCity</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>OriginCity</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Trip.OriginCity<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a9474111c3a49ac2bb0a5b519373270a6"/><section>
+    <title>OriginDepotID</title>
+<indexterm><primary>OriginDepotID</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>OriginDepotID</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Trip.OriginDepotID<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1a251615d9c5b93d75dd9dcea732d1c989"/><section>
+    <title>TripCost</title>
+<indexterm><primary>TripCost</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>TripCost</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Trip.TripCost<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_trip_1adf292412d39f9b54f5ac278b05570c70"/><section>
+    <title>TruckId</title>
+<indexterm><primary>TruckId</primary><secondary>TMSMainWindow.Trip</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Trip</primary><secondary>TruckId</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Trip.TruckId<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__trip_8cs">Trip.cs</link></section>
+</section>

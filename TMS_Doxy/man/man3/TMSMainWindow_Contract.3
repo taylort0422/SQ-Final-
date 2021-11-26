@@ -1,0 +1,135 @@
+.TH "TMSMainWindow.Contract" 3 "Fri Nov 26 2021" "Version 0.0.1" "Plakata TMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TMSMainWindow.Contract \- The purpose of this class is to keep all the parts of a contract together\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContract\fP (int \fBContractID\fP, string name, int jobType, int quantity, string origin, string destination, int vanType)"
+.br
+.RI "To instantiate a new \fBContract\fP object\&. "
+.ti -1c
+.RI "\fBContract\fP ()"
+.br
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Changes an contract's elements to a legible string\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBContractID\fP\fC [getset]\fP"
+.br
+.RI "/The contract ID "
+.ti -1c
+.RI "string \fBName\fP\fC [getset]\fP"
+.br
+.RI "/The customer name "
+.ti -1c
+.RI "int \fBJobType\fP\fC [getset]\fP"
+.br
+.RI "/The type of job "
+.ti -1c
+.RI "int \fBQuantity\fP\fC [getset]\fP"
+.br
+.RI "/Amount of boxes on the order "
+.ti -1c
+.RI "string \fBOrigin\fP\fC [getset]\fP"
+.br
+.RI "/Origin city "
+.ti -1c
+.RI "string \fBDestination\fP\fC [getset]\fP"
+.br
+.RI "/The final city "
+.ti -1c
+.RI "int \fBVanType\fP\fC [getset]\fP"
+.br
+.RI "/LTL or FTL "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The purpose of this class is to keep all the parts of a contract together\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+\fIAshley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor\fP 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TMSMainWindow\&.Contract\&.Contract (int ContractID, string name, int jobType, int quantity, string origin, string destination, int vanType)"
+
+.PP
+To instantiate a new \fBContract\fP object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+As this is a \fIconstructor< / i> for the \fBContract\fP class, nothing is returned \fP
+.RE
+.PP
+
+.SS "TMSMainWindow\&.Contract\&.Contract ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override string TMSMainWindow\&.Contract\&.ToString ()"
+
+.PP
+Changes an contract's elements to a legible string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the elements of the contract as a string 
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "int TMSMainWindow\&.Contract\&.ContractID\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The contract ID 
+.SS "string TMSMainWindow\&.Contract\&.Destination\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The final city 
+.SS "int TMSMainWindow\&.Contract\&.JobType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The type of job 
+.SS "string TMSMainWindow\&.Contract\&.Name\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The customer name 
+.SS "string TMSMainWindow\&.Contract\&.Origin\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Origin city 
+.SS "int TMSMainWindow\&.Contract\&.Quantity\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Amount of boxes on the order 
+.SS "int TMSMainWindow\&.Contract\&.VanType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/LTL or FTL 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Plakata TMS from the source code\&.

@@ -1,0 +1,887 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s" xml:lang="en-US">
+<title>TMSMainWindow.CommTMS Class Reference</title>
+<indexterm><primary>TMSMainWindow.CommTMS</primary></indexterm>
+<para>Inheritance diagram for TMSMainWindow.CommTMS:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_t_m_s_main_window_1_1_comm_t_m_s.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a9a80e254c911639b11169cce53468edc">CommTMS</link> (string DbUserName, string <link linkend="_class_t_m_s_main_window_1_1_communicate_1acdc8fe131e431e5315b448b23b22e29d">DbPassword</link>, string <link linkend="_class_t_m_s_main_window_1_1_communicate_1aba5a2f550e3b505dc550b242e6a67627">DbIP</link>, int <link linkend="_class_t_m_s_main_window_1_1_communicate_1a3a101124c5070f67bdcc148f3a3093b5">DbPort</link>, string <link linkend="_class_t_m_s_main_window_1_1_communicate_1a8f4b006365927d49dbd226bc29b9cfc1">DbName</link>)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1af7fd431e825eb902eb3a1001eb5bedc4">InsertOrder</link> (<link linkend="_class_t_m_s_main_window_1_1_order">Order</link> newOrder)</para>
+
+<para>Called to insert a new order into the database. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1aa46a3f7550807621c1dd0be6befc6f1d">CheckCustomer</link> (string name)</para>
+
+<para>Called to see if a customer exists. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1ab6b2c8b20558559d4ef7bdd3bfae18b0">AddCustomer</link> (string name)</para>
+
+<para>Called to add a customer to the database. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a3378478f3d894fb9efe9b6a2a881cb26">AvailableCarriers</link> (string cityL, int orderID)</para>
+
+<para>view carriers in a city </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_t_m_s_main_window_1_1_order">Order</link> &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a9da0369b5dfbd2b3e89d0de1ae0097b9">ListOpenOrders</link> ()</para>
+
+<para>Called to generate a list of open orders. </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_t_m_s_main_window_1_1_order">Order</link> &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a64b8056b7a5d1f99c0d572d44071a286">ListCompletedOrders</link> ()</para>
+
+<para>Called to generate a list of confirmed orders. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a2b720edebe2bc3f5fc6e0c6b099ae45a">GetCustomerName</link> (int custID)</para>
+
+<para>Called to retreive a customer name from their custID. </para>
+</listitem>
+            <listitem><para>List&lt; string &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1ab4a255d126c1cf04a5696393b0e647ec">DisplayCarriers</link> (int orderID)</para>
+
+<para>Called to retreive a list of carriers and their cities based on an OrderID. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a775ca3920ad84c17965d3a8e8f3b8006">GetRouteKMSHRS</link> (string depart, string destination, string direction)</para>
+
+<para>Calculates the KM&apos;s and hours a route takes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a808cf1a4dae922bb5fd71706c43de063">PlanTrip</link> (string trip, int orderNum)</para>
+
+<para>Called to insert a planned trip into the database. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a5c6ca82be276010e09c851a6cc8b20d6">MarkOrderComplete</link> (int orderID)</para>
+
+<para>Called to updates the order to completed. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1af4e18b83c7a2d2ef793bef0123e1ce8a">GetCarrierID</link> (string name, string city)</para>
+
+<para>Called to find a carrier with a specific name in a specific city. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1aa563468056cbb4c05ff4e0438530ab47">GetCityFromCarrier</link> (int CarrierID)</para>
+
+<para>Called to get the Depot city of a carrier based on it&apos;s ID. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1af817575c5fee2dcb40b96dff8b1d62b5">InsertTrip</link> (<link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link> newTrip)</para>
+
+<para>Called to insert a trip into the database. </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link> &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a54ff7f8e6f0500373545f79cc9a732b5">ListOfTrips</link> (int orderId)</para>
+
+<para>Called to create a list of trips from a specific order. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a39063f108bce1a18fc8111d4938a2f22">GetCarrierFromID</link> (int carrierID)</para>
+
+<para>Called to find a specific carrier from their ID. </para>
+</listitem>
+            <listitem><para>List&lt; string &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a796062b8ccf97eeea173590a4e6d8852">CitiesBetween</link> (string depart, string destination, string direction)</para>
+
+<para>Called to find all cities between an origin and a destination. </para>
+</listitem>
+            <listitem><para>List&lt; string &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1aef313e4c6b333c9513510e6c066021e4">DisplayCustomers</link> ()</para>
+
+<para>Displays customers. </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_t_m_s_main_window_1_1_carrier">Carrier</link> &gt; <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a49a86fee4c39cee537155a617e9fdc6b">CarrierList</link> ()</para>
+
+<para>Called to get a list of carriers from the database and their data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>MySqlConnection <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a9a567a4e1d0719d7cb523e0d125225c1">conn</link> = null</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s_1a5611c9f2acdf8df552b0e2daba8666de">connStr</link><computeroutput> [getset]</computeroutput>
+</para>
+
+<para>SQL command to connect to databse. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a9a80e254c911639b11169cce53468edc"/><section>
+    <title>CommTMS()</title>
+<indexterm><primary>CommTMS</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>CommTMS</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.CommTMS.CommTMS (string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1ab6b2c8b20558559d4ef7bdd3bfae18b0"/><section>
+    <title>AddCustomer()</title>
+<indexterm><primary>AddCustomer</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>AddCustomer</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.CommTMS.AddCustomer (string name)</computeroutput></para><para>
+
+<para>Called to add a customer to the database. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and inserts a customer</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>customer name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an int of a customer&apos;s ID if method is successful </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a3378478f3d894fb9efe9b6a2a881cb26"/><section>
+    <title>AvailableCarriers()</title>
+<indexterm><primary>AvailableCarriers</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>AvailableCarriers</secondary></indexterm>
+<para><computeroutput>void TMSMainWindow.CommTMS.AvailableCarriers (string cityL, int orderID)</computeroutput></para><para>
+
+<para>view carriers in a city </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, checks cities against an orderID. The method will see which cities are within a specific order. The method then connects to a different database table, and updates it with the cities within a specific order</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>cityL, (int) orderID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>N/A </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a49a86fee4c39cee537155a617e9fdc6b"/><section>
+    <title>CarrierList()</title>
+<indexterm><primary>CarrierList</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>CarrierList</secondary></indexterm>
+<para><computeroutput>List&lt; <link linkend="_class_t_m_s_main_window_1_1_carrier">Carrier</link> &gt; TMSMainWindow.CommTMS.CarrierList ( )</computeroutput></para><para>
+
+<para>Called to get a list of carriers from the database and their data. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches a database, extracts all carrier information, and returns it in a list of objects</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>List of <link linkend="_class_t_m_s_main_window_1_1_carrier">Carrier</link> objects </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1aa46a3f7550807621c1dd0be6befc6f1d"/><section>
+    <title>CheckCustomer()</title>
+<indexterm><primary>CheckCustomer</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>CheckCustomer</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.CommTMS.CheckCustomer (string name)</computeroutput></para><para>
+
+<para>Called to see if a customer exists. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and searches for a specific customer</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>customer name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an int of a customer&apos;s ID if method is successful </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a796062b8ccf97eeea173590a4e6d8852"/><section>
+    <title>CitiesBetween()</title>
+<indexterm><primary>CitiesBetween</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>CitiesBetween</secondary></indexterm>
+<para><computeroutput>List&lt; string &gt; TMSMainWindow.CommTMS.CitiesBetween (string depart, string destination, string direction)</computeroutput></para><para>
+
+<para>Called to find all cities between an origin and a destination. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches between a departure and destination city, and find each city between them</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>depart, (string) destination, (string) direction</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>List of strings of cities between the depart and destination </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1ab4a255d126c1cf04a5696393b0e647ec"/><section>
+    <title>DisplayCarriers()</title>
+<indexterm><primary>DisplayCarriers</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>DisplayCarriers</secondary></indexterm>
+<para><computeroutput>List&lt; string &gt; TMSMainWindow.CommTMS.DisplayCarriers (int orderID)</computeroutput></para><para>
+
+<para>Called to retreive a list of carriers and their cities based on an OrderID. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and finds a specific order ID from a cityList table. all associated cities from that orderID are returned.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>orderID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>(san array of (string) showing the cities within that order 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1aef313e4c6b333c9513510e6c066021e4"/><section>
+    <title>DisplayCustomers()</title>
+<indexterm><primary>DisplayCustomers</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>DisplayCustomers</secondary></indexterm>
+<para><computeroutput>List&lt; string &gt; TMSMainWindow.CommTMS.DisplayCustomers ( )</computeroutput></para><para>
+
+<para>Displays customers. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches the contract database and finds all active customers</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>List of strings of customers </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a39063f108bce1a18fc8111d4938a2f22"/><section>
+    <title>GetCarrierFromID()</title>
+<indexterm><primary>GetCarrierFromID</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>GetCarrierFromID</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.CommTMS.GetCarrierFromID (int carrierID)</computeroutput></para><para>
+
+<para>Called to find a specific carrier from their ID. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches a database for a carrierID. According to that ID, the database is searched for the associated carrrier.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>carrierID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>(string) name of carrier </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1af4e18b83c7a2d2ef793bef0123e1ce8a"/><section>
+    <title>GetCarrierID()</title>
+<indexterm><primary>GetCarrierID</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>GetCarrierID</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.CommTMS.GetCarrierID (string name, string city)</computeroutput></para><para>
+
+<para>Called to find a carrier with a specific name in a specific city. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches a database for a carrier name and a city. The carrierID value will be retreived from that entry in the database where the name and city match those of the database</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>name, (string) city</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>(int) carrierID </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1aa563468056cbb4c05ff4e0438530ab47"/><section>
+    <title>GetCityFromCarrier()</title>
+<indexterm><primary>GetCityFromCarrier</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>GetCityFromCarrier</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.CommTMS.GetCityFromCarrier (int CarrierID)</computeroutput></para><para>
+
+<para>Called to get the Depot city of a carrier based on it&apos;s ID. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches a database for a carrierID. The depot city of the associated carrierID will be returned</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>carrierID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>(string) city </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a2b720edebe2bc3f5fc6e0c6b099ae45a"/><section>
+    <title>GetCustomerName()</title>
+<indexterm><primary>GetCustomerName</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>GetCustomerName</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.CommTMS.GetCustomerName (int custID)</computeroutput></para><para>
+
+<para>Called to retreive a customer name from their custID. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and finds a specific customer ID. The name associated with that ID is retreived.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>custID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>(string) customer&apos;s name </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a775ca3920ad84c17965d3a8e8f3b8006"/><section>
+    <title>GetRouteKMSHRS()</title>
+<indexterm><primary>GetRouteKMSHRS</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>GetRouteKMSHRS</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.CommTMS.GetRouteKMSHRS (string depart, string destination, string direction)</computeroutput></para><para>
+
+<para>Calculates the KM&apos;s and hours a route takes. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and finds a specific route ID from the routes table. For each city the KM&apos;s and hours will be taken out of that route. These values will be added together to determine the length of the trip.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>depart location, (string) destination location, (string) direction</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a string indicating the KM&apos;s and horus of a route </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1af7fd431e825eb902eb3a1001eb5bedc4"/><section>
+    <title>InsertOrder()</title>
+<indexterm><primary>InsertOrder</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>InsertOrder</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.CommTMS.InsertOrder (<link linkend="_class_t_m_s_main_window_1_1_order">Order</link> newOrder)</computeroutput></para><para>
+
+<para>Called to insert a new order into the database. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, and inserts a newly created order into 
+<literallayout>&#160;&#xa;</literallayout>
+ an SQL database</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_class_t_m_s_main_window_1_1_order">Order</link></entry><entry>
+<para>object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para><link linkend="__order_8cs">Order.cs</link></para>
+</formalpara>
+<formalpara><title>Returns</title>
+
+<para>an int indicating success </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1af817575c5fee2dcb40b96dff8b1d62b5"/><section>
+    <title>InsertTrip()</title>
+<indexterm><primary>InsertTrip</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>InsertTrip</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.CommTMS.InsertTrip (<link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link> newTrip)</computeroutput></para><para>
+
+<para>Called to insert a trip into the database. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches a database for a carrierID. The depot city of the associated carrierID will be returned</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>carrierID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>(string) city </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a64b8056b7a5d1f99c0d572d44071a286"/><section>
+    <title>ListCompletedOrders()</title>
+<indexterm><primary>ListCompletedOrders</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>ListCompletedOrders</secondary></indexterm>
+<para><computeroutput>List&lt; <link linkend="_class_t_m_s_main_window_1_1_order">Order</link> &gt; TMSMainWindow.CommTMS.ListCompletedOrders ( )</computeroutput></para><para>
+
+<para>Called to generate a list of confirmed orders. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, goes through the &apos;orders&apos; table. All of the orders with a 1 status for &apos;confirmed&apos; (so confirmed) will be pulled from the database. Every order which has been confirmed will be added to a list.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>list of completed orders </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a54ff7f8e6f0500373545f79cc9a732b5"/><section>
+    <title>ListOfTrips()</title>
+<indexterm><primary>ListOfTrips</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>ListOfTrips</secondary></indexterm>
+<para><computeroutput>List&lt; <link linkend="_class_t_m_s_main_window_1_1_trip">Trip</link> &gt; TMSMainWindow.CommTMS.ListOfTrips (int orderId)</computeroutput></para><para>
+
+<para>Called to create a list of trips from a specific order. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method searches a database for an orderID. According to that orderID, the database is searched for all trips associated wit that order. Those trips are added to a list, and returned.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>orderID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>List of trips </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a9da0369b5dfbd2b3e89d0de1ae0097b9"/><section>
+    <title>ListOpenOrders()</title>
+<indexterm><primary>ListOpenOrders</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>ListOpenOrders</secondary></indexterm>
+<para><computeroutput>List&lt; <link linkend="_class_t_m_s_main_window_1_1_order">Order</link> &gt; TMSMainWindow.CommTMS.ListOpenOrders ( )</computeroutput></para><para>
+
+<para>Called to generate a list of open orders. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method connects to a server, goes through the &apos;orders&apos; table. All of the orders with a 0 status for &apos;confirmed&apos; (so not confirmed) will be pulled from the database. Every order which has not yet been confirmed will be added to a list.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>list of open orders </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a5c6ca82be276010e09c851a6cc8b20d6"/><section>
+    <title>MarkOrderComplete()</title>
+<indexterm><primary>MarkOrderComplete</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>MarkOrderComplete</secondary></indexterm>
+<para><computeroutput>void TMSMainWindow.CommTMS.MarkOrderComplete (int orderID)</computeroutput></para><para>
+
+<para>Called to updates the order to completed. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method chamnges an OrderConfirmed value to &apos;1&apos;</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(int)</entry><entry>
+<para>orderID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>N/A </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a808cf1a4dae922bb5fd71706c43de063"/><section>
+    <title>PlanTrip()</title>
+<indexterm><primary>PlanTrip</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>PlanTrip</secondary></indexterm>
+<para><computeroutput>void TMSMainWindow.CommTMS.PlanTrip (string trip, int orderNum)</computeroutput></para><para>
+
+<para>Called to insert a planned trip into the database. </para>
+</para>
+
+<para><emphasis role="bold">Details</emphasis></para>
+
+<para>Method gets destionation and departure cities from another fucntion. After the cities and direction are determined, the trip is inserted into a database.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>(string)</entry><entry>
+<para>trip, (int) order number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>N/A </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a9a567a4e1d0719d7cb523e0d125225c1"/><section>
+    <title>conn</title>
+<indexterm><primary>conn</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>conn</secondary></indexterm>
+<para><computeroutput>MySqlConnection TMSMainWindow.CommTMS.conn = null</computeroutput></para></section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_comm_t_m_s_1a5611c9f2acdf8df552b0e2daba8666de"/><section>
+    <title>connStr</title>
+<indexterm><primary>connStr</primary><secondary>TMSMainWindow.CommTMS</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.CommTMS</primary><secondary>connStr</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.CommTMS.connStr<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+
+<para>SQL command to connect to databse. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__comm_t_m_s_8cs">CommTMS.cs</link></section>
+</section>

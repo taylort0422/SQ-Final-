@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_carrier" xml:lang="en-US">
+<title>TMSMainWindow.Carrier Class Reference</title>
+<indexterm><primary>TMSMainWindow.Carrier</primary></indexterm>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_carrier_1a898bc6ae37014ba8c96dbfd498362982">CarrierID</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_carrier_1ae166114bbd5a013ac4a08a38e8ab0ac6">CarrierName</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_t_m_s_main_window_1_1_carrier_1ae380c73d4a6cf99ee4374c46a9aeb06c">DepotCity</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_carrier_1a83f6356f3d87accd65134d472942c324">FTLA</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_t_m_s_main_window_1_1_carrier_1a35b797ffa02fc94710a0dd8656bab5e8">LTLA</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_carrier_1a10848e64a63797c5b1cb8c6890490565">FTLRate</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_carrier_1acd32d9cc2db6077e921f5e19f547c73e">LTLRate</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_t_m_s_main_window_1_1_carrier_1a76ec5d047b30501980dd66733687682c">ReefCharge</link><computeroutput> [getset]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1a898bc6ae37014ba8c96dbfd498362982"/><section>
+    <title>CarrierID</title>
+<indexterm><primary>CarrierID</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>CarrierID</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Carrier.CarrierID<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1ae166114bbd5a013ac4a08a38e8ab0ac6"/><section>
+    <title>CarrierName</title>
+<indexterm><primary>CarrierName</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>CarrierName</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Carrier.CarrierName<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1ae380c73d4a6cf99ee4374c46a9aeb06c"/><section>
+    <title>DepotCity</title>
+<indexterm><primary>DepotCity</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>DepotCity</secondary></indexterm>
+<para><computeroutput>string TMSMainWindow.Carrier.DepotCity<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1a83f6356f3d87accd65134d472942c324"/><section>
+    <title>FTLA</title>
+<indexterm><primary>FTLA</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>FTLA</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Carrier.FTLA<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1a10848e64a63797c5b1cb8c6890490565"/><section>
+    <title>FTLRate</title>
+<indexterm><primary>FTLRate</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>FTLRate</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Carrier.FTLRate<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1a35b797ffa02fc94710a0dd8656bab5e8"/><section>
+    <title>LTLA</title>
+<indexterm><primary>LTLA</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>LTLA</secondary></indexterm>
+<para><computeroutput>int TMSMainWindow.Carrier.LTLA<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1acd32d9cc2db6077e921f5e19f547c73e"/><section>
+    <title>LTLRate</title>
+<indexterm><primary>LTLRate</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>LTLRate</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Carrier.LTLRate<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_t_m_s_main_window_1_1_carrier_1a76ec5d047b30501980dd66733687682c"/><section>
+    <title>ReefCharge</title>
+<indexterm><primary>ReefCharge</primary><secondary>TMSMainWindow.Carrier</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.Carrier</primary><secondary>ReefCharge</secondary></indexterm>
+<para><computeroutput>float TMSMainWindow.Carrier.ReefCharge<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__carrier_8cs">Carrier.cs</link></section>
+</section>

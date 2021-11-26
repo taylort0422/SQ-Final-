@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_admin_main_window" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::AdminMainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_admin_main_window_1a1c623a25e413cc428f268f895465a17c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_comm_t_m_s" kindref="compound">CommTMS</ref></type>
+        <definition>CommTMS TMSMainWindow.AdminMainWindow.nTMS</definition>
+        <argsstring></argsstring>
+        <name>nTMS</name>
+        <initializer>= new <ref refid="class_t_m_s_main_window_1_1_comm_t_m_s" kindref="compound">CommTMS</ref>(ConfigurationManager.AppSettings.Get(&quot;localUser&quot;),
+                        ConfigurationManager.AppSettings.Get(&quot;localPass&quot;),
+                        ConfigurationManager.AppSettings.Get(&quot;localIP&quot;),
+                        Int32.Parse(ConfigurationManager.AppSettings.Get(&quot;localPort&quot;)),
+                        ConfigurationManager.AppSettings.Get(&quot;localDb&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A private variable.</para>
+<para>This variable stores the communication information for the local database. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AdminMainWindow.xaml.cs" line="27" column="25" bodyfile="AdminMainWindow.xaml.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_admin_main_window_1ad9773b55fb89e2488fcecf9d6a9b65aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.AdminMainWindow.AdminMainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>AdminMainWindow</name>
+        <briefdescription>
+<para>This is the function for the Admin window. It fills the relevant WPF controls with data from the external and internal databases. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AdminMainWindow.xaml.cs" line="35" column="16" bodyfile="AdminMainWindow.xaml.cs" bodystart="35" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_admin_main_window_1a550b236c341a1377963b29ca3e772eec" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.AdminMainWindow.ChangeLogFile</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>ChangeLogFile</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>This is the function that is used to change the currently displayed logfile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It gets the new logfile location from the UI, then updates the UI to show the contents of the new logfile. note: this function has not been implemented yet and is subject to change <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AdminMainWindow.xaml.cs" line="59" column="22" bodyfile="AdminMainWindow.xaml.cs" bodystart="59" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for AdminMainWindow.xaml </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TMSMainWindow.AdminMainWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_admin_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>TMSMainWindow.AdminMainWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_admin_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </collaborationgraph>
+    <location file="AdminMainWindow.xaml.cs" line="21" column="19" bodyfile="AdminMainWindow.xaml.cs" bodystart="22" bodyend="63"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_admin_main_window_1ad9773b55fb89e2488fcecf9d6a9b65aa" prot="public" virt="non-virtual"><scope>TMSMainWindow::AdminMainWindow</scope><name>AdminMainWindow</name></member>
+      <member refid="class_t_m_s_main_window_1_1_admin_main_window_1a550b236c341a1377963b29ca3e772eec" prot="private" virt="non-virtual"><scope>TMSMainWindow::AdminMainWindow</scope><name>ChangeLogFile</name></member>
+      <member refid="class_t_m_s_main_window_1_1_admin_main_window_1a1c623a25e413cc428f268f895465a17c" prot="private" virt="non-virtual"><scope>TMSMainWindow::AdminMainWindow</scope><name>nTMS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

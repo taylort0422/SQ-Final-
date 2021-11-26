@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_class_t_m_s_main_window_1_1_admin_main_window">TMSMainWindow.AdminMainWindow</link>
+<para>Interaction logic for AdminMainWindow.xaml </para>
+<link linkend="_class_t_m_s_main_window_1_1_app">TMSMainWindow.App</link>
+<para>Interaction logic for App.xaml </para>
+<link linkend="_class_t_m_s_main_window_1_1_buyer_main_window">TMSMainWindow.BuyerMainWindow</link>
+<para>Interaction logic for BuyerMainWindow.xaml </para>
+<link linkend="_class_t_m_s_main_window_1_1_carrier">TMSMainWindow.Carrier</link><link linkend="_class_comm">Comm</link>
+<para>This class is a child of the Communicate class, and has more specialized methods </para>
+<link linkend="_class_t_m_s_main_window_1_1_comm_t_m_s">TMSMainWindow.CommTMS</link><link linkend="_class_t_m_s_main_window_1_1_communicate">TMSMainWindow.Communicate</link>
+<para>The purpose of this class is to allow communications between our program and a database </para>
+<link linkend="_class_t_m_s_main_window_1_1_contract">TMSMainWindow.Contract</link>
+<para>The purpose of this class is to keep all the parts of a contract together </para>
+<link linkend="_class_t_m_s_main_window_1_1_order">TMSMainWindow.Order</link>
+<para>The purpose of this class is to keep all the parts of an order together </para>
+<link linkend="_class_t_m_s_main_window_1_1_planner_main_window">TMSMainWindow.PlannerMainWindow</link>
+<para>Interaction logic for PlannerMainWindow.xaml </para>
+<link linkend="_class_t_m_s_main_window_1_1_role_select_window">TMSMainWindow.RoleSelectWindow</link>
+<para>Interaction logic for RoleSelectWindow.xaml </para>
+<link linkend="_class_t_m_s_main_window_1_1_trip">TMSMainWindow.Trip</link></section>

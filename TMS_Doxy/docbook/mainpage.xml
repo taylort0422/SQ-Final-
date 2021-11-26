@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage" xml:lang="en-US">
+<section xml:id="_index_1intro">
+<title>Program Introduction</title>
+
+<para>The <emphasis role="bold">TMS</emphasis> project is meant to revolutionize the shippign and logistics industry. Our project allows for the purchasing, scheduling, monitoring and billing of organizations who want to have cargo shipped via truck or train. Though this work is currently in a prototype stage, it is meant to model the effectiveness of using a TMS solution as opposed to more traditional shipping providers.</para>
+
+<para><informaltable frame='bottom'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>
+</entry></row></tbody></tgroup></informaltable>
+ </para>
+</section>
+<section xml:id="_index_1notes">
+<title>Special Release Notes</title>
+
+<para><emphasis role="bold">Version 0.0.1</emphasis> Features: Added GUI functionality Added SQL backend Added doxygen wiki to project</para>
+
+<para><informaltable frame='bottom'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>
+</entry></row></tbody></tgroup></informaltable>
+ </para>
+</section>
+<section xml:id="_index_1version">
+<title>Current version of the Shapes Project : 0.0.1</title>
+
+<para><itemizedlist>
+<listitem>
+
+<para><formalpara><title>Authors</title>
+
+<para><emphasis role="bold"><emphasis>Andrew Tudor, Ashley Ingle, Taylor Trainor, Will Schwetz</emphasis></emphasis> </para>
+</formalpara>
+</para>
+</listitem>
+<listitem>
+
+<para><formalpara><title>Version</title>
+
+<para>0.0.1 </para>
+</formalpara>
+</para>
+</listitem>
+<listitem>
+
+<para><formalpara><title>Date</title>
+
+<para>11-2021 </para>
+</formalpara>
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</section>
+</chapter>

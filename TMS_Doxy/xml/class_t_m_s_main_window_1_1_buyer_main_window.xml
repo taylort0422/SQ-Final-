@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_buyer_main_window" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::BuyerMainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_buyer_main_window_1ab45dd7559d2b2a5c5eecbdd5f4bdfee6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_comm_t_m_s" kindref="compound">CommTMS</ref></type>
+        <definition>CommTMS TMSMainWindow.BuyerMainWindow.nTMS</definition>
+        <argsstring></argsstring>
+        <name>nTMS</name>
+        <initializer>= new <ref refid="class_t_m_s_main_window_1_1_comm_t_m_s" kindref="compound">CommTMS</ref>(ConfigurationManager.AppSettings.Get(&quot;localUser&quot;),
+                                ConfigurationManager.AppSettings.Get(&quot;localPass&quot;),
+                                ConfigurationManager.AppSettings.Get(&quot;localIP&quot;),
+                                Int32.Parse(ConfigurationManager.AppSettings.Get(&quot;localPort&quot;)),
+                                ConfigurationManager.AppSettings.Get(&quot;localDb&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A private variable.</para>
+<para>This variable stores the communication information for the local database. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="28" column="25" bodyfile="BuyerMainWindow.xaml.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_buyer_main_window_1a0371eea832a32d42d55a51b8a255ce78" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref></type>
+        <definition>Communicate TMSMainWindow.BuyerMainWindow.nc</definition>
+        <argsstring></argsstring>
+        <name>nc</name>
+        <initializer>= new <ref refid="class_t_m_s_main_window_1_1_communicate" kindref="compound">Communicate</ref>(ConfigurationManager.AppSettings.Get(&quot;marketplaceUser&quot;),
+                                    ConfigurationManager.AppSettings.Get(&quot;marketplacePass&quot;),
+                                    ConfigurationManager.AppSettings.Get(&quot;marketplaceIP&quot;),
+                                    Int32.Parse(ConfigurationManager.AppSettings.Get(&quot;marketplacePort&quot;)),
+                                    ConfigurationManager.AppSettings.Get(&quot;marketplaceDb&quot;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A private variable.</para>
+<para>This variable stores the communication information for the external marketplace database. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="37" column="29" bodyfile="BuyerMainWindow.xaml.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_buyer_main_window_1ae62ee54382b0104cc84e568f6d6f323f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_t_m_s_main_window_1_1_order" kindref="compound">Order</ref></type>
+        <definition>Order TMSMainWindow.BuyerMainWindow.newOrder</definition>
+        <argsstring></argsstring>
+        <name>newOrder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A private variable.</para>
+<para>This variable stores the information for the <ref refid="class_t_m_s_main_window_1_1_order" kindref="compound">Order</ref> currently being created. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="46" column="23" bodyfile="BuyerMainWindow.xaml.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_buyer_main_window_1a21907205f3217fc02aa457896df6dd37" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.BuyerMainWindow.sCities</definition>
+        <argsstring></argsstring>
+        <name>sCities</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A function variable.</para>
+<para>This string is a list of cities that the <ref refid="class_t_m_s_main_window_1_1_order" kindref="compound">Order</ref> will stop at. <simplesect kind="see"><para>newOrder </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="52" column="16" bodyfile="BuyerMainWindow.xaml.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_m_s_main_window_1_1_buyer_main_window_1ad7b3505efa3f500903032bf42f73acaa" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_t_m_s_main_window_1_1_contract" kindref="compound">Contract</ref> &gt;</type>
+        <definition>List&lt;Contract&gt; TMSMainWindow.BuyerMainWindow.contracts</definition>
+        <argsstring></argsstring>
+        <name>contracts</name>
+        <initializer>= new List&lt;<ref refid="class_t_m_s_main_window_1_1_contract" kindref="compound">Contract</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A function variable.</para>
+<para>This is a list that will be filled with contracts from the <ref refid="class_t_m_s_main_window_1_1_contract" kindref="compound">Contract</ref> database. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="57" column="14" bodyfile="BuyerMainWindow.xaml.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_buyer_main_window_1afd9859f86861e5fd723fdd9c40b9a455" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.BuyerMainWindow.BuyerMainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>BuyerMainWindow</name>
+        <briefdescription>
+<para>This is the function for the Buyer window. It fills the relevant WPF controls with data from the external and internal databases. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N/A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>N/A </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="63" column="16" bodyfile="BuyerMainWindow.xaml.cs" bodystart="63" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_buyer_main_window_1a77ff535a5771eddb69fe537c9c8c53b7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.BuyerMainWindow.MarketplaceOrdersListBox_SelectionChanged</definition>
+        <argsstring>(object sender, SelectionChangedEventArgs e)</argsstring>
+        <name>MarketplaceOrdersListBox_SelectionChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SelectionChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>This is the function that is triggered when an item is selected from the Marketplace Orders menu. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It gets the selected order from the Marketplace Orders list and starts creating a new order. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="90" column="22" bodyfile="BuyerMainWindow.xaml.cs" bodystart="90" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_buyer_main_window_1a127375ce04a8da8c9dd129a5d39d124e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.BuyerMainWindow.AcceptSelectedCustomerButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>AcceptSelectedCustomerButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>This is the function that is triggered when the &quot;accept customer&quot; button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It adds the customer selected in the new customer list to the TMS database as an accepted customer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="135" column="22" bodyfile="BuyerMainWindow.xaml.cs" bodystart="135" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_buyer_main_window_1a1f284c742aa74de9a68e3a9645e1d617" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.BuyerMainWindow.CreateNewOrderButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>CreateNewOrderButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>This is the function that is triggered when the &quot;create new order&quot; button is clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It stores the order in the TMS database. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="152" column="22" bodyfile="BuyerMainWindow.xaml.cs" bodystart="152" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_buyer_main_window_1a6f53513136623bdbbeddf74363ce6a59" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.BuyerMainWindow.AddCityToOrderButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>AddCityToOrderButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>This is the function that is triggered when the &quot;add city to order&quot; button is clicked. <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It adds the selected city to the list of cities attached to the current order. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the wpf object that called the function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the arguments of the event that was triggered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="BuyerMainWindow.xaml.cs" line="170" column="22" bodyfile="BuyerMainWindow.xaml.cs" bodystart="170" bodyend="174"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for BuyerMainWindow.xaml </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TMSMainWindow.BuyerMainWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_buyer_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>TMSMainWindow.BuyerMainWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_buyer_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </collaborationgraph>
+    <location file="BuyerMainWindow.xaml.cs" line="22" column="19" bodyfile="BuyerMainWindow.xaml.cs" bodystart="23" bodyend="175"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1a127375ce04a8da8c9dd129a5d39d124e" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>AcceptSelectedCustomerButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1a6f53513136623bdbbeddf74363ce6a59" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>AddCityToOrderButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1afd9859f86861e5fd723fdd9c40b9a455" prot="public" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>BuyerMainWindow</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1ad7b3505efa3f500903032bf42f73acaa" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>contracts</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1a1f284c742aa74de9a68e3a9645e1d617" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>CreateNewOrderButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1a77ff535a5771eddb69fe537c9c8c53b7" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>MarketplaceOrdersListBox_SelectionChanged</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1a0371eea832a32d42d55a51b8a255ce78" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>nc</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1ae62ee54382b0104cc84e568f6d6f323f" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>newOrder</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1ab45dd7559d2b2a5c5eecbdd5f4bdfee6" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>nTMS</name></member>
+      <member refid="class_t_m_s_main_window_1_1_buyer_main_window_1a21907205f3217fc02aa457896df6dd37" prot="private" virt="non-virtual"><scope>TMSMainWindow::BuyerMainWindow</scope><name>sCities</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_role_select_window" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::RoleSelectWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_role_select_window_1a9349087eaaa610b45ee21575cbf505b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TMSMainWindow.RoleSelectWindow.RoleSelectWindow</definition>
+        <argsstring>()</argsstring>
+        <name>RoleSelectWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mainwindow.xaml.cs" line="24" column="16" bodyfile="mainwindow.xaml.cs" bodystart="24" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_role_select_window_1ae82546df2da0957c49724fff9fac6206" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TMSMainWindow.RoleSelectWindow.SetSetting</definition>
+        <argsstring>(string key, string value)</argsstring>
+        <name>SetSetting</name>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mainwindow.xaml.cs" line="49" column="29" bodyfile="mainwindow.xaml.cs" bodystart="49" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_role_select_window_1ac88d3e8ebdb4e446851ba73245e7e7fa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.RoleSelectWindow.adminButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>adminButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mainwindow.xaml.cs" line="58" column="22" bodyfile="mainwindow.xaml.cs" bodystart="58" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_role_select_window_1a01624ec1653afb57fd4813590263c2d0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.RoleSelectWindow.buyerButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>buyerButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mainwindow.xaml.cs" line="64" column="22" bodyfile="mainwindow.xaml.cs" bodystart="64" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_m_s_main_window_1_1_role_select_window_1aeb2656dd167c258504ecfa2db46d218a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TMSMainWindow.RoleSelectWindow.plannerButton_Click</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>plannerButton_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mainwindow.xaml.cs" line="70" column="22" bodyfile="mainwindow.xaml.cs" bodystart="70" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for RoleSelectWindow.xaml </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>TMSMainWindow.RoleSelectWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_role_select_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>TMSMainWindow.RoleSelectWindow</label>
+        <link refid="class_t_m_s_main_window_1_1_role_select_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window</label>
+      </node>
+    </collaborationgraph>
+    <location file="mainwindow.xaml.cs" line="22" column="19" bodyfile="mainwindow.xaml.cs" bodystart="23" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_role_select_window_1ac88d3e8ebdb4e446851ba73245e7e7fa" prot="private" virt="non-virtual"><scope>TMSMainWindow::RoleSelectWindow</scope><name>adminButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_role_select_window_1a01624ec1653afb57fd4813590263c2d0" prot="private" virt="non-virtual"><scope>TMSMainWindow::RoleSelectWindow</scope><name>buyerButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_role_select_window_1aeb2656dd167c258504ecfa2db46d218a" prot="private" virt="non-virtual"><scope>TMSMainWindow::RoleSelectWindow</scope><name>plannerButton_Click</name></member>
+      <member refid="class_t_m_s_main_window_1_1_role_select_window_1a9349087eaaa610b45ee21575cbf505b0" prot="public" virt="non-virtual"><scope>TMSMainWindow::RoleSelectWindow</scope><name>RoleSelectWindow</name></member>
+      <member refid="class_t_m_s_main_window_1_1_role_select_window_1ae82546df2da0957c49724fff9fac6206" prot="private" virt="non-virtual"><scope>TMSMainWindow::RoleSelectWindow</scope><name>SetSetting</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

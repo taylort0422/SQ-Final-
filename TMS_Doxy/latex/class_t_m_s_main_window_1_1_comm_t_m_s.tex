@@ -1,0 +1,523 @@
+\hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s}{}\doxysection{TMSMain\+Window.\+Comm\+TMS Class Reference}
+\label{class_t_m_s_main_window_1_1_comm_t_m_s}\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+Inheritance diagram for TMSMain\+Window.\+Comm\+TMS\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_t_m_s_main_window_1_1_comm_t_m_s}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a9a80e254c911639b11169cce53468edc}{Comm\+TMS}} (string Db\+User\+Name, string \mbox{\hyperlink{class_t_m_s_main_window_1_1_communicate_acdc8fe131e431e5315b448b23b22e29d}{Db\+Password}}, string \mbox{\hyperlink{class_t_m_s_main_window_1_1_communicate_aba5a2f550e3b505dc550b242e6a67627}{Db\+IP}}, int \mbox{\hyperlink{class_t_m_s_main_window_1_1_communicate_a3a101124c5070f67bdcc148f3a3093b5}{Db\+Port}}, string \mbox{\hyperlink{class_t_m_s_main_window_1_1_communicate_a8f4b006365927d49dbd226bc29b9cfc1}{Db\+Name}})
+\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_af7fd431e825eb902eb3a1001eb5bedc4}{Insert\+Order}} (\mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} new\+Order)
+\begin{DoxyCompactList}\small\item\em Called to insert a new order into the database. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_aa46a3f7550807621c1dd0be6befc6f1d}{Check\+Customer}} (string name)
+\begin{DoxyCompactList}\small\item\em Called to see if a customer exists. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_ab6b2c8b20558559d4ef7bdd3bfae18b0}{Add\+Customer}} (string name)
+\begin{DoxyCompactList}\small\item\em Called to add a customer to the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a3378478f3d894fb9efe9b6a2a881cb26}{Available\+Carriers}} (string cityL, int order\+ID)
+\begin{DoxyCompactList}\small\item\em view carriers in a city \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a9da0369b5dfbd2b3e89d0de1ae0097b9}{List\+Open\+Orders}} ()
+\begin{DoxyCompactList}\small\item\em Called to generate a list of open orders. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a64b8056b7a5d1f99c0d572d44071a286}{List\+Completed\+Orders}} ()
+\begin{DoxyCompactList}\small\item\em Called to generate a list of confirmed orders. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a2b720edebe2bc3f5fc6e0c6b099ae45a}{Get\+Customer\+Name}} (int cust\+ID)
+\begin{DoxyCompactList}\small\item\em Called to retreive a customer name from their cust\+ID. \end{DoxyCompactList}\item 
+List$<$ string $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_ab4a255d126c1cf04a5696393b0e647ec}{Display\+Carriers}} (int order\+ID)
+\begin{DoxyCompactList}\small\item\em Called to retreive a list of carriers and their cities based on an Order\+ID. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a775ca3920ad84c17965d3a8e8f3b8006}{Get\+Route\+KMSHRS}} (string depart, string destination, string direction)
+\begin{DoxyCompactList}\small\item\em Calculates the KM\textquotesingle{}s and hours a route takes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a808cf1a4dae922bb5fd71706c43de063}{Plan\+Trip}} (string trip, int order\+Num)
+\begin{DoxyCompactList}\small\item\em Called to insert a planned trip into the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a5c6ca82be276010e09c851a6cc8b20d6}{Mark\+Order\+Complete}} (int order\+ID)
+\begin{DoxyCompactList}\small\item\em Called to updates the order to completed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_af4e18b83c7a2d2ef793bef0123e1ce8a}{Get\+Carrier\+ID}} (string name, string city)
+\begin{DoxyCompactList}\small\item\em Called to find a carrier with a specific name in a specific city. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_aa563468056cbb4c05ff4e0438530ab47}{Get\+City\+From\+Carrier}} (int Carrier\+ID)
+\begin{DoxyCompactList}\small\item\em Called to get the Depot city of a carrier based on it\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_af817575c5fee2dcb40b96dff8b1d62b5}{Insert\+Trip}} (\mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}} new\+Trip)
+\begin{DoxyCompactList}\small\item\em Called to insert a trip into the database. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}} $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a54ff7f8e6f0500373545f79cc9a732b5}{List\+Of\+Trips}} (int order\+Id)
+\begin{DoxyCompactList}\small\item\em Called to create a list of trips from a specific order. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a39063f108bce1a18fc8111d4938a2f22}{Get\+Carrier\+From\+ID}} (int carrier\+ID)
+\begin{DoxyCompactList}\small\item\em Called to find a specific carrier from their ID. \end{DoxyCompactList}\item 
+List$<$ string $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a796062b8ccf97eeea173590a4e6d8852}{Cities\+Between}} (string depart, string destination, string direction)
+\begin{DoxyCompactList}\small\item\em Called to find all cities between an origin and a destination. \end{DoxyCompactList}\item 
+List$<$ string $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_aef313e4c6b333c9513510e6c066021e4}{Display\+Customers}} ()
+\begin{DoxyCompactList}\small\item\em Displays customers. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_carrier}{Carrier}} $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a49a86fee4c39cee537155a617e9fdc6b}{Carrier\+List}} ()
+\begin{DoxyCompactList}\small\item\em Called to get a list of carriers from the database and their data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+My\+Sql\+Connection \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a9a567a4e1d0719d7cb523e0d125225c1}{conn}} = null
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_comm_t_m_s_a5611c9f2acdf8df552b0e2daba8666de}{conn\+Str}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em SQL command to connect to databse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a9a80e254c911639b11169cce53468edc}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a9a80e254c911639b11169cce53468edc}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!CommTMS@{CommTMS}}
+\index{CommTMS@{CommTMS}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{CommTMS()}{CommTMS()}}
+{\footnotesize\ttfamily TMSMain\+Window.\+Comm\+TMS.\+Comm\+TMS (\begin{DoxyParamCaption}\item[{string}]{Db\+User\+Name,  }\item[{string}]{Db\+Password,  }\item[{string}]{Db\+IP,  }\item[{int}]{Db\+Port,  }\item[{string}]{Db\+Name }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_ab6b2c8b20558559d4ef7bdd3bfae18b0}\label{class_t_m_s_main_window_1_1_comm_t_m_s_ab6b2c8b20558559d4ef7bdd3bfae18b0}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!AddCustomer@{AddCustomer}}
+\index{AddCustomer@{AddCustomer}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{AddCustomer()}{AddCustomer()}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Comm\+TMS.\+Add\+Customer (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Called to add a customer to the database. 
+
+{\bfseries{Details}}
+
+Method connects to a server, and inserts a customer
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & customer name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an int of a customer\textquotesingle{}s ID if method is successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a3378478f3d894fb9efe9b6a2a881cb26}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a3378478f3d894fb9efe9b6a2a881cb26}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!AvailableCarriers@{AvailableCarriers}}
+\index{AvailableCarriers@{AvailableCarriers}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{AvailableCarriers()}{AvailableCarriers()}}
+{\footnotesize\ttfamily void TMSMain\+Window.\+Comm\+TMS.\+Available\+Carriers (\begin{DoxyParamCaption}\item[{string}]{cityL,  }\item[{int}]{order\+ID }\end{DoxyParamCaption})}
+
+
+
+view carriers in a city 
+
+{\bfseries{Details}}
+
+Method connects to a server, checks cities against an order\+ID. The method will see which cities are within a specific order. The method then connects to a different database table, and updates it with the cities within a specific order
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & cityL, (int) order\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a49a86fee4c39cee537155a617e9fdc6b}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a49a86fee4c39cee537155a617e9fdc6b}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!CarrierList@{CarrierList}}
+\index{CarrierList@{CarrierList}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{CarrierList()}{CarrierList()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_carrier}{Carrier}} $>$ TMSMain\+Window.\+Comm\+TMS.\+Carrier\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called to get a list of carriers from the database and their data. 
+
+{\bfseries{Details}}
+
+Method searches a database, extracts all carrier information, and returns it in a list of objects
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of \mbox{\hyperlink{class_t_m_s_main_window_1_1_carrier}{Carrier}} objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_aa46a3f7550807621c1dd0be6befc6f1d}\label{class_t_m_s_main_window_1_1_comm_t_m_s_aa46a3f7550807621c1dd0be6befc6f1d}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!CheckCustomer@{CheckCustomer}}
+\index{CheckCustomer@{CheckCustomer}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{CheckCustomer()}{CheckCustomer()}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Comm\+TMS.\+Check\+Customer (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Called to see if a customer exists. 
+
+{\bfseries{Details}}
+
+Method connects to a server, and searches for a specific customer
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & customer name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an int of a customer\textquotesingle{}s ID if method is successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a796062b8ccf97eeea173590a4e6d8852}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a796062b8ccf97eeea173590a4e6d8852}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!CitiesBetween@{CitiesBetween}}
+\index{CitiesBetween@{CitiesBetween}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{CitiesBetween()}{CitiesBetween()}}
+{\footnotesize\ttfamily List$<$ string $>$ TMSMain\+Window.\+Comm\+TMS.\+Cities\+Between (\begin{DoxyParamCaption}\item[{string}]{depart,  }\item[{string}]{destination,  }\item[{string}]{direction }\end{DoxyParamCaption})}
+
+
+
+Called to find all cities between an origin and a destination. 
+
+{\bfseries{Details}}
+
+Method searches between a departure and destination city, and find each city between them
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & depart, (string) destination, (string) direction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of strings of cities between the depart and destination 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_ab4a255d126c1cf04a5696393b0e647ec}\label{class_t_m_s_main_window_1_1_comm_t_m_s_ab4a255d126c1cf04a5696393b0e647ec}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!DisplayCarriers@{DisplayCarriers}}
+\index{DisplayCarriers@{DisplayCarriers}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{DisplayCarriers()}{DisplayCarriers()}}
+{\footnotesize\ttfamily List$<$ string $>$ TMSMain\+Window.\+Comm\+TMS.\+Display\+Carriers (\begin{DoxyParamCaption}\item[{int}]{order\+ID }\end{DoxyParamCaption})}
+
+
+
+Called to retreive a list of carriers and their cities based on an Order\+ID. 
+
+{\bfseries{Details}}
+
+Method connects to a server, and finds a specific order ID from a city\+List table. all associated cities from that order\+ID are returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & order\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(san array of (string) showing the cities within that order ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_aef313e4c6b333c9513510e6c066021e4}\label{class_t_m_s_main_window_1_1_comm_t_m_s_aef313e4c6b333c9513510e6c066021e4}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!DisplayCustomers@{DisplayCustomers}}
+\index{DisplayCustomers@{DisplayCustomers}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{DisplayCustomers()}{DisplayCustomers()}}
+{\footnotesize\ttfamily List$<$ string $>$ TMSMain\+Window.\+Comm\+TMS.\+Display\+Customers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays customers. 
+
+{\bfseries{Details}}
+
+Method searches the contract database and finds all active customers
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of strings of customers 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a39063f108bce1a18fc8111d4938a2f22}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a39063f108bce1a18fc8111d4938a2f22}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!GetCarrierFromID@{GetCarrierFromID}}
+\index{GetCarrierFromID@{GetCarrierFromID}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{GetCarrierFromID()}{GetCarrierFromID()}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Comm\+TMS.\+Get\+Carrier\+From\+ID (\begin{DoxyParamCaption}\item[{int}]{carrier\+ID }\end{DoxyParamCaption})}
+
+
+
+Called to find a specific carrier from their ID. 
+
+{\bfseries{Details}}
+
+Method searches a database for a carrier\+ID. According to that ID, the database is searched for the associated carrrier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & carrier\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(string) name of carrier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_af4e18b83c7a2d2ef793bef0123e1ce8a}\label{class_t_m_s_main_window_1_1_comm_t_m_s_af4e18b83c7a2d2ef793bef0123e1ce8a}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!GetCarrierID@{GetCarrierID}}
+\index{GetCarrierID@{GetCarrierID}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{GetCarrierID()}{GetCarrierID()}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Comm\+TMS.\+Get\+Carrier\+ID (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{city }\end{DoxyParamCaption})}
+
+
+
+Called to find a carrier with a specific name in a specific city. 
+
+{\bfseries{Details}}
+
+Method searches a database for a carrier name and a city. The carrier\+ID value will be retreived from that entry in the database where the name and city match those of the database
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & name, (string) city\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) carrier\+ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_aa563468056cbb4c05ff4e0438530ab47}\label{class_t_m_s_main_window_1_1_comm_t_m_s_aa563468056cbb4c05ff4e0438530ab47}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!GetCityFromCarrier@{GetCityFromCarrier}}
+\index{GetCityFromCarrier@{GetCityFromCarrier}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{GetCityFromCarrier()}{GetCityFromCarrier()}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Comm\+TMS.\+Get\+City\+From\+Carrier (\begin{DoxyParamCaption}\item[{int}]{Carrier\+ID }\end{DoxyParamCaption})}
+
+
+
+Called to get the Depot city of a carrier based on it\textquotesingle{}s ID. 
+
+{\bfseries{Details}}
+
+Method searches a database for a carrier\+ID. The depot city of the associated carrier\+ID will be returned
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & carrier\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(string) city 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a2b720edebe2bc3f5fc6e0c6b099ae45a}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a2b720edebe2bc3f5fc6e0c6b099ae45a}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!GetCustomerName@{GetCustomerName}}
+\index{GetCustomerName@{GetCustomerName}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{GetCustomerName()}{GetCustomerName()}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Comm\+TMS.\+Get\+Customer\+Name (\begin{DoxyParamCaption}\item[{int}]{cust\+ID }\end{DoxyParamCaption})}
+
+
+
+Called to retreive a customer name from their cust\+ID. 
+
+{\bfseries{Details}}
+
+Method connects to a server, and finds a specific customer ID. The name associated with that ID is retreived.
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & cust\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(string) customer\textquotesingle{}s name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a775ca3920ad84c17965d3a8e8f3b8006}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a775ca3920ad84c17965d3a8e8f3b8006}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!GetRouteKMSHRS@{GetRouteKMSHRS}}
+\index{GetRouteKMSHRS@{GetRouteKMSHRS}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{GetRouteKMSHRS()}{GetRouteKMSHRS()}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Comm\+TMS.\+Get\+Route\+KMSHRS (\begin{DoxyParamCaption}\item[{string}]{depart,  }\item[{string}]{destination,  }\item[{string}]{direction }\end{DoxyParamCaption})}
+
+
+
+Calculates the KM\textquotesingle{}s and hours a route takes. 
+
+{\bfseries{Details}}
+
+Method connects to a server, and finds a specific route ID from the routes table. For each city the KM\textquotesingle{}s and hours will be taken out of that route. These values will be added together to determine the length of the trip.
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & depart location, (string) destination location, (string) direction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string indicating the KM\textquotesingle{}s and horus of a route 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_af7fd431e825eb902eb3a1001eb5bedc4}\label{class_t_m_s_main_window_1_1_comm_t_m_s_af7fd431e825eb902eb3a1001eb5bedc4}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!InsertOrder@{InsertOrder}}
+\index{InsertOrder@{InsertOrder}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{InsertOrder()}{InsertOrder()}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Comm\+TMS.\+Insert\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}}}]{new\+Order }\end{DoxyParamCaption})}
+
+
+
+Called to insert a new order into the database. 
+
+{\bfseries{Details}}
+
+Method connects to a server, and inserts a newly created order into ~\newline
+ an SQL database
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}}} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_order_8cs}{Order.\+cs}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+an int indicating success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_af817575c5fee2dcb40b96dff8b1d62b5}\label{class_t_m_s_main_window_1_1_comm_t_m_s_af817575c5fee2dcb40b96dff8b1d62b5}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!InsertTrip@{InsertTrip}}
+\index{InsertTrip@{InsertTrip}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{InsertTrip()}{InsertTrip()}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Comm\+TMS.\+Insert\+Trip (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}}}]{new\+Trip }\end{DoxyParamCaption})}
+
+
+
+Called to insert a trip into the database. 
+
+{\bfseries{Details}}
+
+Method searches a database for a carrier\+ID. The depot city of the associated carrier\+ID will be returned
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & carrier\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(string) city 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a64b8056b7a5d1f99c0d572d44071a286}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a64b8056b7a5d1f99c0d572d44071a286}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!ListCompletedOrders@{ListCompletedOrders}}
+\index{ListCompletedOrders@{ListCompletedOrders}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{ListCompletedOrders()}{ListCompletedOrders()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} $>$ TMSMain\+Window.\+Comm\+TMS.\+List\+Completed\+Orders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called to generate a list of confirmed orders. 
+
+{\bfseries{Details}}
+
+Method connects to a server, goes through the \textquotesingle{}orders\textquotesingle{} table. All of the orders with a 1 status for \textquotesingle{}confirmed\textquotesingle{} (so confirmed) will be pulled from the database. Every order which has been confirmed will be added to a list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of completed orders 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a54ff7f8e6f0500373545f79cc9a732b5}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a54ff7f8e6f0500373545f79cc9a732b5}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!ListOfTrips@{ListOfTrips}}
+\index{ListOfTrips@{ListOfTrips}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{ListOfTrips()}{ListOfTrips()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}} $>$ TMSMain\+Window.\+Comm\+TMS.\+List\+Of\+Trips (\begin{DoxyParamCaption}\item[{int}]{order\+Id }\end{DoxyParamCaption})}
+
+
+
+Called to create a list of trips from a specific order. 
+
+{\bfseries{Details}}
+
+Method searches a database for an order\+ID. According to that order\+ID, the database is searched for all trips associated wit that order. Those trips are added to a list, and returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & order\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of trips 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a9da0369b5dfbd2b3e89d0de1ae0097b9}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a9da0369b5dfbd2b3e89d0de1ae0097b9}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!ListOpenOrders@{ListOpenOrders}}
+\index{ListOpenOrders@{ListOpenOrders}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{ListOpenOrders()}{ListOpenOrders()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} $>$ TMSMain\+Window.\+Comm\+TMS.\+List\+Open\+Orders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called to generate a list of open orders. 
+
+{\bfseries{Details}}
+
+Method connects to a server, goes through the \textquotesingle{}orders\textquotesingle{} table. All of the orders with a 0 status for \textquotesingle{}confirmed\textquotesingle{} (so not confirmed) will be pulled from the database. Every order which has not yet been confirmed will be added to a list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of open orders 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a5c6ca82be276010e09c851a6cc8b20d6}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a5c6ca82be276010e09c851a6cc8b20d6}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!MarkOrderComplete@{MarkOrderComplete}}
+\index{MarkOrderComplete@{MarkOrderComplete}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{MarkOrderComplete()}{MarkOrderComplete()}}
+{\footnotesize\ttfamily void TMSMain\+Window.\+Comm\+TMS.\+Mark\+Order\+Complete (\begin{DoxyParamCaption}\item[{int}]{order\+ID }\end{DoxyParamCaption})}
+
+
+
+Called to updates the order to completed. 
+
+{\bfseries{Details}}
+
+Method chamnges an Order\+Confirmed value to \textquotesingle{}1\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & order\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a808cf1a4dae922bb5fd71706c43de063}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a808cf1a4dae922bb5fd71706c43de063}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!PlanTrip@{PlanTrip}}
+\index{PlanTrip@{PlanTrip}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{PlanTrip()}{PlanTrip()}}
+{\footnotesize\ttfamily void TMSMain\+Window.\+Comm\+TMS.\+Plan\+Trip (\begin{DoxyParamCaption}\item[{string}]{trip,  }\item[{int}]{order\+Num }\end{DoxyParamCaption})}
+
+
+
+Called to insert a planned trip into the database. 
+
+{\bfseries{Details}}
+
+Method gets destionation and departure cities from another fucntion. After the cities and direction are determined, the trip is inserted into a database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em (string)} & trip, (int) order number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a9a567a4e1d0719d7cb523e0d125225c1}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a9a567a4e1d0719d7cb523e0d125225c1}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!conn@{conn}}
+\index{conn@{conn}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{conn}{conn}}
+{\footnotesize\ttfamily My\+Sql\+Connection TMSMain\+Window.\+Comm\+TMS.\+conn = null}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_comm_t_m_s_a5611c9f2acdf8df552b0e2daba8666de}\label{class_t_m_s_main_window_1_1_comm_t_m_s_a5611c9f2acdf8df552b0e2daba8666de}} 
+\index{TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}!connStr@{connStr}}
+\index{connStr@{connStr}!TMSMainWindow.CommTMS@{TMSMainWindow.CommTMS}}
+\doxysubsubsection{\texorpdfstring{connStr}{connStr}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Comm\+TMS.\+conn\+Str\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+SQL command to connect to databse. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_comm_t_m_s_8cs}{Comm\+TMS.\+cs}}\end{DoxyCompactItemize}

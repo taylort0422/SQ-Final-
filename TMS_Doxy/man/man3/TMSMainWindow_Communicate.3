@@ -1,0 +1,120 @@
+.TH "TMSMainWindow.Communicate" 3 "Fri Nov 26 2021" "Version 0.0.1" "Plakata TMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TMSMainWindow.Communicate \- The purpose of this class is to allow communications between our program and a database\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBTMSMainWindow\&.CommTMS\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommunicate\fP (string DbUserName, string \fBDbPassword\fP, string \fBDbIP\fP, int \fBDbPort\fP, string \fBDbName\fP)"
+.br
+.RI "To instantiate a new \fBCommunicate\fP\&. "
+.ti -1c
+.RI "List< \fBContract\fP > \fBRetrieveContracts\fP ()"
+.br
+.RI "Called to retreive a list of contracts from the database\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBDbIP\fP\fC [getset]\fP"
+.br
+.RI "The IP of the database\&. "
+.ti -1c
+.RI "int \fBDbPort\fP\fC [getset]\fP"
+.br
+.RI "The Port of the database\&. "
+.ti -1c
+.RI "string \fBDbUser\fP\fC [getset]\fP"
+.br
+.RI "The username for the database\&. "
+.ti -1c
+.RI "string \fBDbPassword\fP\fC [getset]\fP"
+.br
+.RI "The password of the database\&. "
+.ti -1c
+.RI "string \fBDbName\fP\fC [getset]\fP"
+.br
+.RI "The name of the database\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The purpose of this class is to allow communications between our program and a database\&. 
+
+\fBDetails< / b> The \fBCommunicate\fP has several parameters; (string) DbUserName to access the database, (string) DbPassword to also access a database, a (string) DbIP to conncet to the database IP, an (int) DbPort to also connect to the database IP, and a (string) DbName as a database's name\&.\fP
+.PP
+\fB
+.PP
+\fBAuthor\fP
+.RS 4
+\fIAshley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor\fP 
+.RE
+.PP
+\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TMSMainWindow\&.Communicate\&.Communicate (string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName)"
+
+.PP
+To instantiate a new \fBCommunicate\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+As this is a \fIconstructor< / i> for the \fBCommunicate\fP class, nothing is returned \fP
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "List< \fBContract\fP > TMSMainWindow\&.Communicate\&.RetrieveContracts ()"
+
+.PP
+Called to retreive a list of contracts from the database\&. \fBDetails\fP
+.PP
+Method connects to a server, and goes through all available contracts\&. Each contracted will be added to a list, which will be returned by th emethod
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the list of contracts 
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "string TMSMainWindow\&.Communicate\&.DbIP\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The IP of the database\&. 
+.SS "string TMSMainWindow\&.Communicate\&.DbName\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The name of the database\&. 
+.SS "string TMSMainWindow\&.Communicate\&.DbPassword\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The password of the database\&. 
+.SS "int TMSMainWindow\&.Communicate\&.DbPort\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The Port of the database\&. 
+.SS "string TMSMainWindow\&.Communicate\&.DbUser\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The username for the database\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Plakata TMS from the source code\&.

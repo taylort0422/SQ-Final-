@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_t_m_s_main_window_1_1_carrier" kind="class" language="C#" prot="public">
+    <compoundname>TMSMainWindow::Carrier</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1a898bc6ae37014ba8c96dbfd498362982" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Carrier.CarrierID</definition>
+        <argsstring></argsstring>
+        <name>CarrierID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="11" column="20" bodyfile="Carrier.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1ae166114bbd5a013ac4a08a38e8ab0ac6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Carrier.CarrierName</definition>
+        <argsstring></argsstring>
+        <name>CarrierName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="12" column="23" bodyfile="Carrier.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1ae380c73d4a6cf99ee4374c46a9aeb06c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TMSMainWindow.Carrier.DepotCity</definition>
+        <argsstring></argsstring>
+        <name>DepotCity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="13" column="23" bodyfile="Carrier.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1a83f6356f3d87accd65134d472942c324" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Carrier.FTLA</definition>
+        <argsstring></argsstring>
+        <name>FTLA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="14" column="20" bodyfile="Carrier.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1a35b797ffa02fc94710a0dd8656bab5e8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int TMSMainWindow.Carrier.LTLA</definition>
+        <argsstring></argsstring>
+        <name>LTLA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="15" column="20" bodyfile="Carrier.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1a10848e64a63797c5b1cb8c6890490565" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Carrier.FTLRate</definition>
+        <argsstring></argsstring>
+        <name>FTLRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="16" column="22" bodyfile="Carrier.cs" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1acd32d9cc2db6077e921f5e19f547c73e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Carrier.LTLRate</definition>
+        <argsstring></argsstring>
+        <name>LTLRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="17" column="22" bodyfile="Carrier.cs" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="property" id="class_t_m_s_main_window_1_1_carrier_1a76ec5d047b30501980dd66733687682c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float TMSMainWindow.Carrier.ReefCharge</definition>
+        <argsstring></argsstring>
+        <name>ReefCharge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Carrier.cs" line="18" column="22" bodyfile="Carrier.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Carrier.cs" line="9" column="11" bodyfile="Carrier.cs" bodystart="10" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1a898bc6ae37014ba8c96dbfd498362982" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>CarrierID</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1ae166114bbd5a013ac4a08a38e8ab0ac6" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>CarrierName</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1ae380c73d4a6cf99ee4374c46a9aeb06c" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>DepotCity</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1a83f6356f3d87accd65134d472942c324" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>FTLA</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1a10848e64a63797c5b1cb8c6890490565" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>FTLRate</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1a35b797ffa02fc94710a0dd8656bab5e8" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>LTLA</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1acd32d9cc2db6077e921f5e19f547c73e" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>LTLRate</name></member>
+      <member refid="class_t_m_s_main_window_1_1_carrier_1a76ec5d047b30501980dd66733687682c" prot="public" virt="non-virtual"><scope>TMSMainWindow::Carrier</scope><name>ReefCharge</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

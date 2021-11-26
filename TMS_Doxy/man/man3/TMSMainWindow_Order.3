@@ -1,0 +1,220 @@
+.TH "TMSMainWindow.Order" 3 "Fri Nov 26 2021" "Version 0.0.1" "Plakata TMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TMSMainWindow.Order \- The purpose of this class is to keep all the parts of an order together\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOrder\fP (string customerName, string originCity, string destinationCity, int jobType, int \fBvanType\fP)"
+.br
+.RI "To instantiate a new \fBOrder\fP object\&. "
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Changes an order's elements to a legible string\&. "
+.ti -1c
+.RI "void \fBCalcTotalHours\fP (int orderID)"
+.br
+.RI "Calculates the hours of an order\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBTrip\fP > \fBtripList\fP = new List<\fBTrip\fP>()"
+.br
+.RI "The name of the database\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBId\fP\fC [getset]\fP"
+.br
+.RI "/The order ID "
+.ti -1c
+.RI "int \fBCustomerID\fP\fC [getset]\fP"
+.br
+.RI "/The customer associated with the order "
+.ti -1c
+.RI "string \fBCustomerName\fP\fC [getset]\fP"
+.br
+.RI "/The name of the customer "
+.ti -1c
+.RI "int \fBJobType\fP\fC [getset]\fP"
+.br
+.RI "/Type of job "
+.ti -1c
+.RI "int \fBvanType\fP\fC [getset]\fP"
+.br
+.RI "/LTL or FTL "
+.ti -1c
+.RI "float \fBTotalCost\fP\fC [getset]\fP"
+.br
+.RI "/The cost of this order "
+.ti -1c
+.RI "string \fBOriginCity\fP\fC [getset]\fP"
+.br
+.RI "/Originating city "
+.ti -1c
+.RI "string \fBDestinationCity\fP\fC [getset]\fP"
+.br
+.RI "/Final city "
+.ti -1c
+.RI "float \fBTotalHours\fP\fC [getset]\fP"
+.br
+.RI "/The hours driven for the order "
+.ti -1c
+.RI "float \fBTotalKms\fP\fC [getset]\fP"
+.br
+.RI "/The kms driven for the order "
+.ti -1c
+.RI "float \fBSurcharge\fP\fC [getset]\fP"
+.br
+.RI "/Our markup on this order "
+.ti -1c
+.RI "float \fBMarkup\fP\fC [getset]\fP"
+.br
+.RI "/Markup % for this order "
+.ti -1c
+.RI "int \fBConfirmed\fP\fC [getset]\fP"
+.br
+.RI "/Boolean indicating whether the order is confirmed "
+.ti -1c
+.RI "DateTime \fBdate\fP\fC [getset]\fP"
+.br
+.RI "Date/time of the order\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The purpose of this class is to keep all the parts of an order together\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+\fIAshley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor\fP 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TMSMainWindow\&.Order\&.Order (string customerName, string originCity, string destinationCity, int jobType, int vanType)"
+
+.PP
+To instantiate a new \fBOrder\fP object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+As this is a \fIconstructor< / i> for the \fBCommunicate\fP class, nothing is returned \fP
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void TMSMainWindow\&.Order\&.CalcTotalHours (int orderID)"
+
+.PP
+Calculates the hours of an order\&. \fBDetails\fP Connects to a database, and finds a given order using an orderID\&. The total hours of driving are calculated from all the trips within the order
+.PP
+\fBParameters\fP
+.RS 4
+\fI(int)\fP orderID
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+N/A 
+.RE
+.PP
+
+.SS "override string TMSMainWindow\&.Order\&.ToString ()"
+
+.PP
+Changes an order's elements to a legible string\&. \fBDetails\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIN/A\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the elements of the order as a string 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBTrip\fP> TMSMainWindow\&.Order\&.tripList = new List<\fBTrip\fP>()"
+
+.PP
+The name of the database\&. 
+.SH "Property Documentation"
+.PP 
+.SS "int TMSMainWindow\&.Order\&.Confirmed\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Boolean indicating whether the order is confirmed 
+.SS "int TMSMainWindow\&.Order\&.CustomerID\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The customer associated with the order 
+.SS "string TMSMainWindow\&.Order\&.CustomerName\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The name of the customer 
+.SS "DateTime TMSMainWindow\&.Order\&.date\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Date/time of the order\&. 
+.SS "string TMSMainWindow\&.Order\&.DestinationCity\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Final city 
+.SS "int TMSMainWindow\&.Order\&.Id\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The order ID 
+.SS "int TMSMainWindow\&.Order\&.JobType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Type of job 
+.SS "float TMSMainWindow\&.Order\&.Markup\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Markup % for this order 
+.SS "string TMSMainWindow\&.Order\&.OriginCity\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Originating city 
+.SS "float TMSMainWindow\&.Order\&.Surcharge\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/Our markup on this order 
+.SS "float TMSMainWindow\&.Order\&.TotalCost\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The cost of this order 
+.SS "float TMSMainWindow\&.Order\&.TotalHours\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The hours driven for the order 
+.SS "float TMSMainWindow\&.Order\&.TotalKms\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/The kms driven for the order 
+.SS "int TMSMainWindow\&.Order\&.vanType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+/LTL or FTL 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Plakata TMS from the source code\&.

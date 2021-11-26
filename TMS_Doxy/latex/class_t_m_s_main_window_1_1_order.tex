@@ -1,0 +1,280 @@
+\hypertarget{class_t_m_s_main_window_1_1_order}{}\doxysection{TMSMain\+Window.\+Order Class Reference}
+\label{class_t_m_s_main_window_1_1_order}\index{TMSMainWindow.Order@{TMSMainWindow.Order}}
+
+
+The purpose of this class is to keep all the parts of an order together.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a5d2feca871caca7faf8737f317dcbc19}{Order}} (string customer\+Name, string origin\+City, string destination\+City, int job\+Type, int \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a4e752af83a43a722d46c2ea223f6438c}{van\+Type}})
+\begin{DoxyCompactList}\small\item\em To instantiate a new \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} object. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a8b9252bb8bb00ce34f444503a6847a8d}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Changes an order\textquotesingle{}s elements to a legible string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a24ffee555987b9f69ce3c20ffa13cfa5}{Calc\+Total\+Hours}} (int order\+ID)
+\begin{DoxyCompactList}\small\item\em Calculates the hours of an order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}} $>$ \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a68f74b62f895ba35619c11bb6dbe869d}{trip\+List}} = new List$<$\mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}}$>$()
+\begin{DoxyCompactList}\small\item\em The name of the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a3c92f14fcbafdc0ac910c3ea5514524b}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+The order ID \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a26ad20ae4b80bc549fcfa2b4f80ae254}{Customer\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+The customer associated with the order \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_ac5f9c2c262b60d61dde833c668649b36}{Customer\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+The name of the customer \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_aaa4642f331622e6690ab78a04b6dfd8e}{Job\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+Type of job \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a4e752af83a43a722d46c2ea223f6438c}{van\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+LTL or FTL \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_ac6c64dc070ffbfc406fd614d19f17343}{Total\+Cost}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+The cost of this order \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a814cfd21e69f588c282d00e5238c6851}{Origin\+City}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+Originating city \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_aa69bedf62cb93d4e3004ac599369e049}{Destination\+City}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+Final city \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a37ee77db72ca99e7b2a3bb0e56064251}{Total\+Hours}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+The hours driven for the order \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a24e55d20d69c3877e576cee680bcb6f0}{Total\+Kms}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+The kms driven for the order \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a153a6b7e574090419e677630bc44d862}{Surcharge}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+Our markup on this order \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_acd02a464d61ddec615dd67992aa64025}{Markup}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+Markup \% for this order \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a5f68c1ce23d6de9227324af123bebd9d}{Confirmed}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em /\+Boolean indicating whether the order is confirmed \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_t_m_s_main_window_1_1_order_a774480dd6d2b84f80f7c18537260ad75}{date}}\hspace{0.3cm}{\ttfamily  \mbox{[}getset\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Date/time of the order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The purpose of this class is to keep all the parts of an order together. 
+
+\begin{DoxyAuthor}{Author}
+{\itshape Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a5d2feca871caca7faf8737f317dcbc19}\label{class_t_m_s_main_window_1_1_order_a5d2feca871caca7faf8737f317dcbc19}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!Order@{Order}}
+\index{Order@{Order}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{Order()}{Order()}}
+{\footnotesize\ttfamily TMSMain\+Window.\+Order.\+Order (\begin{DoxyParamCaption}\item[{string}]{customer\+Name,  }\item[{string}]{origin\+City,  }\item[{string}]{destination\+City,  }\item[{int}]{job\+Type,  }\item[{int}]{van\+Type }\end{DoxyParamCaption})}
+
+
+
+To instantiate a new \mbox{\hyperlink{class_t_m_s_main_window_1_1_order}{Order}} object. 
+
+\begin{DoxyReturn}{Returns}
+As this is a {\itshape constructor\texorpdfstring{$<$}{<} / i\texorpdfstring{$>$}{>} for the \mbox{\hyperlink{class_t_m_s_main_window_1_1_communicate}{Communicate}} class, nothing is returned }
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a24ffee555987b9f69ce3c20ffa13cfa5}\label{class_t_m_s_main_window_1_1_order_a24ffee555987b9f69ce3c20ffa13cfa5}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!CalcTotalHours@{CalcTotalHours}}
+\index{CalcTotalHours@{CalcTotalHours}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{CalcTotalHours()}{CalcTotalHours()}}
+{\footnotesize\ttfamily void TMSMain\+Window.\+Order.\+Calc\+Total\+Hours (\begin{DoxyParamCaption}\item[{int}]{order\+ID }\end{DoxyParamCaption})}
+
+
+
+Calculates the hours of an order. 
+
+{\bfseries{Details}} Connects to a database, and finds a given order using an order\+ID. The total hours of driving are calculated from all the trips within the order
+
+
+\begin{DoxyParams}{Parameters}
+{\em (int)} & order\+ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a8b9252bb8bb00ce34f444503a6847a8d}\label{class_t_m_s_main_window_1_1_order_a8b9252bb8bb00ce34f444503a6847a8d}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!ToString@{ToString}}
+\index{ToString@{ToString}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily override string TMSMain\+Window.\+Order.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Changes an order\textquotesingle{}s elements to a legible string. 
+
+{\bfseries{Details}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em N/A} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the elements of the order as a string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a68f74b62f895ba35619c11bb6dbe869d}\label{class_t_m_s_main_window_1_1_order_a68f74b62f895ba35619c11bb6dbe869d}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!tripList@{tripList}}
+\index{tripList@{tripList}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{tripList}{tripList}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}}$>$ TMSMain\+Window.\+Order.\+trip\+List = new List$<$\mbox{\hyperlink{class_t_m_s_main_window_1_1_trip}{Trip}}$>$()}
+
+
+
+The name of the database. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a5f68c1ce23d6de9227324af123bebd9d}\label{class_t_m_s_main_window_1_1_order_a5f68c1ce23d6de9227324af123bebd9d}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!Confirmed@{Confirmed}}
+\index{Confirmed@{Confirmed}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{Confirmed}{Confirmed}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Order.\+Confirmed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+Boolean indicating whether the order is confirmed 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a26ad20ae4b80bc549fcfa2b4f80ae254}\label{class_t_m_s_main_window_1_1_order_a26ad20ae4b80bc549fcfa2b4f80ae254}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!CustomerID@{CustomerID}}
+\index{CustomerID@{CustomerID}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{CustomerID}{CustomerID}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Order.\+Customer\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+The customer associated with the order 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_ac5f9c2c262b60d61dde833c668649b36}\label{class_t_m_s_main_window_1_1_order_ac5f9c2c262b60d61dde833c668649b36}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!CustomerName@{CustomerName}}
+\index{CustomerName@{CustomerName}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{CustomerName}{CustomerName}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Order.\+Customer\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+The name of the customer 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a774480dd6d2b84f80f7c18537260ad75}\label{class_t_m_s_main_window_1_1_order_a774480dd6d2b84f80f7c18537260ad75}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!date@{date}}
+\index{date@{date}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily Date\+Time TMSMain\+Window.\+Order.\+date\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Date/time of the order. 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_aa69bedf62cb93d4e3004ac599369e049}\label{class_t_m_s_main_window_1_1_order_aa69bedf62cb93d4e3004ac599369e049}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!DestinationCity@{DestinationCity}}
+\index{DestinationCity@{DestinationCity}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{DestinationCity}{DestinationCity}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Order.\+Destination\+City\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+Final city 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a3c92f14fcbafdc0ac910c3ea5514524b}\label{class_t_m_s_main_window_1_1_order_a3c92f14fcbafdc0ac910c3ea5514524b}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!Id@{Id}}
+\index{Id@{Id}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Order.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+The order ID 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_aaa4642f331622e6690ab78a04b6dfd8e}\label{class_t_m_s_main_window_1_1_order_aaa4642f331622e6690ab78a04b6dfd8e}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!JobType@{JobType}}
+\index{JobType@{JobType}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{JobType}{JobType}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Order.\+Job\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+Type of job 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_acd02a464d61ddec615dd67992aa64025}\label{class_t_m_s_main_window_1_1_order_acd02a464d61ddec615dd67992aa64025}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!Markup@{Markup}}
+\index{Markup@{Markup}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{Markup}{Markup}}
+{\footnotesize\ttfamily float TMSMain\+Window.\+Order.\+Markup\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+Markup \% for this order 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a814cfd21e69f588c282d00e5238c6851}\label{class_t_m_s_main_window_1_1_order_a814cfd21e69f588c282d00e5238c6851}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!OriginCity@{OriginCity}}
+\index{OriginCity@{OriginCity}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{OriginCity}{OriginCity}}
+{\footnotesize\ttfamily string TMSMain\+Window.\+Order.\+Origin\+City\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+Originating city 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a153a6b7e574090419e677630bc44d862}\label{class_t_m_s_main_window_1_1_order_a153a6b7e574090419e677630bc44d862}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!Surcharge@{Surcharge}}
+\index{Surcharge@{Surcharge}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{Surcharge}{Surcharge}}
+{\footnotesize\ttfamily float TMSMain\+Window.\+Order.\+Surcharge\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+Our markup on this order 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_ac6c64dc070ffbfc406fd614d19f17343}\label{class_t_m_s_main_window_1_1_order_ac6c64dc070ffbfc406fd614d19f17343}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!TotalCost@{TotalCost}}
+\index{TotalCost@{TotalCost}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{TotalCost}{TotalCost}}
+{\footnotesize\ttfamily float TMSMain\+Window.\+Order.\+Total\+Cost\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+The cost of this order 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a37ee77db72ca99e7b2a3bb0e56064251}\label{class_t_m_s_main_window_1_1_order_a37ee77db72ca99e7b2a3bb0e56064251}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!TotalHours@{TotalHours}}
+\index{TotalHours@{TotalHours}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{TotalHours}{TotalHours}}
+{\footnotesize\ttfamily float TMSMain\+Window.\+Order.\+Total\+Hours\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+The hours driven for the order 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a24e55d20d69c3877e576cee680bcb6f0}\label{class_t_m_s_main_window_1_1_order_a24e55d20d69c3877e576cee680bcb6f0}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!TotalKms@{TotalKms}}
+\index{TotalKms@{TotalKms}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{TotalKms}{TotalKms}}
+{\footnotesize\ttfamily float TMSMain\+Window.\+Order.\+Total\+Kms\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+The kms driven for the order 
+
+\mbox{\Hypertarget{class_t_m_s_main_window_1_1_order_a4e752af83a43a722d46c2ea223f6438c}\label{class_t_m_s_main_window_1_1_order_a4e752af83a43a722d46c2ea223f6438c}} 
+\index{TMSMainWindow.Order@{TMSMainWindow.Order}!vanType@{vanType}}
+\index{vanType@{vanType}!TMSMainWindow.Order@{TMSMainWindow.Order}}
+\doxysubsubsection{\texorpdfstring{vanType}{vanType}}
+{\footnotesize\ttfamily int TMSMain\+Window.\+Order.\+van\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+/\+LTL or FTL 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_order_8cs}{Order.\+cs}}\end{DoxyCompactItemize}

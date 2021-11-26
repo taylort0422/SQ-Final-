@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_m_s_main_window_1_1_buyer_main_window" xml:lang="en-US">
+<title>TMSMainWindow.BuyerMainWindow Class Reference</title>
+<indexterm><primary>TMSMainWindow.BuyerMainWindow</primary></indexterm>
+<para>
+
+<para>Interaction logic for BuyerMainWindow.xaml </para>
+ 
+</para>
+<para>Inheritance diagram for TMSMainWindow.BuyerMainWindow:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_t_m_s_main_window_1_1_buyer_main_window.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_m_s_main_window_1_1_buyer_main_window_1afd9859f86861e5fd723fdd9c40b9a455">BuyerMainWindow</link> ()</para>
+
+<para>This is the function for the Buyer window. It fills the relevant WPF controls with data from the external and internal databases. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Interaction logic for BuyerMainWindow.xaml </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_m_s_main_window_1_1_buyer_main_window_1afd9859f86861e5fd723fdd9c40b9a455"/><section>
+    <title>BuyerMainWindow()</title>
+<indexterm><primary>BuyerMainWindow</primary><secondary>TMSMainWindow.BuyerMainWindow</secondary></indexterm>
+<indexterm><primary>TMSMainWindow.BuyerMainWindow</primary><secondary>BuyerMainWindow</secondary></indexterm>
+<para><computeroutput>TMSMainWindow.BuyerMainWindow.BuyerMainWindow ( )</computeroutput></para><para>
+
+<para>This is the function for the Buyer window. It fills the relevant WPF controls with data from the external and internal databases. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>N/A</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>N/A </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__buyer_main_window_8xaml_8cs">BuyerMainWindow.xaml.cs</link></section>
+</section>
