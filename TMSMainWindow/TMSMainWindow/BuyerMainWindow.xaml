@@ -9,7 +9,7 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="420">
 
-            <ListBox Name="NewCustomerListBox" HorizontalAlignment="Left" Height="259" Margin="10,68,0,0" VerticalAlignment="Top" Width="400" SelectionChanged="NewCustomerListBox_SelectionChanged"/>
+            <ListBox Name="NewCustomerListBox" HorizontalAlignment="Left" Height="259" Margin="10,68,0,0" VerticalAlignment="Top" Width="400" />
             <ListBox Name="AcceptedCustomerListBox" HorizontalAlignment="Left" Height="231" Margin="10,448,0,0" VerticalAlignment="Top" Width="400"/>
             <Button Name="AcceptSelectedCustomerButton" FontSize="18" Content="Accept selected customer" HorizontalAlignment="Left" Margin="86,350,0,0" VerticalAlignment="Top" Width="248" Height="40" Click="AcceptSelectedCustomerButton_Click"/>
             <Label Content="New Customers" FontSize="30" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>

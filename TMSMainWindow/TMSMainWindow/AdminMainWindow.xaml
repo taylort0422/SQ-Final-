@@ -11,7 +11,7 @@
             <Label FontSize="22" Content="Rate/Fee Table" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Height="41"/>
             <DataGrid Name="RateFeeDataGrid" HorizontalAlignment="Left" Height="185" Margin="0,43,0,0" VerticalAlignment="Top" Width="419"/>
             <Label FontSize="22" Content="Carrier Data" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" Height="41"/>
-            <DataGrid Name="CarrierDataGrid" HorizontalAlignment="Left" Height="185" Margin="0,267,0,0" VerticalAlignment="Top" Width="856"/>
+            <DataGrid Name="CarrierDataGrid" HorizontalAlignment="Left" Height="185" Margin="0,267,0,0" VerticalAlignment="Top" Width="856" />
             <Label FontSize="22" Content="Route Table" HorizontalAlignment="Left" Margin="0,453,0,0" VerticalAlignment="Top" Height="41"/>
             <DataGrid Name="RouteDataGrid" HorizontalAlignment="Left" Height="185" Margin="0,494,0,0" VerticalAlignment="Top" Width="856"/>
             <TextBox Name="CurrentLogFileDisplayTextBox" HorizontalAlignment="Left" Height="219" Margin="424,43,0,0" TextWrapping="Wrap" Text="placeholder text to be replaced by logfile contents" VerticalAlignment="Top" Width="432"/>
@@ -19,7 +19,7 @@
             <Button Name="ChangeDisplayedLogfileButton" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="766,7,0,0" VerticalAlignment="Top" Width="90" Height="29"/>
             <Button Name="SaveRateFeeTableChangesButton" FontSize="16" Content="Save Rate/Fee Table Changes" HorizontalAlignment="Left" Margin="175,7,0,0" VerticalAlignment="Top" Width="227" Height="29"/>
             <Button Name="SaveCarrierDataChangesButton" FontSize="16" Content="Save Route Table Changes" HorizontalAlignment="Left" Margin="158,460,0,0" VerticalAlignment="Top" Width="244" Height="29"/>
-            <Button Name="SaveRouteTableChangesButton" FontSize="16" Content="Save Carrier Data Changes" HorizontalAlignment="Left" Margin="158,233,0,0" VerticalAlignment="Top" Width="244" Height="29"/>
+            <Button Name="SaveRouteTableChangesButton" FontSize="16" Content="Save Carrier Data Changes" HorizontalAlignment="Left" Margin="158,233,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveRouteTableChangesButton_Click"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="400">
             <Label FontSize="30" Content="TMS Configuration" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
@@ -29,7 +29,7 @@
             <Label FontSize="30" Content="Communications" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
             <TextBox Name="CarrierIPAddressTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="10,265,0,0" TextWrapping="Wrap" Text="255.255.255.255" VerticalAlignment="Top" Width="203"/>
             <Button Name="ChangeCarrierConnectionInfoButton" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="300,265,0,0" VerticalAlignment="Top" Width="90" Height="29"/>
-            <TextBox Name="CarrierPortNumberTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="218,265,0,0" TextWrapping="Wrap" Text="65535" VerticalAlignment="Top" Width="77" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.407,0.471"/>
+            <TextBox Name="CarrierPortNumberTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="218,265,0,0" TextWrapping="Wrap" Text="65535" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.407,0.471"/>
             <Label FontSize="18" Content="IP Address" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top"/>
             <Label FontSize="18" Content="Port" HorizontalAlignment="Left" Margin="218,231,0,0" VerticalAlignment="Top"/>
             <Label FontSize="22" Content="Carrier" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top"/>
@@ -41,7 +41,7 @@
             <Label FontSize="22" Content="Contract" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top"/>
             <TextBox Name="LocalDatabaseIPAddressTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="10,469,0,0" TextWrapping="Wrap" Text="255.255.255.255" VerticalAlignment="Top" Width="203"/>
             <Button Name="ChangeLocalDatabaseConnectionInfoButton" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="300,469,0,0" VerticalAlignment="Top" Width="90" Height="29"/>
-            <TextBox Name="LocalDatabasePortNumberTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="218,469,0,0" TextWrapping="Wrap" Text="65535" VerticalAlignment="Top" Width="77" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.407,0.471"/>
+            <TextBox Name="LocalDatabasePortNumberTextBox" FontSize="18" HorizontalAlignment="Left" Height="29" Margin="218,469,0,0" TextWrapping="Wrap" Text="65535" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.407,0.471"/>
             <Label FontSize="18" Content="IP Address" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top"/>
             <Label FontSize="18" Content="Port" HorizontalAlignment="Left" Margin="218,435,0,0" VerticalAlignment="Top"/>
             <Label FontSize="22" Content="Local Database" HorizontalAlignment="Left" Margin="10,401,0,0" VerticalAlignment="Top"/>

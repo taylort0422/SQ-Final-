@@ -60,5 +60,19 @@ namespace TMSMainWindow
         {
 
         }
+
+        private void CarrierDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SaveRouteTableChangesButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<Carrier> carrierList = CarrierDataGrid.Items.OfType<Carrier>().ToList();
+            foreach (Carrier c in carrierList)
+            {
+                nTMS.UpDateCarrier(c);
+            }
+        }
     }
 }
