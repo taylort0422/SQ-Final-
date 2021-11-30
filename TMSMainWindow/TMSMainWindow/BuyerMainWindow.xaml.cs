@@ -172,5 +172,12 @@ namespace TMSMainWindow
             sCities += SelectCityToAddDropdown.SelectedValue.ToString() + ",";
             CreateNewOrderButton.IsEnabled = true;
         }
+
+        private void GenerateInvoiceButton_Click(object sender, RoutedEventArgs e)
+        {
+            int selectedOrder = 0;
+            selectedOrder = Int32.Parse(CompletedOrdersListBox.SelectedItem.ToString().Split(' ')[0]);
+            nTMS.GenerateInvoice(selectedOrder);
+        }
     }
 }

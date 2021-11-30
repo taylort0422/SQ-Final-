@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace TMSMainWindow
 {
@@ -722,7 +723,7 @@ namespace TMSMainWindow
         /// \param (int) orderID
         /// 
         /// \return invoice
-        public string GenerateInvoice(int orderID)
+        public void GenerateInvoice(int orderID)
         {
             List<int> tripIDs = new List<int>();
             int customerID, orderType, vanType, orderConfirmed;
@@ -732,7 +733,7 @@ namespace TMSMainWindow
             int surCharge = 0;
             float totalCharge = 0;
             int totalHours = 0;
-            DateTime orderDate;
+            DateTime orderDate= new DateTime { };
 
             conn.Open();
             string sql = "SELECT `order`.CustomerID, OrderType, DepartCity, DestCity, TotalHours, Surcharge, VanType, OrderConfirmed, OrderDate, customer.Name, trip.tripID"
@@ -752,7 +753,7 @@ namespace TMSMainWindow
                // if (rdr.GetInt32(5) != null) surCharge = rdr.GetInt32(5);
                 vanType = rdr.GetInt32(6);
                 orderConfirmed = rdr.GetInt32(7);
-                //orderDate = rdr.GetDateTime(8);
+                orderDate = rdr.GetDateTime(8);
                 customerName = rdr.GetString(9);
                 tripIDs.Add(rdr.GetInt32(10));
             }
@@ -769,7 +770,7 @@ namespace TMSMainWindow
             invoiceOut += "//\t\t\t\t\t\t\t\t\t//\n";
             invoiceOut += "//////////////////////////////////////////////////////////////////////////\n\n\n";
             // DateTime.now has to be changed to date time of order once all orders have proper dates
-            invoiceOut += "Customer: " + customerName + "\t\t\t\t" + DateTime.Now + "\n\n";
+            invoiceOut += "Customer: " + customerName + "\t\t\t\t" + orderDate + "\n\n";
             invoiceOut += "From: " + departCity + "\t TO \t" + destCity + "\n\n\n";
             invoiceOut += "Line Items:\n";
 
@@ -785,9 +786,16 @@ namespace TMSMainWindow
             invoiceOut += "\n\n\t\t\t\t\t\tTotal Charge: " + totalCharge + "\n\n\n";
             invoiceOut += "© TMS via Team Plakata\n";
 
+            string invoicePath = AppDomain.CurrentDomain.BaseDirectory + "\\invoices\\";
+            if(!Directory.Exists(invoicePath))
+            {
+                Directory.CreateDirectory(invoicePath);
+            }
+
+            File.WriteAllText(invoicePath + "invoice" + orderID + ".txt", invoiceOut);
 
 
-            return invoiceOut;
+            InsertInvoice(File.ReadAllBytes(invoicePath + "invoice" + orderID + ".txt"), orderID, totalCharge );
         }
 
         ///RemoveTrip(int TripID)
@@ -800,6 +808,7 @@ namespace TMSMainWindow
         /// 
         /// \return N/A
 
+
         /// \brief Called to insert an invoice on to an order
         /// \details <b>Details</b>
         /// 
@@ -808,6 +817,28 @@ namespace TMSMainWindow
         /// \param (int) orderID, (int) invoiceID
         /// 
         /// \return N/A
+        /// 
+        public void InsertInvoice(byte[] file, int orderID, float amount)
+        {
+            conn.Open();
+            string sql = "INSERT INTO invoice (OrderID, Amount, invoiceFile) VALUES(?orderID, ?amount, ?file)";
+            MySqlParameter dOrderID = new MySqlParameter("?orderID", MySqlDbType.Int32);
+            MySqlParameter dAmount = new MySqlParameter("?Amount", MySqlDbType.Float);
+            MySqlParameter blobData = new MySqlParameter("?file", MySqlDbType.Blob, file.Length);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            dOrderID.Value = orderID;
+            dAmount.Value = amount;
+            blobData.Value = file;
+
+            cmd.Parameters.Add(dOrderID);
+            cmd.Parameters.Add(dAmount);
+            cmd.Parameters.Add(blobData);
+            cmd.ExecuteNonQuery();
+     
+            conn.Close();
+        }
+
 
         /// \brief Called to back up a database
         /// \details <b>Details</b>
@@ -858,7 +889,6 @@ namespace TMSMainWindow
         public string GetRouteTable()
         {
             List<string> cols = new List<string>();
-            //string[] cols = new string[] { };
             // Get the values of all the column titles
             conn.Open();
             string sql = "SELECT `COLUMN_NAME`"

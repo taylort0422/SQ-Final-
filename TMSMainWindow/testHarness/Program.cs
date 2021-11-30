@@ -19,9 +19,9 @@ namespace testHarness
                                 Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                                 ConfigurationManager.AppSettings.Get("localDb"));
 
-            List<string> results = JsonConvert.DeserializeObject<List<string>>(nTMS.GetRouteTable());
+            //List<string> results = JsonConvert.DeserializeObject<List<string>>(nTMS.GetRouteTable());
 
-            Console.Write(nTMS.GetRouteTable());
+            //Console.Write(nTMS.GenerateInvoice(44));
             Console.ReadKey();
         }
     }
