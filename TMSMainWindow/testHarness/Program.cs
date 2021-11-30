@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using TMSMainWindow;
+using Newtonsoft.Json;
 namespace testHarness
 {
     internal class Program
@@ -18,7 +19,9 @@ namespace testHarness
                                 Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                                 ConfigurationManager.AppSettings.Get("localDb"));
 
-            Console.Write(nTMS.GenerateInvoice(44));
+            List<string> results = JsonConvert.DeserializeObject<List<string>>(nTMS.GetRouteTable());
+
+            Console.Write(nTMS.GetRouteTable());
             Console.ReadKey();
         }
     }

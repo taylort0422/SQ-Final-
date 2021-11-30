@@ -1,6 +1,5 @@
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.csproj.AssemblyReference.cache
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.csproj.SuggestedBindingRedirects.cache
-C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.exe.config
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.csproj.CoreCompileInputs.cache
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\bin\Debug\testHarness.exe.config
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\bin\Debug\testHarness.exe
@@ -34,3 +33,7 @@ C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarnes
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.csproj.CopyComplete
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.exe
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\obj\Debug\testHarness.pdb
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\testHarness\bin\Debug\Newtonsoft.Json.xml

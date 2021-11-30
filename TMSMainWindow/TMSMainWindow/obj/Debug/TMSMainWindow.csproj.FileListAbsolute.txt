@@ -165,3 +165,5 @@ C:\Users\Taylor\Documents\SET year 2\Software Quality\SQ-Final-\TMSMainWindow\TM
 C:\Users\Taylor\Documents\SET year 2\Software Quality\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.pdb
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.SuggestedBindingRedirects.cache
 C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\obj\Debug\TMSMainWindow.csproj.CopyComplete
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hades\source\repos\School\Year 2\WDD\SQ-Final-\TMSMainWindow\TMSMainWindow\bin\Debug\Newtonsoft.Json.xml

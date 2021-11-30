@@ -18,7 +18,7 @@
             <Label FontSize="22" Content="Current logfile: (name)" HorizontalAlignment="Left" Margin="424,2,0,0" VerticalAlignment="Top" Height="41" RenderTransformOrigin="0.125,0.707"/>
             <Button Name="ChangeDisplayedLogfileButton" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="766,7,0,0" VerticalAlignment="Top" Width="90" Height="29"/>
             <Button Name="SaveRateFeeTableChangesButton" FontSize="16" Content="Save Rate/Fee Table Changes" HorizontalAlignment="Left" Margin="175,7,0,0" VerticalAlignment="Top" Width="227" Height="29"/>
-            <Button Name="SaveCarrierDataChangesButton" FontSize="16" Content="Save Route Table Changes" HorizontalAlignment="Left" Margin="158,460,0,0" VerticalAlignment="Top" Width="244" Height="29"/>
+            <Button Name="SaveCarrierDataChangesButton" FontSize="16" Content="Save Route Table Changes" HorizontalAlignment="Left" Margin="158,460,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveCarrierDataChangesButton_Click"/>
             <Button Name="SaveRouteTableChangesButton" FontSize="16" Content="Save Carrier Data Changes" HorizontalAlignment="Left" Margin="158,233,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveRouteTableChangesButton_Click"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="400">

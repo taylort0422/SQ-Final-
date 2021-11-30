@@ -829,11 +829,6 @@ namespace TMSMainWindow
         /// 
         /// \return N/A
         /// 
-
-
-
-
-        //Had to add to update carrier
         public void UpDateCarrier(Carrier c)
         {
             conn.Open();
@@ -843,6 +838,77 @@ namespace TMSMainWindow
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
             conn.Close();
+        }
+
+
+        /* Everything below here had to be added */
+
+        public void UpDateRouteTable(Route r)
+        {
+            conn.Open();
+            string sql = "UPDATE `route` SET routeID = " + r.RouteID + ", DepartLocation = \"" + r.DepartLocation + "\", DestinationLocation = \"" + r.DestinationLocation
+                    + "\", Hours = " + r.Hours + ", KMs = " + r.KMs + ", Direction = \"" + r.Direction + "\""
+                    + " WHERE RouteID = " + r.RouteID;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            conn.Close();
+        }
+
+
+        public string GetRouteTable()
+        {
+            List<string> cols = new List<string>();
+            //string[] cols = new string[] { };
+            // Get the values of all the column titles
+            conn.Open();
+            string sql = "SELECT `COLUMN_NAME`"
+                           + " FROM `INFORMATION_SCHEMA`.`COLUMNS`"
+                           + " WHERE `TABLE_SCHEMA`= 'tms'"
+                           + " AND `TABLE_NAME`= 'route';";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                cols.Add(rdr.GetString(0));
+            }
+            conn.Close();
+
+            int rdrCnt = 0;
+            conn.Open();
+            sql = "SELECT COUNT(*) FROM route";
+            cmd = new MySqlCommand(sql, conn);
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                rdrCnt = rdr.GetInt32(0);
+            }
+            conn.Close();
+
+            string retString = "[";
+            conn.Open();
+            sql = "SELECT * FROM route";
+            cmd = new MySqlCommand(sql, conn);
+            rdr = cmd.ExecuteReader();
+            int j = 0;
+            while (rdr.Read())
+            {
+                retString += "{";
+                for(int i = 0; i < cols.Count; i++)
+                {
+                    retString += "\""+ cols[i] + "\":\"" + rdr.GetValue(i) + "\"";
+                    if(i < cols.Count-1)
+                    {
+                        retString += ",";
+                    }
+                }
+                
+                retString += "}";
+                if(j < rdrCnt -1) retString += ",";
+                j++;
+            }
+            conn.Close();
+            retString += "]";
+            return retString;
         }
     }
 }

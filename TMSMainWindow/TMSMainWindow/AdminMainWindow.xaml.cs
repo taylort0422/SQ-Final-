@@ -12,9 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Configuration;
+using Newtonsoft.Json;
 
 namespace TMSMainWindow
 {
+
+
+
     /// <summary>
     /// Interaction logic for AdminMainWindow.xaml
     /// </summary>
@@ -30,6 +34,10 @@ namespace TMSMainWindow
                         Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                         ConfigurationManager.AppSettings.Get("localDb"));
 
+        
+
+
+
         /// \brief This is the function for the Admin window. It fills the relevant WPF controls with data from the external and internal databases.
         
         public AdminMainWindow()
@@ -40,6 +48,10 @@ namespace TMSMainWindow
             List<Carrier> cList = new List<Carrier>();
             cList = nTMS.CarrierList();
             CarrierDataGrid.ItemsSource = cList;
+
+            // Generate route table to display
+            List<Route> results = JsonConvert.DeserializeObject<List<Route>>(nTMS.GetRouteTable());
+            RouteDataGrid.ItemsSource = results;
 
             // Display configuration data
             LocalDatabaseIPAddressTextBox.Text = ConfigurationManager.AppSettings.Get("localIP");
@@ -61,10 +73,6 @@ namespace TMSMainWindow
 
         }
 
-        private void CarrierDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void SaveRouteTableChangesButton_Click(object sender, RoutedEventArgs e)
         {
@@ -72,6 +80,15 @@ namespace TMSMainWindow
             foreach (Carrier c in carrierList)
             {
                 nTMS.UpDateCarrier(c);
+            }
+        }
+
+        private void SaveCarrierDataChangesButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<Route> routeList = RouteDataGrid.Items.OfType<Route>().ToList();
+            foreach (Route r in routeList)
+            {
+                nTMS.UpDateRouteTable(r);
             }
         }
     }
