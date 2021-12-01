@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace TMSMainWindow
 {
@@ -27,11 +28,11 @@ namespace TMSMainWindow
         public string connStr { get; set; } ///<SQL command to connect to databse
         public MySqlConnection conn = null;
 
-/*
-* \brief To instantiate a new CommTMS object 
-*
-* \return As this is a <i>constructor< / i> for the CommTMS class, nothing is returned
-*/
+        /*
+        * \brief To instantiate a new CommTMS object 
+        *
+        * \return As this is a <i>constructor< / i> for the CommTMS class, nothing is returned
+        */
         public CommTMS(string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName) : base(DbUserName, DbPassword, DbIP, DbPort, DbName)
         {
             connStr = "server=" + DbIP + ";user=" + DbUser + ";database=" + DbName + ";port=" + DbPort + ";password=" + DbPassword;
@@ -123,7 +124,7 @@ namespace TMSMainWindow
             return CheckCustomer(name);
         }
 
-     
+
         ///
         /// \brief view carriers in a city
         /// \details <b>Details</b>
@@ -280,7 +281,7 @@ namespace TMSMainWindow
 
             List<string> cities = new List<string>();
             conn.Open();
-            string sql = "SELECT DepotID, Carrier, carrier.DepotCity " 
+            string sql = "SELECT DepotID, Carrier, carrier.DepotCity "
                         + "FROM citylist "
                         + "INNER JOIN carrier ON citylist.DepotID = carrier.CarrierID WHERE WhichOrder = " + orderID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -416,11 +417,11 @@ namespace TMSMainWindow
             newTrip.DestinationCity = DestLocation;
             newTrip.Kilometers = kms;
             newTrip.Hours = hours;
-
+            //newTrip.TripCost = newTrip.TripTotalCost(newTrip);
             InsertTrip(newTrip);
         }
 
-        
+
 
         ///
         /// \brief Called to updates the order to completed
@@ -437,7 +438,7 @@ namespace TMSMainWindow
             string sql = "UPDATE `order` SET OrderConfirmed = 1, OrderDate = \"" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\" WHERE OrderID = " + orderID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
-
+            conn.Close();
         }
 
 
@@ -512,7 +513,7 @@ namespace TMSMainWindow
             int lastID = 0;
 
             conn.Open();
-            string sql = "INSERT INTO `trip` (OrderID, OriginCity, DestinationCity, Kilometers, Hours, OriginDepotID, DestinationDepotID) VALUES(" + newTrip.OrderId + ",\"" + newTrip.OriginCity + "\",\"" + newTrip.DestinationCity + "\"," + newTrip.Kilometers + "," + newTrip.Hours + "," + newTrip.OriginDepotID + "," + newTrip.DestinationDepotID + "); SELECT LAST_INSERT_ID();";
+            string sql = "INSERT INTO `trip` (OrderID, OriginCity, DestinationCity, Kilometers, Hours, OriginDepotID, DestinationDepotID, TripCost) VALUES(" + newTrip.OrderId + ",\"" + newTrip.OriginCity + "\",\"" + newTrip.DestinationCity + "\"," + newTrip.Kilometers + "," + newTrip.Hours + "," + newTrip.OriginDepotID + "," + newTrip.DestinationDepotID + "," + newTrip.TripCost + "); SELECT LAST_INSERT_ID();";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
@@ -553,6 +554,7 @@ namespace TMSMainWindow
                 trip.Hours = rdr.GetFloat(4);
                 trip.OriginDepotID = rdr.GetInt32(5);
                 trip.DestinationDepotID = rdr.GetInt32(6);
+                //trip.TripCost = trip.TripTotalCost(trip);
                 // Add to the lost of trips
                 tripList.Add(trip);
             }
@@ -596,12 +598,12 @@ namespace TMSMainWindow
         /// \return List of strings of cities between the depart and destination
         public List<string> CitiesBetween(string depart, string destination, string direction)
         {
-            int firstRouteID=0;
-            int lastRouteID=0;
+            int firstRouteID = 0;
+            int lastRouteID = 0;
             //string direction = null;
             //Need to determine direction
             //if (firstRouteID < 8) direction = "East";
-           // else direction = "West";
+            // else direction = "West";
 
             // Get the route ID of the Origin City
             conn.Open();
@@ -688,9 +690,9 @@ namespace TMSMainWindow
             string sql = "SELECT * FROM carrier;";
             conn.Open();
             //Open the database
-            MySqlCommand cmd = new MySqlCommand(sql,conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
-            while(rdr.Read())
+            while (rdr.Read())
             {
                 // Get the carrier data and build a temp carrier
                 Carrier c = new Carrier();
@@ -711,6 +713,7 @@ namespace TMSMainWindow
         }
 
 
+
         /// \brief Called to generate an invoice
         /// \details <b>Details</b>
         /// 
@@ -720,7 +723,80 @@ namespace TMSMainWindow
         /// \param (int) orderID
         /// 
         /// \return invoice
+        public void GenerateInvoice(int orderID)
+        {
+            List<int> tripIDs = new List<int>();
+            int customerID, orderType, vanType, orderConfirmed;
+            string customerName = "";
+            string departCity = "";
+            string destCity = "";
+            int surCharge = 0;
+            float totalCharge = 0;
+            int totalHours = 0;
+            DateTime orderDate = new DateTime { };
 
+            conn.Open();
+            string sql = "SELECT `order`.CustomerID, OrderType, DepartCity, DestCity, TotalHours, Surcharge, VanType, OrderConfirmed, OrderDate, customer.Name, trip.tripID"
+                        + " FROM `order`"
+                        + " INNER JOIN customer ON `order`.CustomerID = customer.CustomerID"
+                        + " INNER JOIN trip ON `order`.OrderID = trip.OrderID"
+                        + " WHERE `order`.orderID =" + orderID;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                customerID = rdr.GetInt32(0);
+                orderType = rdr.GetInt32(1);
+                departCity = rdr.GetString(2);
+                destCity = rdr.GetString(3);
+                //if(rdr.GetInt32(4) != null) totalHours = rdr.GetInt32(4);
+                // if (rdr.GetInt32(5) != null) surCharge = rdr.GetInt32(5);
+                vanType = rdr.GetInt32(6);
+                orderConfirmed = rdr.GetInt32(7);
+                orderDate = rdr.GetDateTime(8);
+                customerName = rdr.GetString(9);
+                tripIDs.Add(rdr.GetInt32(10));
+            }
+            conn.Close();
+
+            List<Trip> trips = ListOfTrips(orderID);
+
+
+            string invoiceOut = "";
+
+            invoiceOut += "//////////////////////////////////////////////////////////////////////////\n";
+            invoiceOut += "//\t\t\t\t\t\t\t\t\t//\n";
+            invoiceOut += "//\t\t\t TMS INC. INVOICE\t\t\t\t//\n";
+            invoiceOut += "//\t\t\t\t\t\t\t\t\t//\n";
+            invoiceOut += "//////////////////////////////////////////////////////////////////////////\n\n\n";
+            // DateTime.now has to be changed to date time of order once all orders have proper dates
+            invoiceOut += "Customer: " + customerName + "\t\t\t\t" + orderDate + "\n\n";
+            invoiceOut += "From: " + departCity + "\t TO \t" + destCity + "\n\n\n";
+            invoiceOut += "Line Items:\n";
+
+            int iTrip = 1;
+            foreach (Trip trip in trips)
+            {
+                totalCharge += trip.TripTotalCost(trip);
+                invoiceOut += iTrip + ") \t" + trip.OriginCity + " to " + trip.DestinationCity + "\t COST: $" + trip.TripTotalCost(trip) + " \n";
+            }
+
+            //****** Have to determine if it is an LTL or FTL and then add markup 5% or 8% for totals
+
+            invoiceOut += "\n\n\t\t\t\t\t\tTotal Charge: " + totalCharge + "\n\n\n";
+            invoiceOut += "© TMS via Team Plakata\n";
+
+            string invoicePath = AppDomain.CurrentDomain.BaseDirectory + "\\invoices\\";
+            if (!Directory.Exists(invoicePath))
+            {
+                Directory.CreateDirectory(invoicePath);
+            }
+
+            File.WriteAllText(invoicePath + "invoice" + orderID + ".txt", invoiceOut);
+
+
+            InsertInvoice(File.ReadAllBytes(invoicePath + "invoice" + orderID + ".txt"), orderID, totalCharge);
+        }
 
         ///RemoveTrip(int TripID)
         /// \brief Called to delete a trip
@@ -732,6 +808,7 @@ namespace TMSMainWindow
         /// 
         /// \return N/A
 
+
         /// \brief Called to insert an invoice on to an order
         /// \details <b>Details</b>
         /// 
@@ -740,6 +817,28 @@ namespace TMSMainWindow
         /// \param (int) orderID, (int) invoiceID
         /// 
         /// \return N/A
+        /// 
+        public void InsertInvoice(byte[] file, int orderID, float amount)
+        {
+            conn.Open();
+            string sql = "INSERT INTO invoice (OrderID, Amount, invoiceFile) VALUES(?orderID, ?amount, ?file)";
+            MySqlParameter dOrderID = new MySqlParameter("?orderID", MySqlDbType.Int32);
+            MySqlParameter dAmount = new MySqlParameter("?Amount", MySqlDbType.Float);
+            MySqlParameter blobData = new MySqlParameter("?file", MySqlDbType.Blob, file.Length);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            dOrderID.Value = orderID;
+            dAmount.Value = amount;
+            blobData.Value = file;
+
+            cmd.Parameters.Add(dOrderID);
+            cmd.Parameters.Add(dAmount);
+            cmd.Parameters.Add(blobData);
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+        }
+
 
         /// \brief Called to back up a database
         /// \details <b>Details</b>
@@ -802,6 +901,8 @@ namespace TMSMainWindow
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 conn.Close();
             }
+        }
+
             /// 
             public void UpDateCarrier(Carrier c)
             {
@@ -884,4 +985,4 @@ namespace TMSMainWindow
                 return retString;
             }
         }
-}
+    }
