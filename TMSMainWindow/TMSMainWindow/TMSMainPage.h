@@ -2,7 +2,7 @@
 ///
 /// \section intro Program Introduction
 /// 
-/// The <b>TMS</b> project is meant to revolutionize the shippign and logistics industry.
+/// The <b>TMS</b> project is meant to revolutionize the shipping and logistics industry.
 /// Our project allows for the purchasing, scheduling, monitoring and billing of organizations
 /// who want to have cargo shipped via truck or train. Though this work is currently in 
 /// a prototype stage, it is meant to model the effectiveness of using a TMS

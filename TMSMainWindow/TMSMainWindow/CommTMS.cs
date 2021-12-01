@@ -760,5 +760,48 @@ namespace TMSMainWindow
         /// \param (int)carrierID
         /// 
         /// \return N/A
+        void RemoveTrucks (int CarrierID, string truckType, int LTLLoad)
+        {
+            if (LTLLoad == 0)
+            {
+                string sql = "UPDATE carrier SET " + truckType + " = " + truckType + " - 1;";
+                conn.Open();
+                //Open the database
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                conn.Close();
+            }
+            else
+            {
+                string sql = "UPDATE carrier SET " + truckType + " = " + truckType + " - " + LTLLoad + ";";
+                conn.Open();
+                //Open the database
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                conn.Close();
+            }
+        }
+
+        void AddTrucks(int CarrierID, string truckType, int LTLLoad)
+        {
+            if (LTLLoad == 0)
+            {
+                string sql = "UPDATE carrier SET " + truckType + " = " + truckType + " + 1;";
+                conn.Open();
+                //Open the database
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                conn.Close();
+            }
+            else
+            {
+                string sql = "UPDATE carrier SET " + truckType + " = " + truckType + " + " + LTLLoad + ";";
+                conn.Open();
+                //Open the database
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                conn.Close();
+            }
+        }
     }
 }

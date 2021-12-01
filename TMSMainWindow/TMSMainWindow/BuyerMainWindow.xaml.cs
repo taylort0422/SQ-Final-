@@ -157,6 +157,7 @@ namespace TMSMainWindow
             }
             newOrder.Id = nTMS.InsertOrder(newOrder);
             nTMS.AvailableCarriers(sCities, newOrder.Id);
+            MarketplaceOrdersListBox.IsEnabled = true;
 
         }
 
