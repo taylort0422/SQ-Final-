@@ -28,6 +28,7 @@ namespace TMSMainWindow
         public float TotalKms { get; set; } ///</The kms driven for the order
         public float Surcharge { get; set; } ///</Our markup on this order
         public float Markup { get; set; } ///</Markup % for this order
+        public int OrderSize { get; set; }///</size in pallets (0 means FTL)
         public int Confirmed { get; set; } ///</Boolean indicating whether the order is confirmed
         public DateTime date { get; set; } ///<Date/time of the order
 

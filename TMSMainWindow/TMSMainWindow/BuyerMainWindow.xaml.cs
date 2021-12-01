@@ -89,16 +89,24 @@ namespace TMSMainWindow
         
         private void MarketplaceOrdersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int findPallet = 0;
+            int palletSize = 0;
             int selectedContract;
+            string[] info;
             // Get the ID of the selected Order
             string choice = MarketplaceOrdersListBox.SelectedItem.ToString().Split(' ')[0];
+            info = MarketplaceOrdersListBox.SelectedItem.ToString().Split(' ');
+            foreach (var item in info)
+            {
+                
+            }
             selectedContract = Int32.Parse(MarketplaceOrdersListBox.SelectedItem.ToString().Split(' ')[0]);
             AddCityToOrderButton.IsEnabled = true;
 
             //Begin creating the new order
 
             newOrder = new Order(contracts[selectedContract].Name, contracts[selectedContract].Origin, contracts[selectedContract].Destination, contracts[selectedContract].JobType, contracts[selectedContract].VanType);
-
+            newOrder.OrderSize = palletSize;
             if (nTMS.CheckCustomer(newOrder.CustomerName) == 0)
             {
                 NewCustomerListBox.Items.Add(newOrder.CustomerName);

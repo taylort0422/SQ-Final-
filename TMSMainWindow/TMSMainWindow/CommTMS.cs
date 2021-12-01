@@ -60,7 +60,7 @@ namespace TMSMainWindow
                 newOrder.CustomerID = customerID;
                 retInt = 1;
                 conn.Open();
-                string sql = "INSERT INTO `order` (CustomerID, OrderType, VanType, DepartCity, DestCity, OrderConfirmed) VALUES(" + newOrder.CustomerID + "," + newOrder.JobType + "," + newOrder.vanType + ",\"" + newOrder.OriginCity + "\",\"" + newOrder.DestinationCity + "\"," + newOrder.Confirmed + "); SELECT LAST_INSERT_ID();";
+                string sql = "INSERT INTO `order` (CustomerID, OrderType, VanType, DepartCity, DestCity, OrderConfirmed, orderSize) VALUES(" + newOrder.CustomerID + "," + newOrder.JobType + "," + newOrder.vanType + ",\"" + newOrder.OriginCity + "\",\"" + newOrder.DestinationCity + "\"," + newOrder.Confirmed + "," + newOrder.OrderSize + "); SELECT LAST_INSERT_ID();";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
