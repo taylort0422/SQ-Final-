@@ -23,9 +23,10 @@ DROP TABLE IF EXISTS `invoice`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `invoice` (
-  `InvoiceID` int NOT NULL,
+  `InvoiceID` int NOT NULL AUTO_INCREMENT,
   `OrderID` int DEFAULT NULL,
   `Amount` float DEFAULT NULL,
+  `invoiceFile` blob,
   PRIMARY KEY (`InvoiceID`),
   KEY `OrderID_idx` (`OrderID`),
   CONSTRAINT `OrderID` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`)
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-22 16:53:05
+-- Dump completed on 2021-11-30 17:06:39
