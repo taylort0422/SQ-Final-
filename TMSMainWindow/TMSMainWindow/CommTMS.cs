@@ -859,7 +859,7 @@ namespace TMSMainWindow
         /// \param (int)carrierID
         /// 
         /// \return N/A
-        int RemoveTrucks(int CarrierID, int LTLLoad)
+        public int RemoveTrucks(int CarrierID, int LTLLoad)
         {
             
             if (LTLLoad == 0) //FTL Truck
@@ -923,6 +923,35 @@ namespace TMSMainWindow
                 }
             }
         }
+
+        ///GetLoad(int OrderID)
+        /// \brief Called to see if a truck has an LTL load
+        /// \details <b>Details</b>
+        /// 
+        /// Method searches a database for an order based on their ID, and
+        /// returns the orderSize of that order
+        /// 
+        /// \param (int)OrderID
+        /// 
+        /// \return N/A
+        public int GetLoad(int OrderID)
+        {
+            int load = 0;
+            string sql = "SELECT orderSize FROM `order` WHERE OrderID = " + OrderID + ";";
+            conn.Open();
+            //Open the database
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                load = rdr.GetInt32(0);
+            }
+            conn.Close();
+
+            return load;
+
+        }
+
 
         void AddTrucks(int CarrierID, string truckType, int LTLLoad)
         {

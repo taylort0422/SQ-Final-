@@ -117,6 +117,7 @@ namespace TMSMainWindow
         private void AddTripToOrderButton_Click(object sender, RoutedEventArgs e)
         {
             int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
+            int orderSize = nTMS.GetLoad(orderID);
             var checkBoxes = CarrierListBox.Items.OfType<CheckBox>();
             int checkedBoxes = 0;
             List<int> selectedElements = new List<int>();
@@ -144,6 +145,7 @@ namespace TMSMainWindow
                 string trip = (originID + "-" + destID);
 
                 var tripsExist = TripsAttachedToOrderListBox.Items;
+
                 if (tripsExist.Count > 0)
                 {
                     for (int c = 0; c < tripsExist.Count; c++)
@@ -155,7 +157,11 @@ namespace TMSMainWindow
                         {
 
                             // Here we have to check if there is enough trucks at the origin depot to perform the operation
+                            if(nTMS.RemoveTrucks(originID, orderSize) == -1)
+                            {
+                                //if this executes, the depot does not have enough trucks to fulfill the order
 
+                            }
                             // Add the trip to the database
                             nTMS.PlanTrip(trip, orderID);
                             // Move the trip to trip added list
@@ -180,6 +186,11 @@ namespace TMSMainWindow
                     nTMS.PlanTrip(trip, Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]));
                     // Move the trip to trip added list
                     TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
+                    if (nTMS.RemoveTrucks(originID, orderSize) == -1)
+                    {
+                        //if this executes, the depot does not have enough trucks to fulfill the order
+
+                    }
                 }
             }
             else
