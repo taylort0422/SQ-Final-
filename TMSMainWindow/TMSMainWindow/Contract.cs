@@ -51,7 +51,7 @@ namespace TMSMainWindow
         /// \return the elements of the contract as a string
         public override string ToString()
         {
-            return String.Format(ContractID + " " + Name + " " + JobType + " " + Quantity + " " + Origin + " " + Destination + " " + VanType);
+            return String.Format(ContractID + ", " + Name + ", " + JobType + ", " + Quantity + ", " + Origin + ", " + Destination + " " + VanType);
         }
     }
 }

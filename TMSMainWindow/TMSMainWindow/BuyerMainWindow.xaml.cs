@@ -89,18 +89,13 @@ namespace TMSMainWindow
         
         private void MarketplaceOrdersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int findPallet = 0;
             int palletSize = 0;
             int selectedContract;
-            string[] info;
+     
             // Get the ID of the selected Order
-            string choice = MarketplaceOrdersListBox.SelectedItem.ToString().Split(' ')[0];
-            info = MarketplaceOrdersListBox.SelectedItem.ToString().Split(' ');
-            foreach (var item in info)
-            {
-                
-            }
-            selectedContract = Int32.Parse(MarketplaceOrdersListBox.SelectedItem.ToString().Split(' ')[0]);
+            string choice = MarketplaceOrdersListBox.SelectedItem.ToString().Split(',')[0].Trim();
+            palletSize = Int32.Parse(MarketplaceOrdersListBox.SelectedItem.ToString().Split(',')[3].Trim());
+            selectedContract = Int32.Parse(MarketplaceOrdersListBox.SelectedItem.ToString().Split(',')[0].Trim());
             AddCityToOrderButton.IsEnabled = true;
 
             //Begin creating the new order
