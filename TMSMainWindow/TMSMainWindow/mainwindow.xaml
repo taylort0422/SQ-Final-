@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="RoleSelectWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="adminButton" Content="Admin" HorizontalAlignment="Left" Margin="202,213,0,0" VerticalAlignment="Top" Width="74" Click="adminButton_Click"/>
-        <Button Name="buyerButton" Content="Buyer" HorizontalAlignment="Left" Margin="395,233,0,0" VerticalAlignment="Top" Width="75" Click="buyerButton_Click"/>
-        <Button Name="plannerButton" Content="Planner" HorizontalAlignment="Left" Margin="629,233,0,0" VerticalAlignment="Top" Width="75" Click="plannerButton_Click"/>
+        <Button Name="adminButton" FontSize="35" Content="Admin" HorizontalAlignment="Left" Margin="78,160,0,0" VerticalAlignment="Top" Width="160" Click="adminButton_Click" Height="160"/>
+        <Button Name="buyerButton" FontSize="35" Content="Buyer" HorizontalAlignment="Left" Margin="310,160,0,0" VerticalAlignment="Top" Width="160" Click="buyerButton_Click" Height="160"/>
+        <Button Name="plannerButton" FontSize="35" Content="Planner" HorizontalAlignment="Left" Margin="542,160,0,0" VerticalAlignment="Top" Width="160" Click="plannerButton_Click" Height="160"/>
+        <Label Content="TMS Login Screen" FontSize="50" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
