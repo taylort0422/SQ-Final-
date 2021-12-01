@@ -8,7 +8,7 @@ namespace TMSMainWindow
 {
     public class Route
     {
-        public int RouteID { get; set; }
+        public string RouteID { get; set; }
         public string DepartLocation { get; set; }
         public string DestinationLocation { get; set; }
         public float Hours { get; set; }

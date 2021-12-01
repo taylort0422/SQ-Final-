@@ -116,6 +116,7 @@ namespace TMSMainWindow
         
         private void AddTripToOrderButton_Click(object sender, RoutedEventArgs e)
         {
+            int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
             var checkBoxes = CarrierListBox.Items.OfType<CheckBox>();
             int checkedBoxes = 0;
             List<int> selectedElements = new List<int>();
@@ -156,7 +157,7 @@ namespace TMSMainWindow
                             // Here we have to check if there is enough trucks at the origin depot to perform the operation
 
                             // Add the trip to the database
-                            nTMS.PlanTrip(trip, Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]));
+                            nTMS.PlanTrip(trip, orderID);
                             // Move the trip to trip added list
                             TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
 
@@ -214,7 +215,6 @@ namespace TMSMainWindow
             foreach (Order orders in openOrders)
             {
                 ActiveOrdersDataGrid.Items.Add(orders);
-
             }
 
         }

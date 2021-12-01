@@ -859,25 +859,68 @@ namespace TMSMainWindow
         /// \param (int)carrierID
         /// 
         /// \return N/A
-        void RemoveTrucks(int CarrierID, string truckType, int LTLLoad)
+        int RemoveTrucks(int CarrierID, int LTLLoad)
         {
-            if (LTLLoad == 0)
+            
+            if (LTLLoad == 0) //FTL Truck
             {
-                string sql = "UPDATE carrier SET " + truckType + " = " + truckType + " - 1;";
+                int Load = 0;
+                //make sure there are enough trucks left
+                string sql = "SELECT FTLA FROM carrier WHERE CarrierID = " + CarrierID + ";";
                 conn.Open();
                 //Open the database
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
+                while(rdr.Read())
+                {
+                    Load = rdr.GetInt32(0);
+                }
                 conn.Close();
+
+                if (Load == 0)//not enough trucks left
+                {
+                    return -1;
+                }
+                else //we have enough trucks
+                {
+                    sql = "UPDATE carrier SET FTLA = FTLA - 1 WHERE CarrierID = " + CarrierID + ";";
+                    conn.Open();
+                    //Open the database
+                    cmd = new MySqlCommand(sql, conn);
+                    rdr = cmd.ExecuteReader();
+                    conn.Close();
+                    return 0;
+                }
             }
             else
             {
-                string sql = "UPDATE carrier SET " + truckType + " = " + truckType + " - " + LTLLoad + ";";
+                int Load = 0;
+                //make sure there are enough trucks left
+                string sql = "SELECT LTLA FROM carrier WHERE CarrierID = " + CarrierID + ";";
                 conn.Open();
                 //Open the database
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Load = rdr.GetInt32(0);
+                }
                 conn.Close();
+
+                if (Load < LTLLoad)//not enough trucks left
+                {
+                    return -1;
+                }
+                else
+                {
+                    sql = "UPDATE carrier SET LTLA = LTLA - " + LTLLoad + "WHERE CarrierID = " + CarrierID + ";";
+                    conn.Open();
+                    //Open the database
+                    cmd = new MySqlCommand(sql, conn);
+                    rdr = cmd.ExecuteReader();
+                    conn.Close();
+                    return 0;
+                }
             }
         }
 
@@ -932,57 +975,47 @@ namespace TMSMainWindow
 
             public string GetRouteTable()
             {
-                List<string> cols = new List<string>();
-                // Get the values of all the column titles
-                conn.Open();
-                string sql = "SELECT `COLUMN_NAME`"
-                               + " FROM `INFORMATION_SCHEMA`.`COLUMNS`"
-                               + " WHERE `TABLE_SCHEMA`= 'tms'"
-                               + " AND `TABLE_NAME`= 'route';";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    cols.Add(rdr.GetString(0));
-                }
-                conn.Close();
+            int rdrCnt = 0;
+            conn.Open();
+            string sql = "SELECT COUNT(*) FROM route";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                rdrCnt = rdr.GetInt32(0);
+            }
+            conn.Close();
 
-                int rdrCnt = 0;
-                conn.Open();
-                sql = "SELECT COUNT(*) FROM route";
-                cmd = new MySqlCommand(sql, conn);
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    rdrCnt = rdr.GetInt32(0);
-                }
-                conn.Close();
 
-                string retString = "[";
-                conn.Open();
-                sql = "SELECT * FROM route";
-                cmd = new MySqlCommand(sql, conn);
-                rdr = cmd.ExecuteReader();
-                int j = 0;
-                while (rdr.Read())
-                {
-                    retString += "{";
-                    for (int i = 0; i < cols.Count; i++)
-                    {
-                        retString += "\"" + cols[i] + "\":\"" + rdr.GetValue(i) + "\"";
-                        if (i < cols.Count - 1)
-                        {
-                            retString += ",";
-                        }
-                    }
+            sql = "SELECT RouteID, DepartLocation, DestinationLocation, Hours, KMs, Direction FROM route";
+            cmd = new MySqlCommand(sql, conn);
+            
+            string retString = "[";
+            conn.Open();
+                
+            rdr = cmd.ExecuteReader();
+            int j = 0;
+            while (rdr.Read())
+            {
+                retString += "{";
+                   
+                    
+                retString += "\"RouteID\":\"" + rdr.GetValue(0) + "\",";
+                retString += "\"DepartLocation\":\"" + rdr.GetValue(1) + "\",";
+                retString += "\"DestinationLocation\":\"" + rdr.GetValue(2) + "\",";
+                retString += "\"Hours\":\"" + rdr.GetValue(3) + "\",";
+                retString += "\"KMs\":\"" + rdr.GetValue(4) + "\",";
+                retString += "\"Direction\":\"" + rdr.GetValue(5) + "\"";
+                
 
-                    retString += "}";
+
+                retString += "}";
                     if (j < rdrCnt - 1) retString += ",";
                     j++;
-                }
-                conn.Close();
-                retString += "]";
-                return retString;
+            }
+            conn.Close();
+            retString += "]";
+            return retString;
             }
         }
     }
