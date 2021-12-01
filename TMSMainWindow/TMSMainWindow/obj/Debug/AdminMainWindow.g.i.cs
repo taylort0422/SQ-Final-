@@ -265,9 +265,21 @@ namespace TMSMainWindow {
             return;
             case 16:
             this.ChangeBackupDirectoryButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 46 "..\..\AdminMainWindow.xaml"
+            this.ChangeBackupDirectoryButton.Click += new System.Windows.RoutedEventHandler(this.ChangeBackupDirectoryButton_Click);
+            
+            #line default
+            #line hidden
             return;
             case 17:
             this.BackupLocalDatabaseButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 47 "..\..\AdminMainWindow.xaml"
+            this.BackupLocalDatabaseButton.Click += new System.Windows.RoutedEventHandler(this.BackupLocalDatabaseButton_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

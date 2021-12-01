@@ -45,6 +45,21 @@ namespace TMSMainWindow
                 MessageBox.Show("Exception: " + e.Message);
             }
 
+            try
+            {
+                string dbPath = ConfigurationManager.AppSettings.Get("localDbDirectory");
+                if (dbPath == "NULL")
+                {
+                    dbPath = AppDomain.CurrentDomain.BaseDirectory + "//DBBackup";
+                    SetSetting("localDbDirectory", dbPath);
+                    Directory.CreateDirectory(dbPath);
+                }
+            }
+            catch(Exception db)
+            {
+                MessageBox.Show("Exception : " + db.Message);
+            }
+
         }
         private static void SetSetting(string key, string value)
         {

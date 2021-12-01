@@ -91,5 +91,35 @@ namespace TMSMainWindow
                 nTMS.UpDateRouteTable(r);
             }
         }
+
+        private void ChangeBackupDirectoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["localDbDirectory"].Value = BackupDirectoryTextBox.Text;
+        }
+
+        private void BackupLocalDatabaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            nTMS.BackupDB(ConfigurationManager.AppSettings.Get("localDbDirectory"));
+        }
+
+        private void ChangeContractConnectionInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["marketplaceIP"].Value = ContractIPAddressTextBox.Text;
+            config.AppSettings.Settings["marketplacePort"].Value = ContractPortNumberTextBox.Text;
+        }
+
+        private void ChangeLocalDatabaseConnectionInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["localIP"].Value = LocalDatabaseIPAddressTextBox.Text;
+            config.AppSettings.Settings["localPort"].Value = LocalDatabasePortNumberTextBox.Text;
+        }
+
+        private void ChangeLogfileDirectoryButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -952,6 +952,28 @@ namespace TMSMainWindow
 
         }
 
+        ///BackupDB(string filePath)
+        /// \brief backs up the database
+        /// \details <b>Details</b>
+        /// 
+        /// Method backs up the database to the specified directory
+        /// 
+        /// \param (string)filePath
+        /// 
+        /// \return N/A
+        public void BackupDB(string filePath)
+        {
+           
+            string sql = "BACKUP DATABASE tms TO DISK = " + filePath + ";";
+            conn.Open();
+            //Open the database
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            
+            conn.Close();
+
+        }
+
 
         void AddTrucks(int CarrierID, string truckType, int LTLLoad)
         {
