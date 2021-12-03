@@ -139,6 +139,7 @@ namespace TMSMainWindow
         {
             newOrder.CustomerID = nTMS.AddCustomer(newOrder.CustomerName);
             AcceptedCustomerListBox.Items.Clear();
+
             foreach (string customer in nTMS.DisplayCustomers())
             {
                 AcceptedCustomerListBox.Items.Add(customer);
@@ -160,7 +161,9 @@ namespace TMSMainWindow
             }
             newOrder.Id = nTMS.InsertOrder(newOrder);
             nTMS.AvailableCarriers(sCities, newOrder.Id);
-            MarketplaceOrdersListBox.IsEnabled = true;
+            this.Close();
+            BuyerMainWindow newWindow = new BuyerMainWindow();
+            newWindow.Show();
 
         }
 
@@ -173,8 +176,15 @@ namespace TMSMainWindow
         ///
         private void AddCityToOrderButton_Click(object sender, RoutedEventArgs e)
         {
+            
             sCities += SelectCityToAddDropdown.SelectedValue.ToString() + ",";
+            
             CreateNewOrderButton.IsEnabled = true;
+
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxResult result = MessageBox.Show(SelectCityToAddDropdown.SelectedValue.ToString() + " has been added to city list", "City Added", button);
+            SelectCityToAddDropdown.Items.Remove(SelectCityToAddDropdown.SelectedValue);
+
         }
 
         private void GenerateInvoiceButton_Click(object sender, RoutedEventArgs e)
