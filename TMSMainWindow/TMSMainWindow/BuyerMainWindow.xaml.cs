@@ -106,6 +106,7 @@ namespace TMSMainWindow
             {
                 NewCustomerListBox.Items.Add(newOrder.CustomerName);
                 NewCustomerListBox.IsEnabled = true;
+                AcceptSelectedCustomerButton.IsEnabled = true;
             }
             else
             {
@@ -153,6 +154,7 @@ namespace TMSMainWindow
             }
             NewCustomerListBox.IsEnabled=false;
             CreateNewOrderButton.IsEnabled = true;
+            AcceptSelectedCustomerButton.IsEnabled = false;
         }
 
         /// \brief This is the function that is triggered when the "create new order" button is clicked. 
@@ -170,6 +172,10 @@ namespace TMSMainWindow
             }
             newOrder.Id = nTMS.InsertOrder(newOrder);
             nTMS.AvailableCarriers(sCities, newOrder.Id);
+
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxResult result = MessageBox.Show("Order Number: " + newOrder.Id + " was added!", "Order Added", button);
+
             this.Close();
             BuyerMainWindow newWindow = new BuyerMainWindow();
             newWindow.Show();

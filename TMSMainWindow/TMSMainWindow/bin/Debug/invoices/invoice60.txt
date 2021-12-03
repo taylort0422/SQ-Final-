@@ -1,0 +1,20 @@
+//////////////////////////////////////////////////////////////////////////
+//									//
+//			 TMS INC. INVOICE				//
+//									//
+//////////////////////////////////////////////////////////////////////////
+
+
+Customer: Future Buy				2021-12-03 1:39:39 PM
+
+From: Hamilton	 TO 	Windsor
+
+
+Line Items:
+1) 	Hamilton to Windsor	 COST: $2916.55 
+
+
+						Total Charge: 2916.55
+
+
+© TMS via Team Plakata

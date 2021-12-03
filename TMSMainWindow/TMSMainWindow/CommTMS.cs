@@ -54,14 +54,16 @@ namespace TMSMainWindow
         {
             int retInt = 0;
             int customerID;
+            MySqlCommand cmd;
+            string sql;
             //check if user exists first
             if ((customerID = CheckCustomer(newOrder.CustomerName)) != 0)
             {
                 newOrder.CustomerID = customerID;
                 retInt = 1;
                 conn.Open();
-                string sql = "INSERT INTO `order` (CustomerID, OrderType, VanType, DepartCity, DestCity, OrderConfirmed, orderSize, TotalHours) VALUES(" + newOrder.CustomerID + "," + newOrder.JobType + "," + newOrder.vanType + ",\"" + newOrder.OriginCity + "\",\"" + newOrder.DestinationCity + "\"," + newOrder.Confirmed + "," + newOrder.OrderSize + ", 0); SELECT LAST_INSERT_ID();";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                sql = "INSERT INTO `order` (CustomerID, OrderType, VanType, DepartCity, DestCity, OrderConfirmed, orderSize, TotalHours) VALUES(" + newOrder.CustomerID + "," + newOrder.JobType + "," + newOrder.vanType + ",\"" + newOrder.OriginCity + "\",\"" + newOrder.DestinationCity + "\"," + newOrder.Confirmed + "," + newOrder.OrderSize + ", 0); SELECT LAST_INSERT_ID();";
+                cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
@@ -74,6 +76,11 @@ namespace TMSMainWindow
                 retInt = 0;
             }
 
+            conn.Open();
+            sql = "UPDATE `order` SET TotalHours = (TotalHours + 2) WHERE orderID = " + retInt;
+            cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
             return retInt;
         }
@@ -309,17 +316,13 @@ namespace TMSMainWindow
         /// \param (string) depart location, (string) destination location, (string) direction
         /// 
         /// \return a string indicating the KM's and horus of a route
-
-
         public string GetRouteKMSHRS(string depart, string destination, string direction)
         {
             int firstRouteID = 0;
             int lastRouteID = 0;
 
-
             float totalKMs = 0;
             float totalHours = 0;
-
 
             conn.Open();
             string sql = "SELECT routeID FROM route WHERE DepartLocation = \"" + depart + "\" AND Direction = \"" + direction + "\"";
@@ -337,11 +340,9 @@ namespace TMSMainWindow
             rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-
                 lastRouteID = rdr.GetInt32(0);
             }
             conn.Close();
-
 
             // Iterate through all routes between the origin city of this trip and the destination city and calculate total KMS and hours
             for (int i = firstRouteID; i <= lastRouteID; i++)
@@ -353,7 +354,6 @@ namespace TMSMainWindow
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-
                     totalKMs += rdr.GetFloat(0);
                     totalHours += rdr.GetFloat(1);
                 }
@@ -396,7 +396,7 @@ namespace TMSMainWindow
                 //Heading east
                 kmhrs = GetRouteKMSHRS(DepLocation, DestLocation, "east").Split('|');
                 kms = float.Parse(kmhrs[0]);
-                hours = float.Parse(kmhrs[1]);
+                hours = float.Parse(kmhrs[1]) + 2;
 
             }
             //else if (Int32.Parse(trip1[0]) > Int32.Parse(trip1[1]))
@@ -417,7 +417,7 @@ namespace TMSMainWindow
             newTrip.DestinationCity = DestLocation;
             newTrip.Kilometers = kms;
             newTrip.Hours = hours;
-            //newTrip.TripCost = newTrip.TripTotalCost(newTrip);
+
             InsertTrip(newTrip);
         }
 
@@ -550,6 +550,7 @@ namespace TMSMainWindow
                 days = days * 24;
                 currHours = days + remainingHours;
             }
+
 
             conn.Open();
             sql = "UPDATE `order` SET TotalHours = " + currHours + ", orderDate = \""+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\" WHERE OrderID = " + newTrip.OrderId;
@@ -768,17 +769,20 @@ namespace TMSMainWindow
         public void GenerateInvoice(int orderID)
         {
             List<int> tripIDs = new List<int>();
-            int customerID, orderType, vanType, orderConfirmed;
+            int customerID, vanType, orderConfirmed;
             string customerName = "";
             string departCity = "";
             string destCity = "";
             int surCharge = 0;
             float totalCharge = 0;
             int totalHours = 0;
+            int orderType = 0;
+            int orderSize = 0;
+            float tempCost=0;
             DateTime orderDate = new DateTime { };
 
             conn.Open();
-            string sql = "SELECT `order`.CustomerID, OrderType, DepartCity, DestCity, TotalHours, Surcharge, VanType, OrderConfirmed, OrderDate, customer.Name, trip.tripID"
+            string sql = "SELECT `order`.CustomerID, OrderType, DepartCity, DestCity, TotalHours, Surcharge, VanType, OrderConfirmed, OrderDate, customer.Name, trip.tripID, OrderType, orderSize"
                         + " FROM `order`"
                         + " INNER JOIN customer ON `order`.CustomerID = customer.CustomerID"
                         + " INNER JOIN trip ON `order`.OrderID = trip.OrderID"
@@ -798,6 +802,8 @@ namespace TMSMainWindow
                 orderDate = rdr.GetDateTime(8);
                 customerName = rdr.GetString(9);
                 tripIDs.Add(rdr.GetInt32(10));
+                orderType = rdr.GetInt32(11);
+                orderSize = rdr.GetInt32(12);
             }
             conn.Close();
 
@@ -819,13 +825,28 @@ namespace TMSMainWindow
             int iTrip = 1;
             foreach (Trip trip in trips)
             {
-                totalCharge += trip.TripTotalCost(trip);
-                invoiceOut += iTrip + ") \t" + trip.OriginCity + " to " + trip.DestinationCity + "\t COST: $" + trip.TripTotalCost(trip) + " \n";
+                // If FTL markup 8%
+                if(orderType == 0)
+                {
+                    totalCharge += (trip.TripTotalCost(trip) * (float)1.08);
+                }
+                else
+                {
+                    // If LTL markup 5%
+                    tempCost = trip.TripTotalCost(trip);
+                    // charge per pallet
+                    tempCost = tempCost * orderSize;
+                    //add our markup
+                    tempCost = tempCost * (float)1.05;
+                    totalCharge += tempCost;
+                }
+                
+                invoiceOut += iTrip + ") \t" + trip.OriginCity + " to " + trip.DestinationCity + "\t COST: $" + tempCost + " \n";
             }
 
             //****** Have to determine if it is an LTL or FTL and then add markup 5% or 8% for totals
 
-            invoiceOut += "\n\n\t\t\t\t\t\tTotal Charge: " + totalCharge + "\n\n\n";
+            invoiceOut += "\n\n\t\t\t\t\t\tTotal Charge: $" + totalCharge + "\n\n\n";
             invoiceOut += "© TMS via Team Plakata\n";
 
             string invoicePath = AppDomain.CurrentDomain.BaseDirectory + "\\invoices\\";

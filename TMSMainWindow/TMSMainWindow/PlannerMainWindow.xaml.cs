@@ -63,7 +63,7 @@ namespace TMSMainWindow
                 ActiveOrdersDataGrid.Items.Add(orders);
 
             }
-            AddTripToOrderButton.IsEnabled = false;
+            //AddTripToOrderButton.IsEnabled = false;
 
         }
 
@@ -117,98 +117,104 @@ namespace TMSMainWindow
         
         private void AddTripToOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
-            int orderSize = nTMS.GetLoad(orderID);
-            var checkBoxes = CarrierListBox.Items.OfType<CheckBox>();
-            int checkedBoxes = 0;
-            List<int> selectedElements = new List<int>();
-            List<string> cList = new List<string>();
-            for(int i =0; i<checkBoxes.Count(); i++)
+            if(ActiveOrdersDataGrid.SelectedItems.Count > 0)
             {
-                if(checkBoxes.ElementAt(i).IsChecked == true)
+                int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
+                int orderSize = nTMS.GetLoad(orderID);
+                var checkBoxes = CarrierListBox.Items.OfType<CheckBox>();
+                int checkedBoxes = 0;
+                List<int> selectedElements = new List<int>();
+                List<string> cList = new List<string>();
+                for (int i = 0; i < checkBoxes.Count(); i++)
                 {
-                    cList.Add(checkBoxes.ElementAt(i).Content.ToString());
-                    checkedBoxes++;
-                    checkBoxes.ElementAt(i).IsChecked = false;
-                    checkBoxes.ElementAt(i).IsEnabled = false;
-                    selectedElements.Add(i);
-                    //TripsAttachedToOrderListBox.Items.Add(checkBoxes.ElementAt(i).Content.ToString());
-                }
-            }
-
-            if(checkedBoxes == 2)
-            {
-                // Get the IDs of the origin and destination
-                int originID = nTMS.GetCarrierID(cList.ElementAt(0).Split('-')[0].Trim(), cList.ElementAt(0).Split('-')[1].Trim());
-
-                int destID = nTMS.GetCarrierID(cList.ElementAt(1).Split('-')[0].Trim(), cList.ElementAt(1).Split('-')[1].Trim());
-
-                string trip = (originID + "-" + destID);
-
-                var tripsExist = TripsAttachedToOrderListBox.Items;
-                bool tripExists = false;
-                if (tripsExist.Count > 0)
-                {
-                    for (int c = 0; c < tripsExist.Count; c++)
+                    if (checkBoxes.ElementAt(i).IsChecked == true)
                     {
-                        string tmp = tripsExist[c].ToString();
-                        string tmp2 = (cList.ElementAt(0).Trim() + " To " + cList.ElementAt(1).Trim());
+                        cList.Add(checkBoxes.ElementAt(i).Content.ToString());
+                        checkedBoxes++;
+                        checkBoxes.ElementAt(i).IsChecked = false;
+                        checkBoxes.ElementAt(i).IsEnabled = false;
+                        selectedElements.Add(i);
+                    }
+                }
 
-                        if (tmp != tmp2)
+                if (checkedBoxes == 2)
+                {
+                    // Get the IDs of the origin and destination
+                    int originID = nTMS.GetCarrierID(cList.ElementAt(0).Split('-')[0].Trim(), cList.ElementAt(0).Split('-')[1].Trim());
+
+                    int destID = nTMS.GetCarrierID(cList.ElementAt(1).Split('-')[0].Trim(), cList.ElementAt(1).Split('-')[1].Trim());
+
+                    string trip = (originID + "-" + destID);
+
+                    var tripsExist = TripsAttachedToOrderListBox.Items;
+                    if (tripsExist.Count > 0)
+                    {
+                        for (int c = 0; c < tripsExist.Count; c++)
                         {
+                            string tmp = tripsExist[c].ToString();
+                            string tmp2 = (cList.ElementAt(0).Trim() + " To " + cList.ElementAt(1).Trim());
 
-                            // Here we have to check if there is enough trucks at the origin depot to perform the operation
-                            if(nTMS.RemoveTrucks(originID, orderSize) == -1)
+                            if (tmp != tmp2)
                             {
-                                //if this executes, the depot does not have enough trucks to fulfill the order
+
+                                // Here we have to check if there is enough trucks at the origin depot to perform the operation
+                                if (nTMS.RemoveTrucks(originID, orderSize) == -1)
+                                {
+                                    //if this executes, the depot does not have enough trucks to fulfill the order
+
+                                }
+                                // Add the trip to the database
+                                nTMS.PlanTrip(trip, orderID);
+                                // Move the trip to trip added list
+                                TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
+                                break;
 
                             }
-                            // Add the trip to the database
-                            nTMS.PlanTrip(trip, orderID);
-                            // Move the trip to trip added list
-                            TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
-                            break;
-
+                            else
+                            {
+                                MessageBoxButton button = MessageBoxButton.OK;
+                                MessageBoxResult result = MessageBox.Show("This Trip already exists!", "Duplicates", button);
+                                for (int i = 0; i < checkBoxes.Count(); i++)
+                                {
+                                    checkBoxes.ElementAt(i).IsChecked = false;
+                                    checkBoxes.ElementAt(i).IsEnabled = true;
+                                }
+                                break;
+                            }
                         }
-                        else
+                    }
+                    else if (tripsExist.Count == 0)
+                    {
+                        // Add the trip to the database
+                        nTMS.PlanTrip(trip, Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]));
+                        // Move the trip to trip added list
+                        TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
+                        if (nTMS.RemoveTrucks(originID, orderSize) == -1)
                         {
-                            MessageBoxButton button = MessageBoxButton.OK;
-                            MessageBoxResult result = MessageBox.Show("This Trip already exists!", "Duplicates", button);
-                            for (int i = 0; i < checkBoxes.Count(); i++)
-                            {
-                                checkBoxes.ElementAt(i).IsChecked = false;
-                                checkBoxes.ElementAt(i).IsEnabled = true;
-                            }
-                            break;
+                            //if this executes, the depot does not have enough trucks to fulfill the order
+
                         }
                     }
                 }
-                else if (tripsExist.Count == 0)
+                else
                 {
-                    // Add the trip to the database
-                    nTMS.PlanTrip(trip, Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]));
-                    // Move the trip to trip added list
-                    TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
-                    if (nTMS.RemoveTrucks(originID, orderSize) == -1)
+                    selectedElements.Clear();
+                    MessageBoxButton button = MessageBoxButton.OK;
+                    MessageBoxResult result = MessageBox.Show("You must select an Origin and a Destination", "Choices!", button);
+                    for (int i = 0; i < checkBoxes.Count(); i++)
                     {
-                        //if this executes, the depot does not have enough trucks to fulfill the order
-
+                        checkBoxes.ElementAt(i).IsChecked = false;
+                        checkBoxes.ElementAt(i).IsEnabled = true;
                     }
                 }
+
+                AddTripToOrderButton.IsEnabled = false;
             }
             else
             {
-                selectedElements.Clear();
                 MessageBoxButton button = MessageBoxButton.OK;
-                MessageBoxResult result = MessageBox.Show("You must select an Origin and a Destination", "Choices!", button);
-                for (int i = 0; i < checkBoxes.Count(); i++)
-                {
-                    checkBoxes.ElementAt(i).IsChecked = false;
-                    checkBoxes.ElementAt(i).IsEnabled = true;
-                }
+                MessageBoxResult result = MessageBox.Show("Select Trips", "No trip", button);
             }
-            
-            AddTripToOrderButton.IsEnabled = false;
 
         }
 
