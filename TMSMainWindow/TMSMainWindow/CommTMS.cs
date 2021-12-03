@@ -1091,7 +1091,6 @@ namespace TMSMainWindow
             while (rdr.Read())
             {
                 retString += "{";
-                   
                     
                 retString += "\"RouteID\":\"" + rdr.GetValue(0) + "\",";
                 retString += "\"DepartLocation\":\"" + rdr.GetValue(1) + "\",";
@@ -1100,8 +1099,6 @@ namespace TMSMainWindow
                 retString += "\"KMs\":\"" + rdr.GetValue(4) + "\",";
                 retString += "\"Direction\":\"" + rdr.GetValue(5) + "\"";
                 
-
-
                 retString += "}";
                     if (j < rdrCnt - 1) retString += ",";
                     j++;

@@ -1,0 +1,20 @@
+//////////////////////////////////////////////////////////////////////////
+//									//
+//			 TMS INC. INVOICE				//
+//									//
+//////////////////////////////////////////////////////////////////////////
+
+
+Customer: Skynet				2021-12-03 12:59:34 PM
+
+From: Windsor	 TO 	Hamilton
+
+
+Line Items:
+1) 	Windsor to Hamilton	 COST: $115.1478 
+
+
+						Total Charge: 115.1478
+
+
+© TMS via Team Plakata

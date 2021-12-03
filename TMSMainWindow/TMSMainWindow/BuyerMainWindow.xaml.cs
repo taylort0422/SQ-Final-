@@ -105,6 +105,11 @@ namespace TMSMainWindow
             if (nTMS.CheckCustomer(newOrder.CustomerName) == 0)
             {
                 NewCustomerListBox.Items.Add(newOrder.CustomerName);
+                NewCustomerListBox.IsEnabled = true;
+            }
+            else
+            {
+                CreateNewOrderButton.IsEnabled=true;
             }
 
             MarketplaceOrdersListBox.IsEnabled = false;
@@ -113,17 +118,19 @@ namespace TMSMainWindow
             {
                 SelectCityToAddDropdown.IsEnabled = false;
                 AddCityToOrderButton.IsEnabled = false;
-                CreateNewOrderButton.IsEnabled = true;
+                //CreateNewOrderButton.IsEnabled = true;
             }
             else
             {
                 //populate cities to add
-                
                 foreach (string city in nTMS.CitiesBetween(newOrder.OriginCity, newOrder.DestinationCity, "East"))
                 {
                     SelectCityToAddDropdown.Items.Add(city);
+
                 }
-                
+
+                SelectCityToAddDropdown.SelectedIndex = 0;
+
             }
 
         }
@@ -144,6 +151,8 @@ namespace TMSMainWindow
             {
                 AcceptedCustomerListBox.Items.Add(customer);
             }
+            NewCustomerListBox.IsEnabled=false;
+            CreateNewOrderButton.IsEnabled = true;
         }
 
         /// \brief This is the function that is triggered when the "create new order" button is clicked. 
@@ -184,6 +193,16 @@ namespace TMSMainWindow
             MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxResult result = MessageBox.Show(SelectCityToAddDropdown.SelectedValue.ToString() + " has been added to city list", "City Added", button);
             SelectCityToAddDropdown.Items.Remove(SelectCityToAddDropdown.SelectedValue);
+            
+            if(SelectCityToAddDropdown.Items.Count > 0)
+            {
+                SelectCityToAddDropdown.SelectedIndex = 0;
+            }
+            else
+            {
+                SelectCityToAddDropdown.IsEnabled= false;
+                AddCityToOrderButton.IsEnabled= false;
+            }
 
         }
 
