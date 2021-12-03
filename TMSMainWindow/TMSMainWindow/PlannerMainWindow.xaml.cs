@@ -30,6 +30,7 @@ namespace TMSMainWindow
                         Int32.Parse(ConfigurationManager.AppSettings.Get("localPort")),
                         ConfigurationManager.AppSettings.Get("localDb"));
 
+
         /// A private variable.
         ///
         /// This variable stores the communication information for the external marketplace database.
@@ -145,7 +146,7 @@ namespace TMSMainWindow
                 string trip = (originID + "-" + destID);
 
                 var tripsExist = TripsAttachedToOrderListBox.Items;
-
+                bool tripExists = false;
                 if (tripsExist.Count > 0)
                 {
                     for (int c = 0; c < tripsExist.Count; c++)
@@ -166,6 +167,7 @@ namespace TMSMainWindow
                             nTMS.PlanTrip(trip, orderID);
                             // Move the trip to trip added list
                             TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
+                            break;
 
                         }
                         else
@@ -177,6 +179,7 @@ namespace TMSMainWindow
                                 checkBoxes.ElementAt(i).IsChecked = false;
                                 checkBoxes.ElementAt(i).IsEnabled = true;
                             }
+                            break;
                         }
                     }
                 }
@@ -257,9 +260,26 @@ namespace TMSMainWindow
         ///  \param sender the wpf object that called the function.
         ///  \param e the arguments of the event that was triggered.
         ///  \return void
-        
-        private void ForwardTime(object sender, SelectionChangedEventArgs e)
+
+        private void PassTimeButton_Click(object sender, RoutedEventArgs e)
         {
+            int days = Int32.Parse(NumberOfDaysToPassIntegerUpDown.Value.ToString());
+            int hrsPassed = days * 24;
+            int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
+            
+            DateTime currTime = DateTime.Now;
+
+            DateTime newTime = currTime.AddHours(hrsPassed);
+
+            bool orderCompleted = false;
+
+            orderCompleted = nTMS.forwardTrip(orderID, newTime);
+
+            if(orderCompleted)
+            {
+                MarkOrderAsCompleteButton.IsEnabled = true;
+            }
+            //check if the time forwarding will put us past the final time needed to complete the trip.
 
         }
     }

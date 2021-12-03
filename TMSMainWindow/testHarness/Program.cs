@@ -21,7 +21,7 @@ namespace testHarness
 
             //List<string> results = JsonConvert.DeserializeObject<List<string>>(nTMS.GetRouteTable());
 
-            //Console.Write(nTMS.GenerateInvoice(44));
+            Console.Write(nTMS.forwardTrip(43, DateTime.Now.AddHours(24)));
             Console.ReadKey();
         }
     }

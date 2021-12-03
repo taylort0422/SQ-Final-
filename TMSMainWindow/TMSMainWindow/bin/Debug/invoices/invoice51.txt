@@ -1,0 +1,20 @@
+//////////////////////////////////////////////////////////////////////////
+//									//
+//			 TMS INC. INVOICE				//
+//									//
+//////////////////////////////////////////////////////////////////////////
+
+
+Customer: Farm Supply Co				2021-12-03 12:08:14 PM
+
+From: London	 TO 	Toronto
+
+
+Line Items:
+1) 	London to Toronto	 COST: $66.963 
+
+
+						Total Charge: 66.963
+
+
+© TMS via Team Plakata

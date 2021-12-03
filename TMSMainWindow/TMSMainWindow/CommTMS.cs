@@ -60,7 +60,7 @@ namespace TMSMainWindow
                 newOrder.CustomerID = customerID;
                 retInt = 1;
                 conn.Open();
-                string sql = "INSERT INTO `order` (CustomerID, OrderType, VanType, DepartCity, DestCity, OrderConfirmed, orderSize) VALUES(" + newOrder.CustomerID + "," + newOrder.JobType + "," + newOrder.vanType + ",\"" + newOrder.OriginCity + "\",\"" + newOrder.DestinationCity + "\"," + newOrder.Confirmed + "," + newOrder.OrderSize + "); SELECT LAST_INSERT_ID();";
+                string sql = "INSERT INTO `order` (CustomerID, OrderType, VanType, DepartCity, DestCity, OrderConfirmed, orderSize, TotalHours) VALUES(" + newOrder.CustomerID + "," + newOrder.JobType + "," + newOrder.vanType + ",\"" + newOrder.OriginCity + "\",\"" + newOrder.DestinationCity + "\"," + newOrder.Confirmed + "," + newOrder.OrderSize + ", 0); SELECT LAST_INSERT_ID();";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -511,7 +511,7 @@ namespace TMSMainWindow
         public int InsertTrip(Trip newTrip)
         {
             int lastID = 0;
-
+            float currHours = 0;
             conn.Open();
             string sql = "INSERT INTO `trip` (OrderID, OriginCity, DestinationCity, Kilometers, Hours, OriginDepotID, DestinationDepotID, TripCost) VALUES(" + newTrip.OrderId + ",\"" + newTrip.OriginCity + "\",\"" + newTrip.DestinationCity + "\"," + newTrip.Kilometers + "," + newTrip.Hours + "," + newTrip.OriginDepotID + "," + newTrip.DestinationDepotID + "," + newTrip.TripCost + "); SELECT LAST_INSERT_ID();";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -521,6 +521,43 @@ namespace TMSMainWindow
                 lastID = rdr.GetInt32(0);
             }
             conn.Close();
+
+            
+            conn.Open();
+            sql = "SELECT TotalHours FROM `order` WHERE OrderID = " + newTrip.OrderId;
+            cmd = new MySqlCommand(sql, conn);
+            rdr = cmd.ExecuteReader();
+            while(rdr.Read())
+            {
+                if(rdr.GetValue(0) != null)
+                {
+                    currHours = rdr.GetFloat(0);
+                }
+                else
+                {
+                    currHours = 0;
+                }
+                
+            }
+            conn.Close();
+
+            currHours += newTrip.Hours;
+
+            if (currHours > 8)
+            {
+                int days = (int)currHours / 8;
+                float remainingHours = currHours - (days * 8);
+                days = days * 24;
+                currHours = days + remainingHours;
+            }
+
+            conn.Open();
+            sql = "UPDATE `order` SET TotalHours = " + currHours + ", orderDate = \""+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\" WHERE OrderID = " + newTrip.OrderId;
+            cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            rdr = cmd.ExecuteReader();
+            conn.Close();
+
             return lastID;
         }
 
@@ -604,6 +641,11 @@ namespace TMSMainWindow
             //Need to determine direction
             //if (firstRouteID < 8) direction = "East";
             // else direction = "West";
+
+            if (destination == "Windsor")
+            {
+                direction = "West";
+            }
 
             // Get the route ID of the Origin City
             conn.Open();
@@ -913,7 +955,7 @@ namespace TMSMainWindow
                 }
                 else
                 {
-                    sql = "UPDATE carrier SET LTLA = LTLA - " + LTLLoad + "WHERE CarrierID = " + CarrierID + ";";
+                    sql = "UPDATE carrier SET LTLA = LTLA - " + LTLLoad + " WHERE CarrierID = " + CarrierID + ";";
                     conn.Open();
                     //Open the database
                     cmd = new MySqlCommand(sql, conn);
@@ -998,34 +1040,34 @@ namespace TMSMainWindow
         }
 
             /// 
-            public void UpDateCarrier(Carrier c)
-            {
-                conn.Open();
-                string sql = "UPDATE `carrier` SET Name = \"" + c.CarrierName + "\", DepotCity = \"" + c.DepotCity + "\", FTLA = " + c.FTLA
-                        + ", LTLA = " + c.LTLA + ", FTLRate = " + c.FTLRate + ", LTLRate = " + c.LTLRate + ", ReefCharge = " + c.ReefCharge
-                        + " WHERE CarrierID = " + c.CarrierID;
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                conn.Close();
-            }
+        public void UpDateCarrier(Carrier c)
+        {
+            conn.Open();
+            string sql = "UPDATE `carrier` SET Name = \"" + c.CarrierName + "\", DepotCity = \"" + c.DepotCity + "\", FTLA = " + c.FTLA
+                    + ", LTLA = " + c.LTLA + ", FTLRate = " + c.FTLRate + ", LTLRate = " + c.LTLRate + ", ReefCharge = " + c.ReefCharge
+                    + " WHERE CarrierID = " + c.CarrierID;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            conn.Close();
+        }
 
 
-            /* Everything below here had to be added */
+        /* Everything below here had to be added */
 
-            public void UpDateRouteTable(Route r)
-            {
-                conn.Open();
-                string sql = "UPDATE `route` SET routeID = " + r.RouteID + ", DepartLocation = \"" + r.DepartLocation + "\", DestinationLocation = \"" + r.DestinationLocation
-                        + "\", Hours = " + r.Hours + ", KMs = " + r.KMs + ", Direction = \"" + r.Direction + "\""
-                        + " WHERE RouteID = " + r.RouteID;
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                conn.Close();
-            }
+        public void UpDateRouteTable(Route r)
+        {
+            conn.Open();
+            string sql = "UPDATE `route` SET routeID = " + r.RouteID + ", DepartLocation = \"" + r.DepartLocation + "\", DestinationLocation = \"" + r.DestinationLocation
+                    + "\", Hours = " + r.Hours + ", KMs = " + r.KMs + ", Direction = \"" + r.Direction + "\""
+                    + " WHERE RouteID = " + r.RouteID;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            conn.Close();
+        }
 
 
-            public string GetRouteTable()
-            {
+        public string GetRouteTable()
+        {
             int rdrCnt = 0;
             conn.Open();
             string sql = "SELECT COUNT(*) FROM route";
@@ -1067,6 +1109,34 @@ namespace TMSMainWindow
             conn.Close();
             retString += "]";
             return retString;
-            }
         }
+
+        public bool forwardTrip(int orderID, DateTime advTime)
+        {
+            float totalHours = 0;
+            DateTime orderDate;
+            int days = 0;
+
+            conn.Open();
+            string sql = "SELECT TotalHours, OrderDate FROM `order` WHERE orderID = " + orderID;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while(rdr.Read())
+            {
+                totalHours = rdr.GetFloat(0);
+                orderDate = rdr.GetDateTime(1);
+            }
+            conn.Close();
+
+            float minutes = (totalHours - (int)totalHours) * 60;
+
+            DateTime finDate = DateTime.Now.AddHours((int)totalHours);
+            finDate = finDate.AddMinutes(minutes);
+
+            if(advTime > finDate) return true;
+
+            return false;
+        }
+
     }
+}

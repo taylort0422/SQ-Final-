@@ -26,7 +26,7 @@
             <Button Name="RemoveTripFromOrderButton" HorizontalAlignment="Left" Margin="265,523,0,0" VerticalAlignment="Top" Width="192" Height="57">
                 <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center" Text="Remove Trip from Order"/>
             </Button>
-            <Button Name="MarkOrderAsCompleteButton" HorizontalAlignment="Left" Margin="265,596,0,0" VerticalAlignment="Top" Width="192" Height="56" Click="MarkOrderAsCompleteButton_Click">
+            <Button Name="MarkOrderAsCompleteButton" HorizontalAlignment="Left" Margin="265,596,0,0" VerticalAlignment="Top" Width="192" Height="56" IsEnabled="False" Click="MarkOrderAsCompleteButton_Click">
                 <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Mark Order as Complete"/></TextBlock>
             </Button>
         </Grid>
@@ -46,8 +46,8 @@
             <Label FontSize="18"  Content="Generate invoice for..." HorizontalAlignment="Left" Margin="323,610,0,0" VerticalAlignment="Top"/>
             <Button FontSize="16" Name="GenerateInvoiceAllTimeButton" Content="All time" HorizontalAlignment="Left" Margin="297,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
             <Button FontSize="16" Name="GenerateInvoicePast2WeeksButton" Content="Past 2 weeks" HorizontalAlignment="Left" Margin="421,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
-            <Button FontSize="16" Name="PassTimeButton" Content="Go!" HorizontalAlignment="Left" Margin="69,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
-            <xctk:IntegerUpDown Text="2" FontSize="16" Name="NumberOfDaysToPassIntegerUpDown" Margin="103,615,398,50" />
+            <Button FontSize="16" Name="PassTimeButton" Content="Go!" HorizontalAlignment="Left" Margin="69,644,0,0" VerticalAlignment="Top" Width="114" Height="35" Click="PassTimeButton_Click"/>
+            <xctk:IntegerUpDown Text="2" FontSize="16" Name="NumberOfDaysToPassIntegerUpDown" Margin="103,615,398,50" Minimum="0" AllowTextInput="False"/>
         </Grid>
     </Grid>
 </Window>
