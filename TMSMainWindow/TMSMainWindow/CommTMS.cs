@@ -964,7 +964,7 @@ namespace TMSMainWindow
         public void BackupDB(string filePath)
         {
            
-            string sql = "BACKUP DATABASE tms TO DISK = " + filePath + ";";
+            string sql = "BACKUP DATABASE tms TO DISK = " + "'" + filePath + "\\';";
             conn.Open();
             //Open the database
             MySqlCommand cmd = new MySqlCommand(sql, conn);
