@@ -260,11 +260,6 @@ namespace TMSMainWindow
         ///  \param sender the wpf object that called the function.
         ///  \param e the arguments of the event that was triggered.
         ///  \return void
-        
-        private void ForwardTime(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void PassTimeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -272,6 +267,18 @@ namespace TMSMainWindow
             int hrsPassed = days * 24;
             int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
             
+            DateTime currTime = DateTime.Now;
+
+            DateTime newTime = currTime.AddHours(hrsPassed);
+
+            bool orderCompleted = false;
+
+            orderCompleted = nTMS.forwardTrip(orderID, newTime);
+
+            if(orderCompleted)
+            {
+                MarkOrderAsCompleteButton.IsEnabled = true;
+            }
             //check if the time forwarding will put us past the final time needed to complete the trip.
 
         }

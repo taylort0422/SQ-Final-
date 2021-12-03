@@ -47,7 +47,7 @@
             <Button FontSize="16" Name="GenerateInvoiceAllTimeButton" Content="All time" HorizontalAlignment="Left" Margin="297,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
             <Button FontSize="16" Name="GenerateInvoicePast2WeeksButton" Content="Past 2 weeks" HorizontalAlignment="Left" Margin="421,644,0,0" VerticalAlignment="Top" Width="114" Height="35"/>
             <Button FontSize="16" Name="PassTimeButton" Content="Go!" HorizontalAlignment="Left" Margin="69,644,0,0" VerticalAlignment="Top" Width="114" Height="35" Click="PassTimeButton_Click"/>
-            <xctk:IntegerUpDown Text="2" FontSize="16" Name="NumberOfDaysToPassIntegerUpDown" Margin="103,615,398,50" />
+            <xctk:IntegerUpDown Text="2" FontSize="16" Name="NumberOfDaysToPassIntegerUpDown" Margin="103,615,398,50" Minimum="0" AllowTextInput="False"/>
         </Grid>
     </Grid>
 </Window>

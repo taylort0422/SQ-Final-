@@ -1089,7 +1089,7 @@ namespace TMSMainWindow
             return retString;
         }
 
-        public bool forwardTrip(int orderID, float time)
+        public bool forwardTrip(int orderID, DateTime advTime)
         {
             float totalHours = 0;
             DateTime orderDate;
@@ -1106,7 +1106,13 @@ namespace TMSMainWindow
             }
             conn.Close();
 
-         
+            float minutes = (totalHours - (int)totalHours) * 60;
+
+            DateTime finDate = DateTime.Now.AddHours((int)totalHours);
+            finDate = finDate.AddMinutes(minutes);
+
+            if(advTime > finDate) return true;
+
             return false;
         }
 
