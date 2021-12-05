@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Configuration;
 using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace TMSMainWindow
 {
@@ -94,8 +95,19 @@ namespace TMSMainWindow
 
         private void ChangeBackupDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            config.AppSettings.Settings["localDbDirectory"].Value = BackupDirectoryTextBox.Text;
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            DialogResult selectResult = folderBrowserDialog.ShowDialog();
+
+            if (selectResult == System.Windows.Forms.DialogResult.OK)
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                string newBackupDirectory = folderBrowserDialog.SelectedPath;
+                config.AppSettings.Settings["localDbDirectory"].Value = newBackupDirectory;
+                BackupDirectoryTextBox.Text = newBackupDirectory;
+            }
+            //old code
+            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            //config.AppSettings.Settings["localDbDirectory"].Value = BackupDirectoryTextBox.Text;
         }
 
         private void BackupLocalDatabaseButton_Click(object sender, RoutedEventArgs e)
