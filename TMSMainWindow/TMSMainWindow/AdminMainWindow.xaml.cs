@@ -97,6 +97,10 @@ namespace TMSMainWindow
         private void ChangeBackupDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (ConfigurationManager.AppSettings["localDbDirectory"] != null)
+            {
+                folderBrowserDialog.SelectedPath = ConfigurationManager.AppSettings["localDbDirectory"];
+            }
             DialogResult selectResult = folderBrowserDialog.ShowDialog();
 
             if (selectResult == System.Windows.Forms.DialogResult.OK)
@@ -145,6 +149,10 @@ namespace TMSMainWindow
         private void ChangeLogfileDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (ConfigurationManager.AppSettings["logPath"] != null)
+            {
+                folderBrowserDialog.SelectedPath = ConfigurationManager.AppSettings["logPath"];
+            }
             DialogResult selectResult = folderBrowserDialog.ShowDialog();
 
             if (selectResult == System.Windows.Forms.DialogResult.OK)
@@ -163,6 +171,7 @@ namespace TMSMainWindow
         private void ChangeDisplayedLogfileButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = ConfigurationManager.AppSettings["logPath"];
             DialogResult selectResult = openFileDialog.ShowDialog();
 
             if (selectResult == System.Windows.Forms.DialogResult.OK)
