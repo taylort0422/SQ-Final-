@@ -870,7 +870,14 @@ namespace TMSMainWindow
         /// \param (int) tripID
         /// 
         /// \return N/A
-
+        public void RemoveTrip(int tripID)
+        {
+            conn.Open();
+            string sql = "DELETE FROM trip WHERE TripID = " + tripID;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         /// \brief Called to insert an invoice on to an order
         /// \details <b>Details</b>
@@ -1037,7 +1044,17 @@ namespace TMSMainWindow
 
         }
 
-
+        ///
+        /// \brief Called to return trucks to a location
+        /// \details <b>Details</b>
+        /// 
+        /// Method adds trucks back to depots
+        /// 
+        /// \param (int) carrierID
+        /// \param (string) truckType
+        /// \param (int) LTLLoad
+        /// 
+        /// \return Nothing
         void AddTrucks(int CarrierID, string truckType, int LTLLoad)
         {
             if (LTLLoad == 0)
@@ -1060,7 +1077,15 @@ namespace TMSMainWindow
             }
         }
 
-            /// 
+        ///
+        /// \brief Called to update a carrier
+        /// \details <b>Details</b>
+        /// 
+        /// Updates carriers information as requested by user.
+        /// 
+        /// \param (Carrier) c
+        /// 
+        /// \return Nothing
         public void UpDateCarrier(Carrier c)
         {
             conn.Open();
@@ -1073,8 +1098,16 @@ namespace TMSMainWindow
         }
 
 
-        /* Everything below here had to be added */
 
+        ///
+        /// \brief Called to update route table
+        /// \details <b>Details</b>
+        /// 
+        /// This allows for changes to be made to the route table
+        /// 
+        /// \param (Route) r
+        /// 
+        /// \return Nothing
         public void UpDateRouteTable(Route r)
         {
             conn.Open();
@@ -1086,7 +1119,15 @@ namespace TMSMainWindow
             conn.Close();
         }
 
-
+        ///
+        /// \brief Called to retrieve the route table
+        /// \details <b>Details</b>
+        /// 
+        /// This method gets all the data from the route table
+        /// 
+        /// \param None
+        /// 
+        /// \return a string representing the route table
         public string GetRouteTable()
         {
             int rdrCnt = 0;
@@ -1129,6 +1170,16 @@ namespace TMSMainWindow
             return retString;
         }
 
+        ///
+        /// \brief Called to move forward in time on an order
+        /// \details <b>Details</b>
+        /// 
+        /// Method allows time for an order to move forward so that it can be completed
+        /// 
+        /// \param (int) orderID
+        /// \param (DateTime) advTime
+        /// 
+        /// \return true or false if trip is finished
         public bool forwardTrip(int orderID, DateTime advTime)
         {
             float totalHours = 0;

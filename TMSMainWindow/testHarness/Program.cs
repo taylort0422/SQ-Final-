@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Configuration;
 using TMSMainWindow;
 using Newtonsoft.Json;
+using crypto;
+
 namespace testHarness
 {
     internal class Program
@@ -25,4 +27,5 @@ namespace testHarness
             Console.ReadKey();
         }
     }
+
 }

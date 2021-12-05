@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Configuration;
 
+
 namespace TMSMainWindow
 {
     /// <summary>
@@ -101,6 +102,38 @@ namespace TMSMainWindow
                     foreach (Trip trip in openTrip)
                     {
                         TripsAttachedToOrderListBox.Items.Add(nTMS.GetCarrierFromID(trip.OriginDepotID) + " To " + nTMS.GetCarrierFromID(trip.DestinationDepotID));
+                        if (trip.OriginCity == "Windsor" || trip.DestinationCity == "Windsor")
+                        {
+                            Windsor.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "London" || trip.DestinationCity == "London")
+                        {
+                            London.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "Hamilton" || trip.DestinationCity == "Hamilton")
+                        {
+                            Hamilton.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "Oshawa" || trip.DestinationCity == "Oshawa")
+                        {
+                            Oshawa.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "Toronto" || trip.DestinationCity == "Toronto")
+                        {
+                            Toronto.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "Kingston" || trip.DestinationCity == "Kingston")
+                        {
+                            Kingston.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "Ottawa" || trip.DestinationCity == "Ottawa")
+                        {
+                            Ottawa.Visibility = Visibility.Visible;
+                        }
+                        if (trip.OriginCity == "Belleville" || trip.DestinationCity == "Belleville")
+                        {
+                            Belleville.Visibility = Visibility.Visible;
+                        }
                     }
                 }
             }
@@ -143,6 +176,43 @@ namespace TMSMainWindow
                     int originID = nTMS.GetCarrierID(cList.ElementAt(0).Split('-')[0].Trim(), cList.ElementAt(0).Split('-')[1].Trim());
 
                     int destID = nTMS.GetCarrierID(cList.ElementAt(1).Split('-')[0].Trim(), cList.ElementAt(1).Split('-')[1].Trim());
+
+                    for(int i = 0; i < selectedElements.Count;i++)
+                    {
+                        string city = cList.ElementAt(i).Split('-')[1].Trim();
+                        if(city == "Windsor")
+                        {
+                            Windsor.Visibility = Visibility.Visible;
+                        }
+                        if (city == "London")
+                        {
+                            London.Visibility = Visibility.Visible;
+                        }
+                        if (city == "Hamilton")
+                        {
+                            Hamilton.Visibility = Visibility.Visible;
+                        }
+                        if (city == "Oshawa")
+                        {
+                            Oshawa.Visibility = Visibility.Visible;
+                        }
+                        if (city == "Toronto")
+                        {
+                            Toronto.Visibility = Visibility.Visible;
+                        }
+                        if (city == "Kingston")
+                        {
+                            Kingston.Visibility = Visibility.Visible;
+                        }
+                        if (city == "Ottawa")
+                        {
+                            Ottawa.Visibility = Visibility.Visible;
+                        }
+                        if (city == "Belleville")
+                        {
+                            Belleville.Visibility = Visibility.Visible;
+                        }
+                    }
 
                     string trip = (originID + "-" + destID);
 
@@ -286,6 +356,74 @@ namespace TMSMainWindow
                 MarkOrderAsCompleteButton.IsEnabled = true;
             }
             //check if the time forwarding will put us past the final time needed to complete the trip.
+
+        }
+
+        private void RemoveTripFromOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the order ID of the currently selected order
+            int orderID = Int32.Parse(ActiveOrdersDataGrid.SelectedItem.ToString().Split(' ')[0]);
+            // Get a list of trips in that order
+            List<Trip> listTrips = nTMS.ListOfTrips(orderID);
+
+            string selectedTrip = TripsAttachedToOrderListBox.SelectedItem.ToString();
+
+            int pos = selectedTrip.IndexOf("To");
+
+            string origin = selectedTrip.Substring(0, pos).Trim();
+            string destination = selectedTrip.Substring(pos + 1).Trim();
+           
+            origin = origin.Split('-')[1].Trim();
+            destination = destination.Split('-')[1].Trim();
+    
+            var fndTrip = listTrips.FirstOrDefault(i => i.OriginCity == origin && i.DestinationCity == destination);
+            if(fndTrip != null)
+            {
+                nTMS.RemoveTrip(fndTrip.ID);
+                TripsAttachedToOrderListBox.Items.Remove(TripsAttachedToOrderListBox.SelectedItem);
+ 
+                if (origin == "Windsor" || destination == "Windsor")
+                {
+                    Windsor.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "London" || destination == "London")
+                {
+                    London.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "Hamilton" || destination == "Hamilton")
+                {
+                    Hamilton.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "Oshawa" || destination == "Oshawa")
+                {
+                    Oshawa.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "Toronto" || destination == "Toronto")
+                {
+                    Toronto.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "Kingston" || destination == "Kingston")
+                {
+                    Kingston.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "Ottawa" || destination == "Ottawa")
+                {
+                    Ottawa.Visibility = Visibility.Collapsed;
+                }
+                if (origin == "Belleville" || destination == "Belleville")
+                {
+                    Belleville.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxResult result = MessageBox.Show("Trip Not Found!", "Choices!", button);
+            }
+            // Get the IDs of the origin and destination
+            //int originID = nTMS.GetCarrierID(cList.ElementAt(0).Split('-')[0].Trim(), cList.ElementAt(0).Split('-')[1].Trim());
+
+            //int destID = nTMS.GetCarrierID(cList.ElementAt(1).Split('-')[0].Trim(), cList.ElementAt(1).Split('-')[1].Trim());
 
         }
     }
