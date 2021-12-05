@@ -1033,15 +1033,26 @@ namespace TMSMainWindow
         /// \return N/A
         public void BackupDB(string filePath)
         {
-           
-            string sql = "BACKUP DATABASE tms TO DISK = " + "'" + filePath + "\\';";
-            conn.Open();
-            //Open the database
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            
-            conn.Close();
+            filePath += "\\tmsBackup";
+            System.IO.Directory.CreateDirectory(filePath);
+            string fileName;
+            string destFile;
 
+            string sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\MySQL\\MySQL Server 8.0\\Data\\tms";
+
+            if (System.IO.Directory.Exists(sourcePath))
+            {
+                string[] files = System.IO.Directory.GetFiles(sourcePath);
+
+                // Copy the files and overwrite destination files if they already exist.
+                foreach (string s in files)
+                {
+                    // Use static Path methods to extract only the file name from the path.
+                    fileName = System.IO.Path.GetFileName(s);
+                    destFile = System.IO.Path.Combine(filePath, fileName);
+                    System.IO.File.Copy(s, destFile, true);
+                }
+            }
         }
 
         ///
