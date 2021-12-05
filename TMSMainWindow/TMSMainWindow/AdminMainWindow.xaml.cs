@@ -105,9 +105,6 @@ namespace TMSMainWindow
                 config.AppSettings.Settings["localDbDirectory"].Value = newBackupDirectory;
                 BackupDirectoryTextBox.Text = newBackupDirectory;
             }
-            //old code
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //config.AppSettings.Settings["localDbDirectory"].Value = BackupDirectoryTextBox.Text;
         }
 
         private void BackupLocalDatabaseButton_Click(object sender, RoutedEventArgs e)
@@ -131,7 +128,16 @@ namespace TMSMainWindow
 
         private void ChangeLogfileDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            DialogResult selectResult = folderBrowserDialog.ShowDialog();
 
+            if (selectResult == System.Windows.Forms.DialogResult.OK)
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                string newLogfileDirectory = folderBrowserDialog.SelectedPath;
+                config.AppSettings.Settings["logPath"].Value = newLogfileDirectory;
+                BackupDirectoryTextBox.Text = newLogfileDirectory;
+            }
         }
     }
 }
