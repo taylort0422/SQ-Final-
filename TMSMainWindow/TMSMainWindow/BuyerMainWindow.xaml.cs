@@ -151,6 +151,7 @@ namespace TMSMainWindow
             foreach (string customer in nTMS.DisplayCustomers())
             {
                 AcceptedCustomerListBox.Items.Add(customer);
+                Logger.Log("Customer accepted: " + customer);
             }
             NewCustomerListBox.IsEnabled=false;
             CreateNewOrderButton.IsEnabled = true;
@@ -179,6 +180,7 @@ namespace TMSMainWindow
             this.Close();
             BuyerMainWindow newWindow = new BuyerMainWindow();
             newWindow.Show();
+            Logger.Log("Order Number: " + newOrder.Id + " was added!");
 
         }
 
@@ -217,6 +219,7 @@ namespace TMSMainWindow
             int selectedOrder = 0;
             selectedOrder = Int32.Parse(CompletedOrdersListBox.SelectedItem.ToString().Split(' ')[0]);
             nTMS.GenerateInvoice(selectedOrder);
+            Logger.Log("Invoice generated");
         }
     }
 }

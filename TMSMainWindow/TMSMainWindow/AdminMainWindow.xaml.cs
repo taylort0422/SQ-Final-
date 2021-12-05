@@ -106,6 +106,7 @@ namespace TMSMainWindow
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
                 BackupDirectoryTextBox.Text = newBackupDirectory;
+                Logger.Log("Database directory changed to: " + newBackupDirectory);
             }
             //old code
             //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -115,6 +116,8 @@ namespace TMSMainWindow
         private void BackupLocalDatabaseButton_Click(object sender, RoutedEventArgs e)
         {
             nTMS.BackupDB(ConfigurationManager.AppSettings.Get("localDbDirectory"));
+
+            Logger.Log("SQL database backed up");
         }
 
         private void ChangeContractConnectionInfoButton_Click(object sender, RoutedEventArgs e)
@@ -124,6 +127,8 @@ namespace TMSMainWindow
             config.AppSettings.Settings["marketplacePort"].Value = ContractPortNumberTextBox.Text;
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
+
+            Logger.Log("Connection info for remote database changed");
         }
 
         private void ChangeLocalDatabaseConnectionInfoButton_Click(object sender, RoutedEventArgs e)
@@ -133,6 +138,7 @@ namespace TMSMainWindow
             config.AppSettings.Settings["localPort"].Value = LocalDatabasePortNumberTextBox.Text;
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
+            Logger.Log("Connection info for local database changed");
         }
 
         private void ChangeLogfileDirectoryButton_Click(object sender, RoutedEventArgs e)
@@ -148,6 +154,7 @@ namespace TMSMainWindow
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
                 CurrentLogFileDirectoryTextBox.Text = newLogDirectory;
+                Logger.Log("Log file directory changed to: " + newLogDirectory);
             }
 
         }
