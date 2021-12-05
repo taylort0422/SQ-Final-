@@ -168,6 +168,8 @@ namespace TMSMainWindow
                         checkBoxes.ElementAt(i).IsEnabled = false;
                         selectedElements.Add(i);
                     }
+
+                    
                 }
 
                 if (checkedBoxes == 2)
@@ -237,7 +239,9 @@ namespace TMSMainWindow
                                 nTMS.PlanTrip(trip, orderID);
                                 // Move the trip to trip added list
                                 TripsAttachedToOrderListBox.Items.Add(cList.ElementAt(0) + " To " + cList.ElementAt(1));
+                                Logger.Log("Trip" + trip + " added to order");
                                 break;
+                                
 
                             }
                             else
@@ -302,6 +306,7 @@ namespace TMSMainWindow
             CarrierListBox.Items.Clear();
             ActiveOrdersDataGrid.Items.Clear();
             openOrders = nTMS.ListOpenOrders();
+            Logger.Log("Order completed");
             foreach (Order orders in openOrders)
             {
                 ActiveOrdersDataGrid.Items.Add(orders);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Configuration;
 
 namespace TMSMainWindow
 {
@@ -11,7 +12,7 @@ namespace TMSMainWindow
     {
         public static void Log(string logMsg)
         {
-            string logFile = AppDomain.CurrentDomain.BaseDirectory + "\\activityLog.txt";
+            string logFile = ConfigurationManager.AppSettings["logPath"] + "\\activityLog.txt";
             string content = DateTime.Now.ToString("ddd, d MMM yyyy HH:mm:ss K") + " " + logMsg + "\n";
             if (!File.Exists(logFile))
             {
@@ -26,7 +27,7 @@ namespace TMSMainWindow
 
         public static void Log(Exception e)
         {
-            string logFile = AppDomain.CurrentDomain.BaseDirectory + "\\errorLog.txt";
+            string logFile = ConfigurationManager.AppSettings["logPath"] + "\\errorLog.txt";
             string content = DateTime.Now.ToString("ddd, d MMM yyyy HH:mm:ss K") + " " + e.Message + "\n";
             if (!File.Exists(logFile))
             {
