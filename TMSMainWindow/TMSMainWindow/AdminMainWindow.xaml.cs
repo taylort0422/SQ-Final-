@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Configuration;
 using Newtonsoft.Json;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TMSMainWindow
 {
@@ -150,6 +151,25 @@ namespace TMSMainWindow
                 CurrentLogFileDirectoryTextBox.Text = newLogDirectory;
             }
 
+        }
+
+        private void ChangeDisplayedLogfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            DialogResult selectResult = openFileDialog.ShowDialog();
+
+            if (selectResult == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    CurrentLogfileLabel.Content = "Current logfile: " + openFileDialog.FileName;
+                    CurrentLogFileDisplayTextBox.Text = File.ReadAllText(openFileDialog.FileName); //probably incorrect
+                }
+                catch (Exception)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error opening selected logfile.");
+                }
+            }
         }
 
     }
