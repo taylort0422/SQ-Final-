@@ -71,7 +71,7 @@ namespace TMSMainWindow
         
         private void ChangeLogFile(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
 
@@ -103,6 +103,8 @@ namespace TMSMainWindow
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 string newBackupDirectory = folderBrowserDialog.SelectedPath;
                 config.AppSettings.Settings["localDbDirectory"].Value = newBackupDirectory;
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
                 BackupDirectoryTextBox.Text = newBackupDirectory;
             }
             //old code
@@ -120,6 +122,8 @@ namespace TMSMainWindow
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.AppSettings.Settings["marketplaceIP"].Value = ContractIPAddressTextBox.Text;
             config.AppSettings.Settings["marketplacePort"].Value = ContractPortNumberTextBox.Text;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
         }
 
         private void ChangeLocalDatabaseConnectionInfoButton_Click(object sender, RoutedEventArgs e)
@@ -127,11 +131,26 @@ namespace TMSMainWindow
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.AppSettings.Settings["localIP"].Value = LocalDatabaseIPAddressTextBox.Text;
             config.AppSettings.Settings["localPort"].Value = LocalDatabasePortNumberTextBox.Text;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
         }
 
         private void ChangeLogfileDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            DialogResult selectResult = folderBrowserDialog.ShowDialog();
+
+            if (selectResult == System.Windows.Forms.DialogResult.OK)
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                string newLogDirectory = folderBrowserDialog.SelectedPath;
+                config.AppSettings.Settings["logPath"].Value = newLogDirectory;
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+                CurrentLogFileDirectoryTextBox.Text = newLogDirectory;
+            }
 
         }
+
     }
 }

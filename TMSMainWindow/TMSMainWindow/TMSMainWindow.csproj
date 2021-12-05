@@ -124,6 +124,7 @@
     <Compile Include="CommTMS.cs" />
     <Compile Include="Communicate.cs" />
     <Compile Include="Contract.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="mainwindow.xaml.cs">
       <DependentUpon>mainwindow.xaml</DependentUpon>
     </Compile>
