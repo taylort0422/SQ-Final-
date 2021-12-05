@@ -1238,7 +1238,6 @@ namespace TMSMainWindow
                 Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "reports\\");
             }
 
-
             conn.Open();
             string sql = "SELECT InvoiceID, invoice.OrderID, Amount, `order`.OrderDate FROM invoice"
                         + " INNER JOIN `order` ON invoice.OrderID = `order`.OrderID"
