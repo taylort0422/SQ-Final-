@@ -5,16 +5,16 @@
 //////////////////////////////////////////////////////////////////////////
 
 
-Customer: Farm Supply Co				2021-12-03 12:08:14 PM
+Customer: Malmart				2021-12-05 4:02:54 PM
 
-From: London	 TO 	Toronto
+From: Belleville	 TO 	Windsor
 
 
 Line Items:
-1) 	London to Toronto	 COST: $66.963 
+1) 	Windsor to Belleville	 COST: $0 
 
 
-						Total Charge: 66.963
+						Total Charge: $3263.544
 
 
 © TMS via Team Plakata

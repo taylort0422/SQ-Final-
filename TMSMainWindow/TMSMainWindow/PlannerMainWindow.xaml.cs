@@ -431,5 +431,17 @@ namespace TMSMainWindow
             //int destID = nTMS.GetCarrierID(cList.ElementAt(1).Split('-')[0].Trim(), cList.ElementAt(1).Split('-')[1].Trim());
 
         }
+
+        private void GenerateInvoiceAllTimeButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxResult result = MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-1)), "Choices!", button);
+        }
+
+        private void GenerateInvoicePast2WeeksButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxResult result = MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-14)), "Choices!", button);
+        }
     }
 }

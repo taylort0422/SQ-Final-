@@ -1218,5 +1218,44 @@ namespace TMSMainWindow
             return false;
         }
 
+        ///
+        /// \brief Called to generate reports
+        /// \details <b>Details</b>
+        /// 
+        /// Method that generates reports for the selected period of time
+        /// 
+        /// \param (DateTime) StartDate
+        /// 
+        /// \return true or false if trip is finished
+        public string GenerateReport(DateTime startDate)
+        {
+            int totalInvoices = 0;
+            float totalValues = 0;
+            string reportFile = AppDomain.CurrentDomain.BaseDirectory + "reports\\" + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + "_report.txt";
+
+            if(!Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "reports\\"))
+            {
+                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "reports\\");
+            }
+
+
+            conn.Open();
+            string sql = "SELECT InvoiceID, invoice.OrderID, Amount, `order`.OrderDate FROM invoice"
+                        + " INNER JOIN `order` ON invoice.OrderID = `order`.OrderID"
+                        + " WHERE `order`.OrderDate > '" + startDate + "';";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                string outStr = "Order ID: " + rdr.GetInt32(1) + "\t\t| Invoice ID: " + rdr.GetInt32(0) + "\t\t| OrderDate: " + rdr.GetDateTime(3) + "\t\t| Total: " + rdr.GetFloat(2) + "\n";
+                File.AppendAllText(reportFile, outStr);
+                totalInvoices++;
+                totalValues += rdr.GetFloat(2);
+            }
+            conn.Close();
+
+            File.AppendAllText(reportFile, "\n\n Totals for time period :" + totalValues + "\t over " + totalInvoices + " invoices");
+            return (reportFile);
+        }
     }
 }

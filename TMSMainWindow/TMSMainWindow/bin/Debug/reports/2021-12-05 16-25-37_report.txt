@@ -1,0 +1,5 @@
+Order ID: 75		| Invoice ID: 10		| OrderDate: 2021-12-05 4:03:02 PM		| Total: 1610.68
+Order ID: 76		| Invoice ID: 11		| OrderDate: 2021-12-05 4:02:54 PM		| Total: 3263.54
+
+
+ Totals for time period :4874.22	 over 2 invoices
