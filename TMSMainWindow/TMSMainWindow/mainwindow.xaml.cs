@@ -26,7 +26,8 @@ namespace TMSMainWindow
             InitializeComponent();
             try
             {
-                string logPath = ConfigurationManager.AppSettings.Get("logPath");
+                string logPath = ConfigurationManager.AppSettings.Get("logPath").ToString();
+
                 if (logPath != "NULL")
                 {
                     SetSetting("logPath", logPath);
@@ -41,7 +42,7 @@ namespace TMSMainWindow
             }
             catch (Exception e)
             {
-                MessageBox.Show("Exception: " + e.Message);
+                Logger.Log("Exception: " + e.Message);
             }
 
             try

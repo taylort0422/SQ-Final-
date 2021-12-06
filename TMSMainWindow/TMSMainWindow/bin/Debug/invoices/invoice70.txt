@@ -1,0 +1,20 @@
+//////////////////////////////////////////////////////////////////////////
+//									//
+//			 TMS INC. INVOICE				//
+//									//
+//////////////////////////////////////////////////////////////////////////
+
+
+Customer: Space J				2021-12-06 12:53:24 PM
+
+From: Kingston	 TO 	Toronto
+
+
+Line Items:
+1) 	Toronto to Kingston	 COST: $0 
+
+
+						Total Charge: $1610.675
+
+
+© TMS via Team Plakata
