@@ -99,29 +99,6 @@ LOCK TABLES tms.`customer` WRITE;
 /*!40000 ALTER TABLE tms.`customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `ftltruck`
---
-
-DROP TABLE IF EXISTS tms.`ftltruck`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE tms.`ftltruck` (
-  `FTLTruckID` int NOT NULL,
-  `FTLID` varchar(45) DEFAULT NULL,
-  KEY `FTLTruckID_idx` (`FTLTruckID`),
-  CONSTRAINT `FTLTruckID` FOREIGN KEY (`FTLTruckID`) REFERENCES tms.`truck` (`TruckID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ftltruck`
---
-
-LOCK TABLES tms.`ftltruck` WRITE;
-/*!40000 ALTER TABLE tms.`ftltruck` DISABLE KEYS */;
-/*!40000 ALTER TABLE tms.`ftltruck` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `invoice`
@@ -281,74 +258,7 @@ LOCK TABLES tms.`trip` WRITE;
 /*!40000 ALTER TABLE tms.`trip` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `truck`
---
 
-DROP TABLE IF EXISTS tms.`truck`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE tms.`truck` (
-  `TruckID` int NOT NULL,
-  `TruckType` varchar(45) DEFAULT NULL,
-  `ReeferStatus` tinyint(1) DEFAULT NULL,
-  `DrivenHours` int DEFAULT NULL,
-  `OperationalHours` int DEFAULT NULL,
-  `OriginCity` varchar(45) DEFAULT NULL,
-  `DestCity` varchar(45) DEFAULT NULL,
-  `LoadTime` int DEFAULT NULL,
-  `UnloadTime` int DEFAULT NULL,
-  `CarrierID` int DEFAULT NULL,
-  PRIMARY KEY (`TruckID`),
-  KEY `CarrierID_idx` (`CarrierID`),
-  CONSTRAINT `CarrierID` FOREIGN KEY (`CarrierID`) REFERENCES tms.`carrier` (`CarrierID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `truck`
---
-
-LOCK TABLES tms.`truck` WRITE;
-/*!40000 ALTER TABLE tms.`truck` DISABLE KEYS */;
-/*!40000 ALTER TABLE tms.`truck` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS tms.`user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE tms.`user` (
-  `UserID` int NOT NULL AUTO_INCREMENT,
-  `AccountType` varchar(45) DEFAULT NULL,
-  `FirstName` varchar(45) DEFAULT NULL,
-  `LastName` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `Telephone` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 CREATE USER 'tmsUser'@'localhost' IDENTIFIED BY 'pass123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON tms.* TO 'tmsUser'@'localhost'
