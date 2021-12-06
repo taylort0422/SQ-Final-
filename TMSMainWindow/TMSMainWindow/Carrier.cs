@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace TMSMainWindow
 {
+    /// 
+    /// \class Carrier
+    ///
+    /// \brief This class represents a carrier in the system
+    /// 
+    /// \details <b>Details< / b>
+    /// The carrier class contains all the information about a carrier
+    /// 
+    /// \author <i>Ashley Ingle + Andrew Tudor + Will Schwetz + Taylor Trainor</i>
+    /// 
+    ///
     public class Carrier
     {
         public int CarrierID { get; set; }

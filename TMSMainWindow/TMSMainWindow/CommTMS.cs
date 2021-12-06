@@ -25,7 +25,7 @@ namespace TMSMainWindow
 
     public class CommTMS : Communicate
     {
-        public string connStr { get; set; } ///<SQL command to connect to databse
+        public string ConnStr { get; set; } ///<SQL command to connect to databse
         public MySqlConnection conn = null;
 
         /*
@@ -35,8 +35,8 @@ namespace TMSMainWindow
         */
         public CommTMS(string DbUserName, string DbPassword, string DbIP, int DbPort, string DbName) : base(DbUserName, DbPassword, DbIP, DbPort, DbName)
         {
-            connStr = "server=" + DbIP + ";user=" + DbUser + ";database=" + DbName + ";port=" + DbPort + ";password=" + DbPassword;
-            conn = new MySqlConnection(connStr);
+            ConnStr = "server=" + DbIP + ";user=" + DbUser + ";database=" + DbName + ";port=" + DbPort + ";password=" + DbPassword;
+            conn = new MySqlConnection(ConnStr);
         }
 
         ///
@@ -125,7 +125,7 @@ namespace TMSMainWindow
             conn.Open();
             string sql = "INSERT INTO customer (name) VALUES(\"" + name + "\")";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
             conn.Close();
 
             return CheckCustomer(name);
@@ -170,7 +170,7 @@ namespace TMSMainWindow
                 conn.Open();
                 string sql = "INSERT INTO cityList (WhichOrder, DepotID, Carrier) VALUES(" + orderID + "," + cityList[i][0] + ",\"" + cityList[i][1].Trim() + "\")";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
         }
@@ -437,7 +437,7 @@ namespace TMSMainWindow
             conn.Open();
             string sql = "UPDATE `order` SET OrderConfirmed = 1, OrderDate = \"" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\" WHERE OrderID = " + orderID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
 
@@ -556,7 +556,6 @@ namespace TMSMainWindow
             sql = "UPDATE `order` SET TotalHours = " + currHours + ", orderDate = \""+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\" WHERE OrderID = " + newTrip.OrderId;
             cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
-            rdr = cmd.ExecuteReader();
             conn.Close();
 
             return lastID;
@@ -773,9 +772,7 @@ namespace TMSMainWindow
             string customerName = "";
             string departCity = "";
             string destCity = "";
-            int surCharge = 0;
             float totalCharge = 0;
-            int totalHours = 0;
             int orderType = 0;
             int orderSize = 0;
             float tempCost=0;
@@ -795,8 +792,6 @@ namespace TMSMainWindow
                 orderType = rdr.GetInt32(1);
                 departCity = rdr.GetString(2);
                 destCity = rdr.GetString(3);
-                //if(rdr.GetInt32(4) != null) totalHours = rdr.GetInt32(4);
-                // if (rdr.GetInt32(5) != null) surCharge = rdr.GetInt32(5);
                 vanType = rdr.GetInt32(6);
                 orderConfirmed = rdr.GetInt32(7);
                 orderDate = rdr.GetDateTime(8);
@@ -957,7 +952,7 @@ namespace TMSMainWindow
                     conn.Open();
                     //Open the database
                     cmd = new MySqlCommand(sql, conn);
-                    rdr = cmd.ExecuteReader();
+                    cmd.ExecuteNonQuery();
                     conn.Close();
                     return 0;
                 }
@@ -987,7 +982,7 @@ namespace TMSMainWindow
                     conn.Open();
                     //Open the database
                     cmd = new MySqlCommand(sql, conn);
-                    rdr = cmd.ExecuteReader();
+                    cmd.ExecuteNonQuery();
                     conn.Close();
                     return 0;
                 }
@@ -1074,7 +1069,7 @@ namespace TMSMainWindow
                 conn.Open();
                 //Open the database
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
             else
@@ -1083,7 +1078,7 @@ namespace TMSMainWindow
                 conn.Open();
                 //Open the database
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
         }
@@ -1104,7 +1099,7 @@ namespace TMSMainWindow
                     + ", LTLA = " + c.LTLA + ", FTLRate = " + c.FTLRate + ", LTLRate = " + c.LTLRate + ", ReefCharge = " + c.ReefCharge
                     + " WHERE CarrierID = " + c.CarrierID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
 
@@ -1126,7 +1121,7 @@ namespace TMSMainWindow
                     + "\", Hours = " + r.Hours + ", KMs = " + r.KMs + ", Direction = \"" + r.Direction + "\""
                     + " WHERE RouteID = " + r.RouteID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
 
@@ -1191,11 +1186,10 @@ namespace TMSMainWindow
         /// \param (DateTime) advTime
         /// 
         /// \return true or false if trip is finished
-        public bool forwardTrip(int orderID, DateTime advTime)
+        public bool ForwardTrip(int orderID, DateTime advTime)
         {
             float totalHours = 0;
             DateTime orderDate;
-            int days = 0;
 
             conn.Open();
             string sql = "SELECT TotalHours, OrderDate FROM `order` WHERE orderID = " + orderID;

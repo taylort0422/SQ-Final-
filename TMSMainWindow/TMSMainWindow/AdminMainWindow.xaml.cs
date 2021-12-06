@@ -185,7 +185,7 @@ namespace TMSMainWindow
                 }
                 catch (Exception)
                 {
-                    System.Windows.Forms.MessageBox.Show("Error opening selected logfile.");
+                    System.Windows.MessageBox.Show("Error opening selected logfile.");
                 }
             }
         }

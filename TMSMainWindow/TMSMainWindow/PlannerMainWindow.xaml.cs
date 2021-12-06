@@ -32,21 +32,6 @@ namespace TMSMainWindow
                         ConfigurationManager.AppSettings.Get("localDb"));
 
 
-        /// A private variable.
-        ///
-        /// This variable stores the communication information for the external marketplace database.
-        ///
-        private Communicate nc = new Communicate(ConfigurationManager.AppSettings.Get("marketplaceUser"),
-                                    ConfigurationManager.AppSettings.Get("marketplacePass"),
-                                    ConfigurationManager.AppSettings.Get("marketplaceIP"),
-                                    Int32.Parse(ConfigurationManager.AppSettings.Get("marketplacePort")),
-                                    ConfigurationManager.AppSettings.Get("marketplaceDb"));
-        /// A function variable.
-        ///
-        /// This variable stores a trip.
-        ///
-        Trip trip = new Trip();
-
         /// A function variable.
         ///
         /// This is a list that will be filled with currently open orders.
@@ -64,7 +49,6 @@ namespace TMSMainWindow
                 ActiveOrdersDataGrid.Items.Add(orders);
 
             }
-            //AddTripToOrderButton.IsEnabled = false;
 
         }
 
@@ -246,8 +230,7 @@ namespace TMSMainWindow
                             }
                             else
                             {
-                                MessageBoxButton button = MessageBoxButton.OK;
-                                MessageBoxResult result = MessageBox.Show("This Trip already exists!", "Duplicates", button);
+                                MessageBox.Show("This Trip already exists!", "Duplicates");
                                 for (int i = 0; i < checkBoxes.Count(); i++)
                                 {
                                     checkBoxes.ElementAt(i).IsChecked = false;
@@ -273,8 +256,8 @@ namespace TMSMainWindow
                 else
                 {
                     selectedElements.Clear();
-                    MessageBoxButton button = MessageBoxButton.OK;
-                    MessageBoxResult result = MessageBox.Show("You must select an Origin and a Destination", "Choices!", button);
+                    MessageBox.Show("You must select an Origin and a Destination", "Choices!");
+
                     for (int i = 0; i < checkBoxes.Count(); i++)
                     {
                         checkBoxes.ElementAt(i).IsChecked = false;
@@ -286,8 +269,7 @@ namespace TMSMainWindow
             }
             else
             {
-                MessageBoxButton button = MessageBoxButton.OK;
-                MessageBoxResult result = MessageBox.Show("Select Trips", "No trip", button);
+                MessageBox.Show("Select Trips", "No trip");
             }
 
         }
@@ -354,7 +336,7 @@ namespace TMSMainWindow
 
             bool orderCompleted = false;
 
-            orderCompleted = nTMS.forwardTrip(orderID, newTime);
+            orderCompleted = nTMS.ForwardTrip(orderID, newTime);
 
             if(orderCompleted)
             {
@@ -434,14 +416,12 @@ namespace TMSMainWindow
 
         private void GenerateInvoiceAllTimeButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxButton button = MessageBoxButton.OK;
-            MessageBoxResult result = MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-1)), "Choices!", button);
+            MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-1)), "Choices!");
         }
 
         private void GenerateInvoicePast2WeeksButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxButton button = MessageBoxButton.OK;
-            MessageBoxResult result = MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-14)), "Choices!", button);
+            MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-14)), "Choices!");
         }
     }
 }

@@ -70,19 +70,19 @@ namespace TMSMainWindow
             ConfigurationManager.RefreshSection("appSettings");
         }
        
-        private void adminButton_Click(object sender, RoutedEventArgs e)
+        private void AdminButton_Click(object sender, RoutedEventArgs e)
         {
             AdminMainWindow adminWindow = new AdminMainWindow();
             adminWindow.Show();
         }
 
-        private void buyerButton_Click(object sender, RoutedEventArgs e)
+        private void BuyerButton_Click(object sender, RoutedEventArgs e)
         {
             BuyerMainWindow buyerWindow = new BuyerMainWindow();
             buyerWindow.Show();
         }
 
-        private void plannerButton_Click(object sender, RoutedEventArgs e)
+        private void PlannerButton_Click(object sender, RoutedEventArgs e)
         {
             PlannerMainWindow plannerWindow = new PlannerMainWindow();
             plannerWindow.Show();
