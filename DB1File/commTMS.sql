@@ -128,32 +128,6 @@ LOCK TABLES tms.`invoice` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `ltltruck`
---
-
-DROP TABLE IF EXISTS tms.`ltltruck`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE tms.`ltltruck` (
-  `LTLTruckID` int NOT NULL,
-  `LTLID` varchar(45) DEFAULT NULL,
-  `MaxLoad` varchar(45) DEFAULT NULL,
-  `CurrentLoad` varchar(45) DEFAULT NULL,
-  KEY `LTLTruckID_idx` (`LTLTruckID`),
-  CONSTRAINT `LTLTruckID` FOREIGN KEY (`LTLTruckID`) REFERENCES tms.`truck` (`TruckID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ltltruck`
---
-
-LOCK TABLES tms.`ltltruck` WRITE;
-/*!40000 ALTER TABLE tms.`ltltruck` DISABLE KEYS */;
-/*!40000 ALTER TABLE tms.`ltltruck` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `order`
 --
 
