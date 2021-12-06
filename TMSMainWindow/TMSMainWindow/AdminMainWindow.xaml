@@ -15,8 +15,8 @@
             <TextBox Name="CurrentLogFileDisplayTextBox" HorizontalAlignment="Left" Height="219" Margin="6,460,0,0" TextWrapping="Wrap" Text="placeholder text to be replaced by logfile contents" VerticalAlignment="Top" Width="872"/>
             <Label Name="CurrentLogfileLabel"  FontSize="22" Content="Current logfile: (name)" HorizontalAlignment="Left" Margin="6,419,0,0" VerticalAlignment="Top" Height="41" RenderTransformOrigin="0.125,0.707"/>
             <Button Name="ChangeDisplayedLogfileButton" FontSize="18" Content="Change" HorizontalAlignment="Left" Margin="273,426,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="ChangeDisplayedLogfileButton_Click" />
-            <Button Name="SaveCarrierDataChangesButton" FontSize="16" Content="Save Route Table Changes" HorizontalAlignment="Left" Margin="159,19,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveCarrierDataChangesButton_Click"/>
-            <Button Name="SaveRouteTableChangesButton" FontSize="16" Content="Save Carrier Data Changes" HorizontalAlignment="Left" Margin="646,19,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveRouteTableChangesButton_Click"/>
+            <Button Name="SaveRouteTableChangesButton" FontSize="16" Content="Save Route Table Changes" HorizontalAlignment="Left" Margin="159,19,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveRouteTableChangesButton_Click"/>
+            <Button Name="SaveCarrierDataChangesButton" FontSize="16" Content="Save Carrier Data Changes" HorizontalAlignment="Left" Margin="646,19,0,0" VerticalAlignment="Top" Width="244" Height="29" Click="SaveCarrierDataChangesButton_Click" />
         </Grid>
         <Grid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="345">
             <Grid.RowDefinitions>

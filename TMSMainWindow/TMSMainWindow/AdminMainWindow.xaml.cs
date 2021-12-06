@@ -70,28 +70,28 @@ namespace TMSMainWindow
         ///  \param e the arguments of the event that was triggered.
         ///  \return void
         
-        private void ChangeLogFile(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
 
 
         private void SaveRouteTableChangesButton_Click(object sender, RoutedEventArgs e)
-        {
-            List<Carrier> carrierList = CarrierDataGrid.Items.OfType<Carrier>().ToList();
-            foreach (Carrier c in carrierList)
-            {
-                nTMS.UpDateCarrier(c);
-            }
-        }
-
-        private void SaveCarrierDataChangesButton_Click(object sender, RoutedEventArgs e)
         {
             List<Route> routeList = RouteDataGrid.Items.OfType<Route>().ToList();
             foreach (Route r in routeList)
             {
                 nTMS.UpDateRouteTable(r);
             }
+            System.Windows.Forms.MessageBox.Show("Route Table Updated!");
+        }
+
+        private void SaveCarrierDataChangesButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            List<Carrier> carrierList = CarrierDataGrid.Items.OfType<Carrier>().ToList();
+            foreach (Carrier c in carrierList)
+            {
+                nTMS.UpDateCarrier(c);
+            }
+            System.Windows.Forms.MessageBox.Show("Carrier Data Updated!");
+
         }
 
         private void ChangeBackupDirectoryButton_Click(object sender, RoutedEventArgs e)
@@ -113,9 +113,8 @@ namespace TMSMainWindow
                 BackupDirectoryTextBox.Text = newBackupDirectory;
                 Logger.Log("Database directory changed to: " + newBackupDirectory);
             }
-            //old code
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //config.AppSettings.Settings["localDbDirectory"].Value = BackupDirectoryTextBox.Text;
+
+            System.Windows.Forms.MessageBox.Show("Backup Directory Changed!");
         }
 
         private void BackupLocalDatabaseButton_Click(object sender, RoutedEventArgs e)
@@ -123,6 +122,7 @@ namespace TMSMainWindow
             nTMS.BackupDB(ConfigurationManager.AppSettings.Get("localDbDirectory"));
 
             Logger.Log("SQL database backed up");
+            System.Windows.Forms.MessageBox.Show("Local Database Backup created!");
         }
 
         private void ChangeContractConnectionInfoButton_Click(object sender, RoutedEventArgs e)
@@ -134,6 +134,7 @@ namespace TMSMainWindow
             ConfigurationManager.RefreshSection("appSettings");
 
             Logger.Log("Connection info for remote database changed");
+            System.Windows.Forms.MessageBox.Show("Contract database connection info changed!");
         }
 
         private void ChangeLocalDatabaseConnectionInfoButton_Click(object sender, RoutedEventArgs e)
@@ -144,6 +145,7 @@ namespace TMSMainWindow
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
             Logger.Log("Connection info for local database changed");
+            System.Windows.Forms.MessageBox.Show("Local database connection info changed!");
         }
 
         private void ChangeLogfileDirectoryButton_Click(object sender, RoutedEventArgs e)
@@ -165,7 +167,7 @@ namespace TMSMainWindow
                 CurrentLogFileDirectoryTextBox.Text = newLogDirectory;
                 Logger.Log("Log file directory changed to: " + newLogDirectory);
             }
-
+            System.Windows.Forms.MessageBox.Show("Log file Directory Changed!");
         }
 
         private void ChangeDisplayedLogfileButton_Click(object sender, RoutedEventArgs e)
