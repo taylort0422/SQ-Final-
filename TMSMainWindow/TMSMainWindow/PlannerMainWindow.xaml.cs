@@ -416,7 +416,7 @@ namespace TMSMainWindow
 
         private void GenerateInvoiceAllTimeButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddDays(-1)), "Choices!");
+            MessageBox.Show("Report saved to: " + nTMS.GenerateReport(DateTime.Now.AddYears(-1)), "Choices!");
         }
 
         private void GenerateInvoicePast2WeeksButton_Click(object sender, RoutedEventArgs e)
