@@ -218,8 +218,17 @@ namespace TMSMainWindow
         {
             int selectedOrder = 0;
             selectedOrder = Int32.Parse(CompletedOrdersListBox.SelectedItem.ToString().Split(' ')[0]);
-            nTMS.GenerateInvoice(selectedOrder);
-            Logger.Log("Invoice generated");
+            try
+            {
+                nTMS.GenerateInvoice(selectedOrder);
+                MessageBox.Show("Invoice succesfully generated", "Invoice");
+                Logger.Log("Invoice generated");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invoice failed to generate", "Invoice");
+                Logger.Log("Invoice failed to generate");
+            }
         }
     }
 }

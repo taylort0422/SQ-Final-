@@ -1235,7 +1235,7 @@ namespace TMSMainWindow
             conn.Open();
             string sql = "SELECT InvoiceID, invoice.OrderID, Amount, `order`.OrderDate FROM invoice"
                         + " INNER JOIN `order` ON invoice.OrderID = `order`.OrderID"
-                        + " WHERE `order`.OrderDate > '" + startDate + "';";
+                        + " WHERE `order`.OrderDate > '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "';";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
